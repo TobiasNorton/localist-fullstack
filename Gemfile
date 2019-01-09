@@ -44,3 +44,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "faker", "~> 1.9"
 
 gem "awesome_print", "~> 1.8"
+
+gem "rack-cors", "~> 1.0"

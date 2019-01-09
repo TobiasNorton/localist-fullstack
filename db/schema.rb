@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_162755) do
+ActiveRecord::Schema.define(version: 2019_01_09_181557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "links", force: :cascade do |t|
+    t.integer "profile_id_1"
+    t.integer "profile_id_2"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_links_on_profile_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
@@ -43,5 +52,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_162755) do
     t.index ["profile_id"], name: "index_trips_on_profile_id"
   end
 
+  add_foreign_key "links", "profiles"
   add_foreign_key "trips", "profiles"
 end
