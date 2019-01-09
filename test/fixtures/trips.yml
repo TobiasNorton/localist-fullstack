@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  start_date: 2019-01-09
+  end_date: 2019-01-09
+  profile: one
+
+two:
+  location: MyString
+  start_date: 2019-01-09
+  end_date: 2019-01-09
+  profile: two
