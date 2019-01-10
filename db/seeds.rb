@@ -31,6 +31,8 @@
 # "latitude": "",
 # "longitude": ""
 
+toby = Profile.create(name: "Tobias Norton", age: 35, gender: "M", location: "St. Petersburg, Florida", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Jean-Sebastian Sirois", instagram: "@instagram", phone: "941-587-5432", whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude: 123, longitude: 123 )
+
 jean = Profile.create(name: "Jean-Sebastian Sirois", age: 66, gender: "M", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Jean-Sebastian Sirois", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude: 123, longitude: 123 )
 
 margaux = Profile.create(name: "Margaux Anati", age: 26, gender: "F", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Margaux Anati", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
@@ -39,7 +41,7 @@ bruno = Profile.create(name: "Bruno Chastain", age: 26, gender: "M", location: "
 
 sarah = Profile.create(name: "Sarah Richelieu", age: 26, gender: "F", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Sarah Richelieu", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
-duanphen = Profile.create(name: "Duanphen Kaekwoon", age: 26, gender: "F", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Hector Darwin", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
+katie = Profile.create(name: "Katie Miller", age: 26, gender: "F", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Hector Darwin", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
 budsarin = Profile.create(name: "Budsarin Hiranprueck", age: 26, gender: "M", location: "Paris, France", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Budsarin Hiranprueck", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
@@ -53,9 +55,24 @@ kenny = Profile.create(name: "Kenny Matthews", age: 26, gender: "M", location: "
 
 todd = Profile.create(name: "Todd Miller", age: 26, gender: "M", location: "Galway, Ireland", about: "Bacon ipsum dolor amet prosciutto picanha kielbasa, landjaeger pig flank porchetta short loin. Short loin chicken meatloaf chuck rump beef ribs swine buffalo. Short ribs kevin shank biltong beef. Boudin flank sausage, cupim tail filet mignon bresaola turkey landjaeger salami ham meatball leberkas capicola rump.", why_joined: "Alcatra ribeye leberkas hamburger spare ribs beef, beef ribs drumstick short loin landjaeger. Ham porchetta filet mignon, turkey doner bacon ground round pork chop salami corned beef brisket pork belly ball tip chuck spare ribs.", facebook: "Todd Miller", instagram: "@instagram", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
-Link.create(profile_1: jean, profile_2: margaux)
-Link.create(profile_1: kenny, profile_2: jean)
-Link.create(profile_1: kenny, profile_2: todd)
+Link.create(profile_1: toby, profile_2: margaux)
+Link.create(profile_1: toby, profile_2: jean)
+Link.create(profile_1: toby, profile_2: katie)
+Link.create(profile_1: toby, profile_2: bruno)
+Link.create(profile_1: toby, profile_2: sarah)
+Link.create(profile_1: toby, profile_2: budsarin)
+Link.create(profile_1: toby, profile_2: naowarat)
+Link.create(profile_1: toby, profile_2: larry)
+Link.create(profile_1: toby, profile_2: michael)
+Link.create(profile_1: toby, profile_2: todd)
+Link.create(profile_1: toby, profile_2: kenny)
+Link.create(profile_1: katie, profile_2: naowarat)
+Link.create(profile_1: katie, profile_2: jean)
+Link.create(profile_1: katie, profile_2: larry)
+Link.create(profile_1: katie, profile_2: michael)
+Link.create(profile_1: katie, profile_2: todd)
+Link.create(profile_1: katie, profile_2: kenny)
+
 
 # Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
 

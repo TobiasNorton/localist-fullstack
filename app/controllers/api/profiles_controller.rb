@@ -26,6 +26,8 @@ class Api::ProfilesController < ApplicationController
   end
 
   def linked
+    # current_profile is a variable we made in 
+    # application_controller.rb that changes based on what id we give it
     all_linked_profiles = current_profile.linked_profiles_as_1 + current_profile.linked_profiles_as_2
 
     render json: {
