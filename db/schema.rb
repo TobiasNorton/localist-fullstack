@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_205021) do
+ActiveRecord::Schema.define(version: 2019_01_10_163055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,10 @@ ActiveRecord::Schema.define(version: 2019_01_09_205021) do
   end
 
   create_table "links", force: :cascade do |t|
-    t.integer "profile_id_1"
-    t.integer "profile_id_2"
-    t.bigint "profile_id"
+    t.integer "profile_1_id"
+    t.integer "profile_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_links_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -74,6 +72,5 @@ ActiveRecord::Schema.define(version: 2019_01_09_205021) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "links", "profiles"
   add_foreign_key "trips", "profiles"
 end
