@@ -19,7 +19,9 @@ class Api::ProfilesController < ApplicationController
           whatsapp: profile.whatsapp,
           email: profile.email,
           latitude: profile.latitude,
-          longitude: profile.longitude
+          longitude: profile.longitude,
+          picture_url: url_for(profile.picture)
+          # picture_url: url_for(profile.picture.varient(resize: "384 x 384"))
         }
       end
     }
@@ -51,4 +53,11 @@ class Api::ProfilesController < ApplicationController
       end
     }
   end
+
+  private
+
+  def profile_params
+    params.require(:profile).permit(:name, :age, :gender, :location, :about, :why_joined, :facebook, :instagram, :phone, :whatsapp, :email, :latitude, :longitude, :picture)
+  end
+
 end
