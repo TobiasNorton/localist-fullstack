@@ -78,8 +78,47 @@ class Api::ProfilesController < ApplicationController
   end
 
   def browse
-    if current_profile.
+    # Get all profiles that are not me
+    others = Profile.all.select do |profile|
+      profile.id != current_profile.id
+    end
+
+    # Get all of my trip locations (Trips belongs_to Profile)
+    my_trip_locations = current_profile.trips.map do |trip|
+      trip.location
+    end
+
+    # Get all profiles that have locations in the common
+    profiles_in_browse = others.select do |profile|
+      # common_locations.include?(profile.location)
+      profile.location.in?(my_trip_locations)
+    end
+    
+    render json: {
+      profiles: profiles_in_browse.map do |profile|
+        {
+          id: profile.id,
+          name: profile.name,
+          age: profile.age,
+          gender: profile.gender,
+          location: profile.location,
+          about: profile.about,
+          why_joined: profile.why_joined,
+          facebook: profile.facebook,
+          instagram: profile.instagram,
+          phone: profile.phone,
+          whatsapp: profile.whatsapp,
+          email: profile.email,
+          latitude: profile.latitude,
+          longitude: profile.longitude
+        } 
+      end
+    }
   end
+
+  # Browse step 4?
+  # Store the common locations in a variable
+    # common_locations = others_locations & my_trip_locations
 
 
   # This method will be for both "my" and "their" profile
