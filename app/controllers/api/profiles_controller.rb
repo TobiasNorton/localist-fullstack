@@ -31,7 +31,7 @@ class Api::ProfilesController < ApplicationController
   # Lists all profiles I am linked with
   def linked
     # current_profile is a variable we made in 
-    # application_controller.rb that changes based on what id we give it
+    # application_controller.rb that changes based on what ID we give it
     all_linked_profiles = current_profile.linked_profiles_as_1 + current_profile.linked_profiles_as_2
 
     render json: {
@@ -55,6 +55,57 @@ class Api::ProfilesController < ApplicationController
       end
     }
   end
+
+  def my_profile
+    render json: {
+      my_profile: {
+        id: current_profile.id,
+        name: current_profile.name,
+        age: current_profile.age,
+        gender: current_profile.gender,
+        location: current_profile.location,
+        about: current_profile.about,
+        why_joined: current_profile.why_joined,
+        facebook: current_profile.facebook,
+        instagram: current_profile.instagram,
+        phone: current_profile.phone,
+        whatsapp: current_profile.whatsapp,
+        email: current_profile.email,
+        latitude: current_profile.latitude,
+        longitude: current_profile.longitude
+      }
+    }
+  end
+
+  def browse
+    if current_profile.
+  end
+
+
+  # This method will be for both "my" and "their" profile
+  # def show_profile
+
+  #   show_profile = 
+
+  #   render json: {
+  #     my_profile: {
+  #       id: current_profile.id,
+  #       name: current_profile.name,
+  #       age: current_profile.age,
+  #       gender: current_profile.gender,
+  #       location: current_profile.location,
+  #       about: current_profile.about,
+  #       why_joined: current_profile.why_joined,
+  #       facebook: current_profile.facebook,
+  #       instagram: current_profile.instagram,
+  #       phone: current_profile.phone,
+  #       whatsapp: current_profile.whatsapp,
+  #       email: current_profile.email,
+  #       latitude: current_profile.latitude,
+  #       longitude: current_profile.longitude
+  #     }
+  #   }
+  # end
 
   # Find all people whose location = my trip location
   # def browse

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/api/profiles', to: 'api/profiles#index'
   get '/api/profiles/linked', to: 'api/profiles#linked'
   get '/api/profiles/browse', to: 'api/profiles#browse'
+  get '/api/profiles/:id', to: 'api/profiles#show_profile'
+  # get '/api/profiles/:id', to: 'api/profiles#their_profile'
 
   get '/api/trips', to: 'api/trips#index'
 
