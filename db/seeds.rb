@@ -185,6 +185,12 @@ Link.create(profile_1: katie, profile_2: kenny)
 
 
 
+toby.trips.create(location: "Galway, Ireland", start_date: "2019-02-11", end_date: "2019-02-23")
+
+toby.trips.create(location: "Paris, France", start_date: "2019-02-24", end_date: "2019-03-06")
+
+toby.trips.create(location: "Tangier, Morocco", start_date: "2019-03-07", end_date: "2019-03-15")
+
 
 
 cities = ["Galway, Ireland", "Paris, France", "Tangier, Morocco"]

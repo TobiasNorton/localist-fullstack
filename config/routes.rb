@@ -2,6 +2,9 @@ Rails.application.routes.draw do
         #path             # api/controller name#method name
   get '/api/profiles', to: 'api/profiles#index'
   get '/api/profiles/linked', to: 'api/profiles#linked'
+  get '/api/profiles/browse', to: 'api/profiles#browse'
+
+  get '/api/trips', to: 'api/trips#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?

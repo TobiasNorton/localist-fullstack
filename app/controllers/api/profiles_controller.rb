@@ -1,5 +1,6 @@
 class Api::ProfilesController < ApplicationController
 
+  # Lists all profiles in the database
   def index 
     all_profiles_in_db = Profile.all
 
@@ -21,12 +22,13 @@ class Api::ProfilesController < ApplicationController
           latitude: profile.latitude,
           longitude: profile.longitude,
           picture_url: url_for(profile.picture)
-          # picture_url: url_for(profile.picture.varient(resize: "384 x 384"))
+          # picture_url: url_for(profile.picture.variant(resize: "384x384"))
         }
       end
     }
   end
 
+  # Lists all profiles I am linked with
   def linked
     # current_profile is a variable we made in 
     # application_controller.rb that changes based on what id we give it
@@ -53,6 +55,15 @@ class Api::ProfilesController < ApplicationController
       end
     }
   end
+
+  # Find all people whose location = my trip location
+  # def browse
+  #   people_in_my_destination = Profile.all.select do |profile|
+  #     profile.location == current_profile.trip.location
+  #   end
+  # end
+
+
 
   private
 
