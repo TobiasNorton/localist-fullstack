@@ -78,6 +78,28 @@ class Api::ProfilesController < ApplicationController
     }
   end
 
+  def show_profile
+    profile = Profile.find(params[:id])
+    render json: {
+      displaying_profile: {
+        id: profile.id,
+        name: profile.name,
+        age: profile.age,
+        gender: profile.gender,
+        location: profile.location,
+        about: profile.about,
+        why_joined: profile.why_joined,
+        facebook: profile.facebook,
+        instagram: profile.instagram,
+        phone: profile.phone,
+        whatsapp: profile.whatsapp,
+        email: profile.email,
+        latitude: profile.latitude,
+        longitude: profile.longitude
+      }
+    }
+  end
+
   def browse
     # Get all profiles that are not me
     others = Profile.all.select do |profile|
