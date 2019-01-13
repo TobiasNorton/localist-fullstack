@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/api/profiles/browse', to: 'api/profiles#browse'
   get '/api/profiles/:id', to: 'api/profiles#show_profile'
   # get '/api/profiles/:id', to: 'api/profiles#their_profile'
+  post '/api/profiles/create', to: 'api/profiles#create'
 
   get '/api/trips', to: 'api/trips#index'
+  get '/api/trips/:id', to: 'api/trips#my_trips'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?

@@ -117,6 +117,11 @@ class Api::ProfilesController < ApplicationController
     }
   end
 
+  def create
+    new_profile = Profile.create(profile_params)
+    render json: new_profile
+  end
+
   # Browse step 4?
   # Store the common locations in a variable
     # common_locations = others_locations & my_trip_locations
