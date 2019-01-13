@@ -110,7 +110,8 @@ class Api::ProfilesController < ApplicationController
           whatsapp: profile.whatsapp,
           email: profile.email,
           latitude: profile.latitude,
-          longitude: profile.longitude
+          longitude: profile.longitude,
+          picture_url: url_for(profile.picture)
         } 
       end
     }
