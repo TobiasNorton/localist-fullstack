@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/api/trips', to: 'api/trips#index'
   get '/api/trips/:id', to: 'api/trips#my_trips'
 
+  get '/api/links', to: 'api/links#index'
+  get 'api/links/:id', to: 'api/links#my_links'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
     CLIENT_HTML = File.read(Rails.root.join('public/index.html'))
