@@ -51,7 +51,8 @@ class Api::ProfilesController < ApplicationController
           whatsapp: profile.whatsapp,
           email: profile.email,
           latitude: profile.latitude,
-          longitude: profile.longitude
+          longitude: profile.longitude,
+          picture_url: url_for(profile.picture)
         }
       end
     }
@@ -73,7 +74,8 @@ class Api::ProfilesController < ApplicationController
         whatsapp: current_profile.whatsapp,
         email: current_profile.email,
         latitude: current_profile.latitude,
-        longitude: current_profile.longitude
+        longitude: current_profile.longitude,
+        picture_url: url_for(profile.picture)
       }
     }
   end
@@ -95,7 +97,8 @@ class Api::ProfilesController < ApplicationController
         whatsapp: profile.whatsapp,
         email: profile.email,
         latitude: profile.latitude,
-        longitude: profile.longitude
+        longitude: profile.longitude,
+        picture_url: url_for(profile.picture)
       }
     }
   end
