@@ -6,7 +6,7 @@ import dataStore from './DataStore'
 
 class AllSet extends Component {
   passDataStoreAProfileID = () => {
-    dataStore.getProfile(1)
+    dataStore.getProfile(dataStore.)
   }
 
   render() {

@@ -125,7 +125,7 @@ class CreateProfile extends Component {
                 </div>
               </div> */}
 
-              <div className="input">
+              {/* <div className="input">
                 <p>City:</p>
                 <input type="text" name="profile[name]" placeholder="City, Country" />
                 <p>Travel Dates:</p>
@@ -187,14 +187,14 @@ class CreateProfile extends Component {
                     <input type="date" name="profile[name]" />
                   </section>
                 </div>
-              </div>
+              </div> */}
 
               <p>Upload a Photo of Yourself</p>
-              <input type="text" name="profile[picture]" placeholder="picture.jpg" />
+              <input type="file" name="profile[picture]" placeholder="picture.jpg" />
             </div>
-            {/* <Link to="/profile_ready/"> */}
-            <button type="submit">Submit</button>
-            {/* </Link> */}
+            <Link to="/profile_ready/">
+              <button type="submit">Submit</button>
+            </Link>
           </form>
         </div>
         <footer />
