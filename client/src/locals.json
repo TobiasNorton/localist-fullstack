@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Jean-Sebastian Sirois",
+    "location": "Paris, France",
+    "availability": "June 18 - July 8, 2019",
+    "image": "./JeanSebastian.jpeg"
+  },
+  {
+    "name": "Margaux Anati",
+    "location": "Paris, France",
+    "availability": "June 18 - July 8, 2019",
+    "image": "./Margaux.jpg"
+  },
+  {
+    "name": "Bruno Chastain",
+    "location": "Paris, France",
+    "availability": "June 18 - July 8, 2019",
+    "image": "./Bruno.jpg"
+  },
+  {
+    "name": "Sarah Richelieu",
+    "location": "Paris, France",
+    "availability": "June 18 - July 8, 2019",
+    "image": "./Sarah.jpg"
+  },
+  {
+    "name": "Duanphen Kaekwoon",
+    "location": "Chiang Mai, Thailand",
+    "availability": "July 9 - July 24, 2019",
+    "image": "./Duanphen.jpeg"
+  },
+  {
+    "name": "Budsarin Hiranprueck",
+    "location": "Chiang Mai, Thailand",
+    "availability": "July 9 - July 24, 2019",
+    "image": "./BudsarinCropped.jpg"
+  },
+  {
+    "name": "Naowarat Angsakul",
+    "location": "Chiang Mai, Thailand",
+    "availability": "July 9 - July 24, 2019",
+    "image": "./Naowarat.jpg"
+  }
+]
