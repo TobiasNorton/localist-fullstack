@@ -4,7 +4,17 @@ import dataStore from './DataStore'
 import Local from './Local'
 import NavBar from './NavBar'
 
+import auth from './auth'
+import history from './history'
+
 class MyProfile extends Component {
+  componentWillMount = () => {
+    // If not logged in, kick me to the home page
+    if (!auth.isAuthenticated()) {
+      history.push('/')
+    }
+  }
+
   componentDidMount = () => {
     // dataStore.showPeopleIAmLinkedWith()
   }

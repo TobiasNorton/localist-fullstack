@@ -62,7 +62,8 @@ class Api::ProfilesController < ApplicationController
   end
 
   def my_profile
-    render json: {
+
+    json = {
       profile: {
         id: current_profile.id,
         name: current_profile.name,
@@ -79,9 +80,23 @@ class Api::ProfilesController < ApplicationController
         email: current_profile.email,
         latitude: current_profile.latitude,
         longitude: current_profile.longitude,
-        picture_url: url_for(current_profile.picture)
+        picture_url: url_for(current_profile.picture),
+        trips: {
+          trips: current_profile.trips.map do |trip|
+            {
+              id: trip.id,
+              location: trip.location,
+              start_date: trip.start_date,
+              end_date: trip.end_date
+            }
+          end
+        }
       }
     }
+    
+    Rails.logger.debug json
+
+    render json: json
   end
 
   def show_profile
@@ -105,11 +120,13 @@ class Api::ProfilesController < ApplicationController
         longitude: profile.longitude,
         picture_url: url_for(profile.picture),
         trips: {
-          profile.trips.map do |trip|
-            id: trip.id
-            location: trip.location,
-            start_date: trip.start_date,
-            end_date: trip.end_date
+          trips: displaying_profile.trips.map do |trip|
+            {
+              id: trip.id,
+              location: trip.location,
+              start_date: trip.start_date,
+              end_date: trip.end_date
+            }
           end
         }
       }

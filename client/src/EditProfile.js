@@ -7,16 +7,24 @@ import NavBar from './NavBar'
 import { observer } from 'mobx-react'
 import axios from 'axios'
 
+import auth from './auth'
+import history from './history'
+
 class EditProfile extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      loading: true
+      loading: true,
+      profile: undefined
     }
   }
 
   componentWillMount = () => {
+    // If not logged in, kick me to the home page
+    if (!auth.isAuthenticated()) {
+      history.push('/')
+    }
     axios.get('/api/profile').then(response => {
       this.setState({
         profile: response.data.profile,
@@ -277,8 +285,17 @@ class EditProfile extends Component {
                 placeholder="picture.jpg"
               />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Add Trips</button>
           </form>
+          {/* <Link to="/browse/" className="button-link">
+            Search Locals
+          </Link>
+          <Link to="/profiles/user/:id/" className="button-link">
+            My Profile
+          </Link> */}
+          {/* <button type="submit">My Profile</button>
+          <button type="submit">Search Locals</button>
+          <button type="submit">Add Trips</button> */}
         </div>
         <footer />
       </div>

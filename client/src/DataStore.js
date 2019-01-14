@@ -52,7 +52,7 @@ class DataStore {
 
     axios.post('/api/profiles', formData).then(response => {
       // TODO: Replace with history.push()
-      window.location = '/profile_ready'
+      window.location = '/add_trips'
     })
     this.getAllProfiles()
   }

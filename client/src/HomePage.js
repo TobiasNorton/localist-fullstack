@@ -22,7 +22,7 @@ class HomePage extends Component {
             <Link to="/create_profile/">
               <p>Join</p>
             </Link>
-            <a href="#">Log In</a> <a href="#" />
+            <Link to="/login">Log In</Link> <a href="#" />
           </div>
           <div className="hamburger">
             <span />

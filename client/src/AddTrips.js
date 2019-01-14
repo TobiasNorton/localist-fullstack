@@ -1,11 +1,33 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
+import axios from 'axios'
+
+import auth from './auth'
+import history from './history'
 
 import dataStore from './DataStore'
 
 import NavBar from './NavBar'
 
 class AddTrips extends Component {
+  componentWillMount = () => {
+    // If not logged in, kick me to the home page
+    if (!auth.isAuthenticated()) {
+      history.push('/')
+    }
+    axios.get('/api/profile').then(response => {
+      this.setState({
+        profile: response.data.profile,
+        loading: false
+      })
+    })
+  }
+
+  addTrips = event => {
+    event.preventDefault()
+    axios.post('/api/trips/').then(response => {})
+  }
+
   // addAnotherTrip = () => {
   //   return (
   //     <div className="input">
@@ -39,7 +61,7 @@ class AddTrips extends Component {
         <NavBar />
 
         <div className="create-profile">
-          <form onSubmit={dataStore.editProfile} className="form-body">
+          <form onSubmit={this.addTrips} className="form-body">
             <div className="input">
               <p>List your upcoming trips:</p>
 

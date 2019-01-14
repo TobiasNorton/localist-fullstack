@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/api/trips', to: 'api/trips#index'
   get '/api/trips/:id', to: 'api/trips#my_trips'
+  post '/api/trips', to: 'api/trips#create'
 
   get '/api/links', to: 'api/links#index'
   get 'api/links/:id', to: 'api/links#my_links'
