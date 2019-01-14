@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import dataStore from './DataStore'
 
+import { observer } from 'mobx-react'
+
 class CreateProfile extends Component {
   render() {
     return (
@@ -88,11 +90,11 @@ class CreateProfile extends Component {
             </div>
             <div className="input">
               <p>Facebook</p>
-              <input type="text" name="profile[location]" placeholder="Your Facebook" />
+              <input type="text" name="profile[facebook]" placeholder="Your Facebook" />
             </div>
             <div className="input">
               <p>Instagram</p>
-              <input type="text" name="profile[location]" placeholder="@your.instagram.name" />
+              <input type="text" name="profile[instagram]" placeholder="@your.instagram.name" />
             </div>
             <div className="input">
               <p>List your upcoming trips:</p>
@@ -200,9 +202,7 @@ class CreateProfile extends Component {
               <p>Upload a Photo of Yourself</p>
               <input type="file" name="profile[picture]" placeholder="picture.jpg" />
             </div>
-            <Link to="/profile_ready/">
-              <button type="submit">Submit</button>
-            </Link>
+            <button type="submit">Submit</button>
           </form>
         </div>
         <footer />
@@ -211,4 +211,4 @@ class CreateProfile extends Component {
   }
 }
 
-export default CreateProfile
+export default observer(CreateProfile)

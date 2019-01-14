@@ -5,9 +5,9 @@ import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 
 class TheirProfile extends Component {
-  // componentDidMount = () => {
-  //   getProfile()
-  // }
+  componentDidMount = () => {
+    dataStore.getProfile(this.props.match.params.id)
+  }
 
   render() {
     return (

@@ -46,7 +46,10 @@ class DataStore {
       console.log(pair[0] + ', ' + pair[1])
     }
 
-    axios.post('/api/profiles', formData).then(response => {})
+    axios.post('/api/profiles', formData).then(response => {
+      // TODO: Replace with history.push()
+      window.location = '/profile_ready'
+    })
     this.getAllProfiles()
   }
 

@@ -23,6 +23,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
+          # picture_url: url_for(profile.picture)
           picture_url: (url_for(profile.picture) if profile.picture.attached?)
           # picture_url: url_for(profile.picture.variant(resize: "384x384"))
         }
