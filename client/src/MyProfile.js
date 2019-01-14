@@ -5,7 +5,7 @@ import Local from './Local'
 
 class MyProfile extends Component {
   componentDidMount = () => {
-    dataStore.showPeopleIAmLinkedWith()
+    // dataStore.showPeopleIAmLinkedWith()
   }
 
   render() {

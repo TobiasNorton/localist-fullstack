@@ -5,8 +5,12 @@ import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 
 class AllSet extends Component {
-  passDataStoreAProfileID = () => {
-    dataStore.getProfile(dataStore.)
+  componentDidMount = () => {
+    dataStore.getAllProfiles()
+  }
+
+  getNewProfile = () => {
+    dataStore.getProfile(dataStore.profiles.length - 1)
   }
 
   render() {
@@ -55,7 +59,7 @@ class AllSet extends Component {
                 <button>Look for Locals</button>
               </Link>
               <Link to="/profiles/user/:id">
-                <button onClick={this.passDataStoreAProfileID}>Go To My Profile</button>
+                <button onClick={this.getNewProfile}>Go To My Profile</button>
               </Link>
             </div>
           </div>

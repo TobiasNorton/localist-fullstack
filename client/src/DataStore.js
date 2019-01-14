@@ -13,6 +13,7 @@ class DataStore {
     this.myProfile = []
     this.myTrips = []
     this.peopleIAmLinkedWith = []
+    this.currentProfile = []
   }
 
   getAllProfiles = () => {
@@ -46,6 +47,7 @@ class DataStore {
     }
 
     axios.post('/api/profiles', formData).then(response => {})
+    this.getAllProfiles()
   }
 
   getProfile = id => {
@@ -55,11 +57,11 @@ class DataStore {
     })
   }
 
-  showPeopleIAmLinkedWith = () => {
-    axios.get('/api/links').then(response => {
-      console.log(response.data)
-    })
-  }
+  // showPeopleIAmLinkedWith = () => {
+  //   axios.get('/api/links').then(response => {
+  //     console.log(response.data)
+  //   })
+  // }
 
   // getMyProfile = () => {
   //   axios.get('/api/profiles/:id').then(response => {
@@ -71,7 +73,10 @@ class DataStore {
 decorate(DataStore, {
   profiles: observable,
   profileDisplayed: observable,
-  peopleInMyDestinations: observable
+  peopleInMyDestinations: observable,
+  myProfile: observable,
+  myTrips: observable,
+  peopleIAmLinkedWith: observable
 })
 
 let dataStore = new DataStore()

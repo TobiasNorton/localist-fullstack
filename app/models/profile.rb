@@ -8,4 +8,8 @@ class Profile < ApplicationRecord
 
   has_many :linked_profiles_as_1, through: :links_as_1, source: :profile_2
   has_many :linked_profiles_as_2, through: :links_as_2, source: :profile_1
+
+  geocoded_by :location
+
+  after_validation :geocode
 end

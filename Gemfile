@@ -48,3 +48,5 @@ gem "awesome_print", "~> 1.8"
 gem "rack-cors", "~> 1.0"
 
 gem "mini_magick", "~> 4.9"
+
+gem "geocoder", "~> 1.5"
