@@ -23,10 +23,14 @@ class DataStore {
     })
   }
 
-  populateBrowseSection = () => {
+  populateBrowseSection = theFunctionToCallOnceWeHaveLoadedTheData => {
     // This is everyone whose location matches my trip destination
     axios.get('/api/profiles/browse').then(response => {
       dataStore.peopleInMyDestinations = response.data.profiles
+
+      if (theFunctionToCallOnceWeHaveLoadedTheData) {
+        theFunctionToCallOnceWeHaveLoadedTheData()
+      }
     })
   }
 

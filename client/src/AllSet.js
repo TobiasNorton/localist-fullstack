@@ -6,7 +6,7 @@ import dataStore from './DataStore'
 
 class AllSet extends Component {
   componentDidMount = () => {
-    dataStore.getAllProfiles()
+    // dataStore.getAllProfiles()
   }
 
   getNewProfile = () => {

@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  require 'net/http'
+
   has_one_attached :picture
 
   has_many :trips
@@ -12,4 +14,46 @@ class Profile < ApplicationRecord
   geocoded_by :location
 
   after_validation :geocode
+
+
+  def other_profiles_near_my_trips
+    # Get all profiles that are not me
+    # others = Profile.all.select do |profile|
+    #   profile.id != current_profile.id
+    # end
+
+    # Get all of my trip locations (Trips belongs_to Profile)
+    # my_trip_locations = current_profile.trips.map { |trip| trip.location }
+    my_trip_locations = trips.pluck(:location)
+
+    # Get all profiles that have locations in the common
+    # others = Profile.not.where(id: current_profile.id)
+    # profiles_in_browse = others.select do |profile|
+    #   # common_locations.include?(profile.location)
+    #   profile.location.in?(my_trip_locations)
+    # end
+
+    # Take my trip locations
+    my_trip_locations.
+      # Give back a flattened single array of all the profiles that aren't me *AND* are near each location
+      flat_map { |location| Profile.where.not(id: id).near(location) }.
+      # And only give me the unique ones
+      uniq
+  end
+
+  def self.from_auth_hash(payload)
+    Profile.find_or_create_by(auth_sub: payload["sub"]) do |profile|
+      # This code will be called whenever we create a User for the first time.
+  
+      # This code would save a user's avatar as a URL
+      # user.avatar_url = payload["picture"]
+  
+      # This code would attach an ActiveStorage profile image by downloading the user's profile and storing it locally
+      profile.picture.attach(io: StringIO.new(Net::HTTP.get(URI.parse(payload["picture"]))), filename: "profile.png")
+  
+      # This code would store their email address
+      # user.email = payload["email"]
+      profile.name = payload["name"]
+    end
+  end
 end

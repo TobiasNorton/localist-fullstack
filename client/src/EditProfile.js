@@ -3,9 +3,31 @@ import { Link } from 'react-router-dom'
 import dataStore from './DataStore'
 
 import { observer } from 'mobx-react'
+import axios from 'axios'
 
-class CreateProfile extends Component {
+class EditProfile extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentWillMount = () => {
+    axios.get('/api/profile').then(response => {
+      this.setState({
+        profile: response.data.profile,
+        loading: false
+      })
+    })
+  }
+
   render() {
+    if (this.state.loading) {
+      return <div>Loading</div>
+    }
+
     return (
       <div>
         <nav className="nav-bar">
@@ -19,7 +41,12 @@ class CreateProfile extends Component {
           <form onSubmit={dataStore.createProfile} className="form-body">
             <div className="input">
               <p>Name</p>
-              <input type="text" name="profile[name]" placeholder="Your Name Here" />
+              <input
+                type="text"
+                name="profile[name]"
+                defaultValue={this.state.profile.name}
+                placeholder="Your Name Here"
+              />
             </div>
             <div className="input">
               <p>Age</p>
@@ -44,7 +71,12 @@ class CreateProfile extends Component {
             </div>
             <div className="input">
               <p>Location</p>
-              <input type="text" name="profile[location]" placeholder="My Hometown, Anywhere" />
+              <input
+                type="text"
+                defaultValue={this.state.profile.location}
+                name="profile[location]"
+                placeholder="My Hometown, Anywhere"
+              />
             </div>
             <div className="input">
               <p>Languages you speak</p>
@@ -211,4 +243,4 @@ class CreateProfile extends Component {
   }
 }
 
-export default observer(CreateProfile)
+export default observer(EditProfile)

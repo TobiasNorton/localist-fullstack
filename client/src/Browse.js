@@ -8,10 +8,31 @@ import dataStore from './DataStore'
 
 import { toJS } from 'mobx'
 
+import auth from './auth'
+import history from './history'
+
 class Browse extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentWillMount = () => {
+    // If not logged in, kick me to the home page
+    if (!auth.isAuthenticated()) {
+      history.push('/')
+    }
+  }
+
   componentDidMount = () => {
     // dataStore.getAllProfiles()
-    dataStore.populateBrowseSection()
+    dataStore.populateBrowseSection(() => {
+      this.setState({ loading: false })
+    })
+
     // dataStore.getMyTrips()
     // dataStore.getAllMyTrips()
   }
@@ -31,6 +52,34 @@ class Browse extends Component {
   //   })
   // }
 
+  renderLoading = () => {
+    return <div>LOADING</div>
+  }
+
+  renderProfiles = () => {
+    return (
+      <>
+        <p>
+          We found {dataStore.peopleInMyDestinations.length} locals in your travel destinations!
+        </p>
+
+        {dataStore.peopleInMyDestinations.map((profile, index) => {
+          return (
+            <Local
+              key={index}
+              id={profile.id}
+              data-id={profile.id}
+              picture={profile.picture_url}
+              name={profile.name}
+              location={profile.location}
+              availability={profile.availability}
+            />
+          )
+        })}
+      </>
+    )
+  }
+
   render() {
     return (
       <>
@@ -49,7 +98,7 @@ class Browse extends Component {
               </div>
             </div>
             <a href="#">Browse</a> <a href="#">My Profile</a>
-            <a href="#">Sign Out</a> <a href="#" />
+            <Link to="/logout">Sign Out</Link>
             <div className="hamburger">
               <span />
               <span />
@@ -59,23 +108,7 @@ class Browse extends Component {
         </nav>
 
         <main className="browse-background">
-          <p>
-            We found {dataStore.peopleInMyDestinations.length} locals in your travel destinations!
-          </p>
-
-          {dataStore.peopleInMyDestinations.map((profile, index) => {
-            return (
-              <Local
-                key={index}
-                id={profile.id}
-                data-id={profile.id}
-                picture={profile.picture_url}
-                name={profile.name}
-                location={profile.location}
-                availability={profile.availability}
-              />
-            )
-          })}
+          {this.state.loading ? this.renderLoading() : this.renderProfiles()}
         </main>
       </>
     )

@@ -5,7 +5,7 @@ import MatchedProfile from './MatchedProfile'
 import MyProfile from './MyProfile'
 import RequestProfile from './RequestProfile'
 import Browse from './Browse'
-import CreateProfile from './CreateProfile'
+import EditProfile from './EditProfile'
 import UnmatchedProfile from './UnmatchedProfile'
 import AllSet from './AllSet'
 import TheirProfile from './TheirProfile'
@@ -13,14 +13,27 @@ import TheirProfile from './TheirProfile'
 import { decorate, computed, observable } from 'mobx'
 import { observer } from 'mobx-react'
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Router, Route, Link } from 'react-router-dom'
+
+import auth from './auth'
+import history from './history'
+
+import axios from 'axios'
 
 import dataStore from './DataStore'
 
 class App extends Component {
+  componentWillMount() {
+    if (auth.isAuthenticated()) {
+      axios.defaults.headers.common = {
+        Authorization: auth.authorizationHeader()
+      }
+    }
+  }
+
   render() {
     return (
-      <Router>
+      <Router history={history}>
         <>
           {/* <HomePage /> */}
           {/* <CreateProfile /> */}
@@ -32,11 +45,34 @@ class App extends Component {
           {/* <RequestProfile /> */}
           {/* <TheirProfile /> */}
           <Route exact path="/" component={HomePage} />
-          <Route path="/create_profile/" component={CreateProfile} />
+          <Route path="/profile/" component={EditProfile} />
           <Route path="/profile_ready/" component={AllSet} />
           <Route path="/browse/" component={Browse} />
           <Route path="/profiles/user/:id/" component={MyProfile} />
           <Route path="/profiles/:id/" component={TheirProfile} />
+
+          <Route path="/login" render={() => auth.login()} />
+          <Route
+            path="/logout"
+            render={() => {
+              auth.logout()
+
+              return <></>
+            }}
+          />
+          <Route
+            path="/callback"
+            render={() => {
+              auth.handleAuthentication(() => {
+                // Set the axios authentication headers
+                axios.defaults.headers.common = {
+                  Authorization: auth.authorizationHeader()
+                }
+              })
+
+              return <></>
+            }}
+          />
         </>
       </Router>
     )

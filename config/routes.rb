@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/api/profiles/linked', to: 'api/profiles#linked'
   get '/api/profiles/browse', to: 'api/profiles#browse'
   get '/api/profiles/:id', to: 'api/profiles#show_profile'
-  # get '/api/profiles/:id', to: 'api/profiles#their_profile'
+  get '/api/profile', to: 'api/profiles#my_profile'
   post '/api/profiles', to: 'api/profiles#create'
 
   get '/api/trips', to: 'api/trips#index'

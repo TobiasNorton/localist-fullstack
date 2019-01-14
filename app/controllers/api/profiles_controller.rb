@@ -63,12 +63,12 @@ class Api::ProfilesController < ApplicationController
 
   def my_profile
     render json: {
-      my_profile: {
+      profile: {
         id: current_profile.id,
         name: current_profile.name,
         age: current_profile.age,
         gender: current_profile.gender,
-        languages: profile.languages,
+        languages: current_profile.languages,
         location: current_profile.location,
         about: current_profile.about,
         why_joined: current_profile.why_joined,
@@ -79,7 +79,7 @@ class Api::ProfilesController < ApplicationController
         email: current_profile.email,
         latitude: current_profile.latitude,
         longitude: current_profile.longitude,
-        picture_url: url_for(profile.picture)
+        picture_url: url_for(current_profile.picture)
       }
     }
   end
@@ -109,24 +109,8 @@ class Api::ProfilesController < ApplicationController
   end
 
   def browse
-    # Get all profiles that are not me
-    others = Profile.all.select do |profile|
-      profile.id != current_profile.id
-    end
-
-    # Get all of my trip locations (Trips belongs_to Profile)
-    my_trip_locations = current_profile.trips.map do |trip|
-      trip.location
-    end
-
-    # Get all profiles that have locations in the common
-    profiles_in_browse = others.select do |profile|
-      # common_locations.include?(profile.location)
-      profile.location.in?(my_trip_locations)
-    end
-    
     render json: {
-      profiles: profiles_in_browse.map do |profile|
+      profiles: current_profile.other_profiles_near_my_trips.map do |profile|
         {
           id: profile.id,
           name: profile.name,
