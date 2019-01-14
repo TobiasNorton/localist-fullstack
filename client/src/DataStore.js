@@ -41,7 +41,7 @@ class DataStore {
   //   })
   // }
 
-  createProfile = event => {
+  editProfile = event => {
     event.preventDefault()
 
     const formData = new FormData(event.target)

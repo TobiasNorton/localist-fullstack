@@ -103,7 +103,15 @@ class Api::ProfilesController < ApplicationController
         email: profile.email,
         latitude: profile.latitude,
         longitude: profile.longitude,
-        picture_url: url_for(profile.picture)
+        picture_url: url_for(profile.picture),
+        trips: {
+          profile.trips.map do |trip|
+            id: trip.id
+            location: trip.location,
+            start_date: trip.start_date,
+            end_date: trip.end_date
+          end
+        }
       }
     }
   end

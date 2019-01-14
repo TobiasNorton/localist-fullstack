@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import dataStore from './DataStore'
 
+import NavBar from './NavBar'
+
 import { observer } from 'mobx-react'
 import axios from 'axios'
 
@@ -30,15 +32,17 @@ class EditProfile extends Component {
 
     return (
       <div>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <a href="#">Join</a> <a href="#">Log In</a> <a href="#" />
           </div>
-        </nav>
+        </nav> */}
+
+        <NavBar />
 
         <div className="create-profile">
-          <form onSubmit={dataStore.createProfile} className="form-body">
+          <form onSubmit={dataStore.editProfile} className="form-body">
             <div className="input">
               <p>Name</p>
               <input
@@ -50,7 +54,13 @@ class EditProfile extends Component {
             </div>
             <div className="input">
               <p>Age</p>
-              <input type="text" name="profile[age]" maxLength="3" placeholder="Your Age Here" />
+              <input
+                type="text"
+                name="profile[age]"
+                defaultValue={this.state.profile.age}
+                maxLength="3"
+                placeholder="Your Age Here"
+              />
             </div>
             <div className="input">
               <p>Gender*</p>
@@ -73,8 +83,8 @@ class EditProfile extends Component {
               <p>Location</p>
               <input
                 type="text"
-                defaultValue={this.state.profile.location}
                 name="profile[location]"
+                defaultValue={this.state.profile.location}
                 placeholder="My Hometown, Anywhere"
               />
             </div>
@@ -83,6 +93,7 @@ class EditProfile extends Component {
               <input
                 type="text"
                 name="profile[languages]"
+                defaultValue={this.state.profile.languages}
                 placeholder="English, Cantonese, Spanish"
               />
             </div>
@@ -92,6 +103,7 @@ class EditProfile extends Component {
                 className="big-field"
                 type="text"
                 name="profile[about]"
+                defaultValue={this.state.profile.about}
                 rows="5"
                 placeholder="Interests, hobbies, background, etc."
               />
@@ -102,6 +114,7 @@ class EditProfile extends Component {
                 className="big-field"
                 type="text"
                 name="profile[why_joined]"
+                defaultValue={this.state.profile.why_joined}
                 rows="5"
                 placeholder="Hidden food gems, good conversation"
               />
@@ -110,23 +123,48 @@ class EditProfile extends Component {
             <p>Please list your preferred methods of contact.</p>
             <div className="input">
               <p>WhatsApp</p>
-              <input type="text" name="profile[whatsapp]" placeholder="+ 123 4567890123" />
+              <input
+                type="text"
+                name="profile[whatsapp]"
+                defaultValue={this.state.profile.whatsapp}
+                placeholder="+ 123 4567890123"
+              />
             </div>
             <div className="input">
               <p>Phone</p>
-              <input type="text" name="profile[phone]" placeholder="911-555-3423" />
+              <input
+                type="text"
+                name="profile[phone]"
+                defaultValue={this.state.profile.phone}
+                placeholder="911-555-3423"
+              />
             </div>
             <div className="input">
               <p>Email</p>
-              <input type="text" name="profile[email]" placeholder="coolperson@coolmail.com" />
+              <input
+                type="text"
+                name="profile[email]"
+                defaultValue={this.state.profile.email}
+                placeholder="coolperson@coolmail.com"
+              />
             </div>
             <div className="input">
               <p>Facebook</p>
-              <input type="text" name="profile[facebook]" placeholder="Your Facebook" />
+              <input
+                type="text"
+                name="profile[facebook]"
+                defaultValue={this.state.profile.facebook}
+                placeholder="Your Facebook"
+              />
             </div>
             <div className="input">
               <p>Instagram</p>
-              <input type="text" name="profile[instagram]" placeholder="@your.instagram.name" />
+              <input
+                type="text"
+                name="profile[instagram]"
+                defaultValue={this.state.profile.instagram}
+                placeholder="@your.instagram.name"
+              />
             </div>
             <div className="input">
               <p>List your upcoming trips:</p>
@@ -232,7 +270,12 @@ class EditProfile extends Component {
               </div> */}
 
               <p>Upload a Photo of Yourself</p>
-              <input type="file" name="profile[picture]" placeholder="picture.jpg" />
+              <input
+                type="file"
+                name="profile[picture]"
+                defaultValue={this.state.profile.picture}
+                placeholder="picture.jpg"
+              />
             </div>
             <button type="submit">Submit</button>
           </form>

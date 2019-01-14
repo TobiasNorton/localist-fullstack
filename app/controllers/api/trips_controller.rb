@@ -35,6 +35,10 @@ class Api::TripsController < ApplicationController
     }
   end
 
+  def create
+    render json: Trip.create(profile_params)
+  end
+
   private
 
   def profile_params
