@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import NavBar from './NavBar'
+
 import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 
@@ -12,7 +14,7 @@ class TheirProfile extends Component {
   render() {
     return (
       <>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <div className="dropdown">
@@ -34,12 +36,14 @@ class TheirProfile extends Component {
             <span />
             <span />
           </div>
-          {/* <div className="side-nav">
+          <div className="side-nav">
             <a href="#">Browse</a>
             <a href="#">My Profile</a>
             <a href="#">Sign Out</a>
-          </div> */}
-        </nav>
+          </div>
+        </nav> */}
+
+        <NavBar />
 
         <section className="their-profile">
           <div className="left">
@@ -54,7 +58,7 @@ class TheirProfile extends Component {
               <p className="link-status">You are linked with {dataStore.profileDisplayed.name}</p>
               <button>Unlink</button>
 
-              {/* DO NOT REMOVE COMMENTED CODE!! */}
+              {/* DO NOT REMOVE THIS COMMENTED CODE vvvv !! */}
 
               {/* <p className="link-status">Michael Kelly would like to link with you.</p>
               <div className="request-buttons">
@@ -64,6 +68,8 @@ class TheirProfile extends Component {
 
               {/* <p className="link-status">You are not linked with Budsarin Hiranprueck</p>
               <button>Send Request</button> */}
+
+              {/* DO NOT REMOVE THIS CODE ^^^^ !!! */}
             </div>
 
             <div className="category">

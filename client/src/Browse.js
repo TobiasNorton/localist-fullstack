@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Local from './Local'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar'
 
 import { observer } from 'mobx-react'
 import dataStore from './DataStore'
@@ -83,7 +84,7 @@ class Browse extends Component {
   render() {
     return (
       <>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <div className="dropdown">
@@ -97,7 +98,7 @@ class Browse extends Component {
                 <a href="#">Budsarin Hiranprueck</a>
               </div>
             </div>
-            <a href="#">Browse</a> <a href="#">My Profile</a>
+            <Link to="/browse/">Browse</Link> <Link to="/profiles/user/">My Profile</Link>
             <Link to="/logout">Sign Out</Link>
             <div className="hamburger">
               <span />
@@ -105,7 +106,9 @@ class Browse extends Component {
               <span />
             </div>
           </div>
-        </nav>
+        </nav> */}
+
+        <NavBar />
 
         <main className="browse-background">
           {this.state.loading ? this.renderLoading() : this.renderProfiles()}

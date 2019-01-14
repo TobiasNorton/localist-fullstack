@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 import Local from './Local'
+import NavBar from './NavBar'
 
 class MyProfile extends Component {
   componentDidMount = () => {
@@ -11,7 +12,7 @@ class MyProfile extends Component {
   render() {
     return (
       <>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <div className="dropdown">
@@ -33,7 +34,9 @@ class MyProfile extends Component {
               <span />
             </div>
           </div>
-        </nav>
+        </nav> */}
+
+        <NavBar />
 
         <section className="my-profile">
           <div className="left">
