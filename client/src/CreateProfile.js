@@ -45,6 +45,14 @@ class CreateProfile extends Component {
               <input type="text" name="profile[location]" placeholder="My Hometown, Anywhere" />
             </div>
             <div className="input">
+              <p>Languages you speak</p>
+              <input
+                type="text"
+                name="profile[languages]"
+                placeholder="English, Cantonese, Spanish"
+              />
+            </div>
+            <div className="input">
               <p>Tell us about yourself!</p>
               <textarea
                 className="big-field"

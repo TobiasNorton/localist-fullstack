@@ -12,6 +12,7 @@ class Api::ProfilesController < ApplicationController
           name: profile.name,
           age: profile.age,
           gender: profile.gender,
+          languages: profile.languages,
           location: profile.location,
           about: profile.about,
           why_joined: profile.why_joined,
@@ -42,6 +43,7 @@ class Api::ProfilesController < ApplicationController
           name: profile.name,
           age: profile.age,
           gender: profile.gender,
+          languages: profile.languages,
           location: profile.location,
           about: profile.about,
           why_joined: profile.why_joined,
@@ -65,6 +67,7 @@ class Api::ProfilesController < ApplicationController
         name: current_profile.name,
         age: current_profile.age,
         gender: current_profile.gender,
+        languages: profile.languages,
         location: current_profile.location,
         about: current_profile.about,
         why_joined: current_profile.why_joined,
@@ -88,6 +91,7 @@ class Api::ProfilesController < ApplicationController
         name: profile.name,
         age: profile.age,
         gender: profile.gender,
+        languages: profile.languages,
         location: profile.location,
         about: profile.about,
         why_joined: profile.why_joined,
@@ -127,6 +131,7 @@ class Api::ProfilesController < ApplicationController
           name: profile.name,
           age: profile.age,
           gender: profile.gender,
+          languages: profile.languages,
           location: profile.location,
           about: profile.about,
           why_joined: profile.why_joined,
@@ -190,7 +195,7 @@ class Api::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :age, :gender, :location, :about, :why_joined, :facebook, :instagram, :phone, :whatsapp, :email, :latitude, :longitude, :picture)
+    params.require(:profile).permit(:name, :age, :gender, :languages, :location, :about, :why_joined, :facebook, :instagram, :phone, :whatsapp, :email, :latitude, :longitude, :picture)
   end
 
 end
