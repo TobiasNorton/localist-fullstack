@@ -11,6 +11,8 @@ class Api::TripsController < ApplicationController
           location: trip.location,
           start_date: trip.start_date,
           end_date: trip.end_date,
+          latitude: trip.latitude,
+          longitude: trip.longitude,
           profile_id: trip.profile.id
         }
       end
@@ -25,6 +27,8 @@ class Api::TripsController < ApplicationController
           location: trip.location,
           start_date: trip.start_date,
           end_date: trip.end_date,
+          latitude: trip.latitude,
+          longitude: trip.longitude,
           profile_id: current_profile.id
         }
       end
