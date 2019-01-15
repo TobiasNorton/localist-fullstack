@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import { slide as Menu } from 'react-burger-menu'
+
 class HomePage extends Component {
   showWhatIsSection = () => {
     let whatIsLocalistSection = document.querySelector('.what-is')
@@ -15,6 +17,20 @@ class HomePage extends Component {
   render() {
     return (
       <body>
+        {/* <Menu right>
+          <Link id="home" className="menu-item" to="/browse/">
+            Browse
+          </Link>
+          <Link id="about" className="menu-item" to="/profiles/user/:id">
+            Join
+          </Link>
+          <Link id="contact" className="menu-item" to="/logout">
+            Log In
+          </Link> */}
+        {/* <Link onClick={this.showSettings} className="menu-item--small" href="">
+        Settings
+      </Link> */}
+        {/* </Menu> */}
         <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
@@ -24,11 +40,11 @@ class HomePage extends Component {
             </Link>
             <Link to="/login/">Log In</Link>
           </div>
-          <div className="hamburger">
+          {/* <div className="hamburger">
             <span />
             <span />
             <span />
-          </div>
+          </div> */}
         </nav>
 
         <section className="main">

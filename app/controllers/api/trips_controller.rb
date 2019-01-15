@@ -36,12 +36,14 @@ class Api::TripsController < ApplicationController
   end
 
   def create
-    render json: Trip.create(profile_params)
+    render json: current_profile.trips.create(trip_params)
+    # render json: Trip.create(trip_params)
+
   end
 
   private
 
-  def profile_params
+  def trip_params
     params.require(:trip).permit(:location, :start_date, :end_date)
   end
 

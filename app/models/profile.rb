@@ -27,17 +27,17 @@ class Profile < ApplicationRecord
     my_trip_locations = trips.pluck(:location)
 
     # Get all profiles that have locations in the common
-    # others = Profile.not.where(id: current_profile.id)
     # profiles_in_browse = others.select do |profile|
     #   # common_locations.include?(profile.location)
     #   profile.location.in?(my_trip_locations)
     # end
 
     # Take my trip locations
-    my_trip_locations.
-      # Give back a flattened single array of all the profiles that aren't me *AND* are near each location and only give me the unique ones
-      flat_map { |location| Profile.where.not(id: id).near(location) }.uniq
+    # Give back a flattened single array of all the profiles that aren't me *AND* are near each location and only give me the unique ones
+    my_trip_locations.flat_map { |location| Profile.where.not(id: id).near(location) }.uniq
   end
+
+
 
   def self.from_auth_hash(payload)
     Profile.find_or_create_by(auth_sub: payload["sub"]) do |profile|

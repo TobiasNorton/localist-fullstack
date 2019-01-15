@@ -12,6 +12,8 @@ class NavBar extends Component {
     event.preventDefault()
   }
 
+  componentDidMount
+
   render() {
     return (
       <>
@@ -19,7 +21,7 @@ class NavBar extends Component {
           <Link id="home" className="menu-item" to="/browse/">
             Browse
           </Link>
-          <Link id="about" className="menu-item" to="/profiles/user/:id">
+          <Link id="about" className="menu-item" to="/profiles/my">
             My Profile
           </Link>
           <Link id="contact" className="menu-item" to="/logout">
@@ -47,7 +49,7 @@ class NavBar extends Component {
             <Link to="/browse/" className="">
               Browse
             </Link>
-            <Link to="/profiles/user/" className="">
+            <Link to="/profiles/my" className="">
               My Profile
             </Link>
             <Link to="/logout" className="">

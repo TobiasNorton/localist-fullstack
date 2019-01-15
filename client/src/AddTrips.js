@@ -5,8 +5,6 @@ import axios from 'axios'
 import auth from './auth'
 import history from './history'
 
-import dataStore from './DataStore'
-
 import NavBar from './NavBar'
 
 class AddTrips extends Component {
@@ -32,7 +30,7 @@ class AddTrips extends Component {
       console.log(pair[0] + ', ' + pair[1])
     }
 
-    axios.post('/api/profiles', formData).then(response => {
+    axios.post('/api/trips', formData).then(response => {
       // TODO: Replace with history.push()
       window.location = '/profile_ready'
     })
@@ -77,53 +75,53 @@ class AddTrips extends Component {
 
               <div className="input">
                 <p>City:</p>
-                <input type="text" placeholder="City, Country" />
+                <input type="text" name="trip[location]" placeholder="City, Country" />
                 <p>Travel Dates:</p>
 
                 <div className="travel-dates">
                   <label>From</label>
-                  <input type="date" />
+                  <input type="date" name="trip[start_date]" />
                 </div>
 
                 <div className="travel-dates">
                   <label>Until</label>
-                  <input type="date" />
+                  <input type="date" name="trip[end_date]" />
+                </div>
+              </div>
+
+              {/* <div className="input">
+                <p>City:</p>
+                <input type="text" name="trip[location]" placeholder="City, Country" />
+                <p>Travel Dates:</p>
+
+                <div className="travel-dates">
+                  <label>From</label>
+                  <input type="date" name="trip[start_date]" />
+                </div>
+
+                <div className="travel-dates">
+                  <label>Until</label>
+                  <input type="date" name="trip[end_date]" />
                 </div>
               </div>
 
               <div className="input">
                 <p>City:</p>
-                <input type="text" placeholder="City, Country" />
-                <p>Travel Dates:</p>
-
-                <div className="travel-dates">
-                  <label>From</label>
-                  <input type="date" />
-                </div>
-
-                <div className="travel-dates">
-                  <label>Until</label>
-                  <input type="date" />
-                </div>
-              </div>
-
-              <div className="input">
-                <p>City:</p>
-                <input type="text" name="profile[name]" placeholder="City, Country" />
+                <input type="text" name="trip[location]" placeholder="City, Country" />
                 <p>Travel Dates:</p>
                 <div className="travel-dates">
                   <section className="from-until">
                     <label>From</label>
-                    <input type="date" name="profile[name]" />
+                    <input type="date" name="trip[start_date]" />
                   </section>
                   <section className="from-until">
                     <label>Until</label>
-                    <input type="date" name="profile[name]" />
+                    <input type="date" name="trip[end_date]" />
                   </section>
                 </div>
-              </div>
+              </div> */}
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Okay, Let's Go!</button>
             {/* <button onClick={this.addAnothertrip}>Add Another Trip</button> */}
           </form>
         </div>

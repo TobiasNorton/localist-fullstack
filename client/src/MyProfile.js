@@ -6,8 +6,16 @@ import NavBar from './NavBar'
 
 import auth from './auth'
 import history from './history'
+import axios from 'axios'
 
 class MyProfile extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      myProfileInfo: {}
+    }
+  }
   componentWillMount = () => {
     // If not logged in, kick me to the home page
     if (!auth.isAuthenticated()) {
@@ -16,7 +24,12 @@ class MyProfile extends Component {
   }
 
   componentDidMount = () => {
-    // dataStore.showPeopleIAmLinkedWith()
+    axios.get('/api/profile').then(response => {
+      console.log(response.data.profile)
+      this.setState({
+        myProfileInfo: response.data.profile
+      })
+    })
   }
 
   render() {
@@ -51,39 +64,39 @@ class MyProfile extends Component {
         <section className="my-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">{dataStore.profileDisplayed.name}</h3>
-              <img src="./TobyCropped.jpg" className="profile-pic" alt="Toby" />
-              <p className="from">{dataStore.profileDisplayed.location}</p>
+              <h3 className="profile-name">{this.state.myProfileInfo.name}</h3>
+              <img src={this.state.myProfileInfo.picture_url} className="profile-pic" alt="Toby" />
+              <p className="from">{this.state.myProfileInfo.location}</p>
             </div>
 
             <div className="category">
               <p className="header">Languages I Speak</p>
               <div className="line" />
-              <p className="body">English, some Spanish</p>
+              <p className="body">{this.state.myProfileInfo.languages}</p>
             </div>
 
             <div className="category">
               <p className="header">Preferred Contact Information</p>
               <div className="line" />
               <ul className="body">
-                <li>WhatsApp: {dataStore.profileDisplayed.whatsapp}</li>
-                <li>Email: {dataStore.profileDisplayed.email}</li>
-                <li>Facebook Messenger: {dataStore.profileDisplayed.facebook}</li>
-                <li>Instagram: {dataStore.profileDisplayed.instagram}</li>
-                <li>Phone: {dataStore.profileDisplayed.phone}</li>
+                <li>WhatsApp: {this.state.myProfileInfo.whatsapp}</li>
+                <li>Email: {this.state.myProfileInfo.email}</li>
+                <li>Facebook Messenger: {this.state.myProfileInfo.facebook}</li>
+                <li>Instagram: {this.state.myProfileInfo.instagram}</li>
+                <li>Phone: {this.state.myProfileInfo.phone}</li>
               </ul>
             </div>
 
             <div className="category">
               <p className="header">About Me</p>
               <div className="line" />
-              <p className="body">{dataStore.profileDisplayed.about}</p>
+              <p className="body">{this.state.myProfileInfo.about}</p>
             </div>
 
             <div className="category">
               <p className="header">Why I Joined Localist</p>
               <div className="line" />
-              <p className="body">{dataStore.profileDisplayed.why_joined}</p>
+              <p className="body">{this.state.myProfileInfo.why_joined}</p>
             </div>
           </div>
 

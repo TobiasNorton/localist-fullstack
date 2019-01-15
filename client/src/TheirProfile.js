@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 import NavBar from './NavBar'
 
@@ -7,8 +8,22 @@ import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 
 class TheirProfile extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      profile: {}
+    }
+  }
   componentDidMount = () => {
-    dataStore.getProfile(this.props.match.params.id)
+    // dataStore.getProfile(this.props.match.params.id)
+    axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
+      console.log(response.data.profile)
+      this.setState({
+        profile: response.data.profile
+      })
+      // this.state = response.data.displaying_profile
+    })
   }
 
   render() {
@@ -48,15 +63,11 @@ class TheirProfile extends Component {
         <section className="their-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">{dataStore.profileDisplayed.name}</h3>
-              <img
-                src={dataStore.profileDisplayed.picture}
-                className="profile-pic"
-                alt="Budsarin"
-              />
-              <p className="from">{dataStore.profileDisplayed.location}</p>
-              <p className="link-status">You are linked with {dataStore.profileDisplayed.name}</p>
-              <button>Unlink</button>
+              <h3 className="profile-name">{this.state.profile.name}</h3>
+              <img src={this.state.profile.picture_url} className="profile-pic" alt="Budsarin" />
+              <p className="from">{this.state.profile.location}</p>
+              {/* <p className="link-status">You are linked with {this.state.profile.name}</p>
+              <button>Unlink</button> */}
 
               {/* DO NOT REMOVE THIS COMMENTED CODE vvvv !! */}
 
@@ -66,8 +77,8 @@ class TheirProfile extends Component {
                 <button>Decline</button>
               </div> */}
 
-              {/* <p className="link-status">You are not linked with Budsarin Hiranprueck</p>
-              <button>Send Request</button> */}
+              <p className="link-status">You are not linked with {this.state.profile.name}</p>
+              <button>Send Request</button>
 
               {/* DO NOT REMOVE THIS CODE ^^^^ !!! */}
             </div>
@@ -75,37 +86,38 @@ class TheirProfile extends Component {
             <div className="category">
               <p className="header">Languages I Speak</p>
               <div className="line" />
-              <p className="body">Thai, English, Ngaw, some Spanish</p>
+              <p className="body">{this.state.profile.languages}</p>
             </div>
           </div>
 
           <div className="right">
-            <div className="category">
+            {/* <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />
               <ul className="body">
-                <li>WhatsApp: {dataStore.profileDisplayed.whatsapp}</li>
-                <li>Email: {dataStore.profileDisplayed.email}</li>
-                <li>Facebook Messenger: {dataStore.profileDisplayed.facebook}</li>
-                <li>Instagram: {dataStore.profileDisplayed.instagram}</li>
-                <li>Phone: {dataStore.profileDisplayed.phone}</li>
+                <li>WhatsApp: {this.state.profile.whatsapp}</li>
+                <li>Email: {this.state.profile.email}</li>
+                <li>Facebook Messenger: {this.state.profile.facebook}</li>
+                <li>Instagram: {this.state.profile.instagram}</li>
+                <li>Phone: {this.state.profile.phone}</li>
               </ul>
-            </div>
-
-            {/* <div className="category">
-              <p className="header">Contact Me:</p>
-              <p className="body">You must be linked to see contact information.</p>
             </div> */}
+
+            <div className="category">
+              <p className="header">Contact Me</p>
+              <div className="line" />
+              <p className="body">You must be linked to see contact information.</p>
+            </div>
 
             <div className="category">
               <p className="header">About Me</p>
               <div className="line" />
-              <p className="body">{dataStore.profileDisplayed.about}</p>
+              <p className="body">{this.state.profile.about}</p>
             </div>
             <div className="category">
               <p className="header">Why I Joined Localist</p>
               <div className="line" />
-              <p className="body">{dataStore.profileDisplayed.why_joined}</p>
+              <p className="body">{this.state.profile.why_joined}</p>
             </div>
             <div className="category">
               <p className="header">Available</p>

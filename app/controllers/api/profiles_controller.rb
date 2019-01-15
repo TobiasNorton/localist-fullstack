@@ -102,7 +102,7 @@ class Api::ProfilesController < ApplicationController
   def show_profile
     profile = Profile.find(params[:id])
     render json: {
-      displaying_profile: {
+      profile: {
         id: profile.id,
         name: profile.name,
         age: profile.age,
@@ -120,7 +120,7 @@ class Api::ProfilesController < ApplicationController
         longitude: profile.longitude,
         picture_url: url_for(profile.picture),
         trips: {
-          trips: displaying_profile.trips.map do |trip|
+          trips: profile.trips.map do |trip|
             {
               id: trip.id,
               location: trip.location,
