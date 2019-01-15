@@ -118,7 +118,7 @@ class MyProfile extends Component {
               )
             })}
 
-            <div className="local">
+            {/* <div className="local">
               <section>
                 <img src="./JeanSebastian.jpeg" className="mini-pic" />
               </section>
@@ -207,7 +207,7 @@ class MyProfile extends Component {
                 <button>View Profile</button>
                 <button>Unlink</button>
               </section>
-            </div>
+            </div> */}
             <footer />
           </div>
         </section>

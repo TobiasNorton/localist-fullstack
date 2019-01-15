@@ -25,7 +25,17 @@ class AddTrips extends Component {
 
   addTrips = event => {
     event.preventDefault()
-    axios.post('/api/trips/').then(response => {})
+
+    const formData = new FormData(event.target)
+
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1])
+    }
+
+    axios.post('/api/profiles', formData).then(response => {
+      // TODO: Replace with history.push()
+      window.location = '/profile_ready'
+    })
   }
 
   // addAnotherTrip = () => {
@@ -69,9 +79,15 @@ class AddTrips extends Component {
                 <p>City:</p>
                 <input type="text" placeholder="City, Country" />
                 <p>Travel Dates:</p>
+
                 <div className="travel-dates">
                   <label>From</label>
-                  <input type="date" /> <label>until</label> <input type="date" />
+                  <input type="date" />
+                </div>
+
+                <div className="travel-dates">
+                  <label>Until</label>
+                  <input type="date" />
                 </div>
               </div>
 

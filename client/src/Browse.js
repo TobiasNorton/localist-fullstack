@@ -17,7 +17,8 @@ class Browse extends Component {
     super(props)
 
     this.state = {
-      loading: true
+      loading: true,
+      profiles: []
     }
   }
 
@@ -28,30 +29,39 @@ class Browse extends Component {
     }
   }
 
-  componentDidMount = () => {
-    // dataStore.getAllProfiles()
-    dataStore.populateBrowseSection(() => {
-      this.setState({ loading: false })
-    })
+  //componentDidMount = () => {
+  // dataStore.getAllProfiles()
+  //   dataStore.populateBrowseSection(() => {
+  //     this.setState({ loading: false })
+  //   })
+  // }
 
-    // dataStore.getMyTrips()
-    // dataStore.getAllMyTrips()
-  }
+  // populateBrowseSection = theFunctionToCallOnceWeHaveLoadedTheData => {
+  // This is everyone whose location matches my trip destination
+  //   axios.get('/api/profiles/browse').then(response => {
+  //     dataStore.peopleInMyDestinations = response.data.profiles
+
+  //     if (theFunctionToCallOnceWeHaveLoadedTheData) {
+  //       theFunctionToCallOnceWeHaveLoadedTheData()
+  //     }
+  //   })
+  // }
 
   // Original axios call before MobX
 
-  // componentDidMount = () => {
-  //   axios.get('/api/profiles').then(response => {
-  //     console.log(response.data.profiles)
-  //     this.setState({
-  //       profiles: response.data.profiles
-  //     })
-  //   })
+  componentDidMount = () => {
+    axios.get('/api/browse').then(response => {
+      console.log(response.data.profiles)
+      this.setState({
+        loading: false,
+        profiles: response.data.profiles
+      })
+    })
 
-  //   axios.get('/api/trips').then(response => {
-  //     console.log(response.data)
-  //   })
-  // }
+    // axios.get('/api/trips').then(response => {
+    //   console.log(response.data)
+    // })
+  }
 
   renderLoading = () => {
     return <div>LOADING</div>
@@ -60,11 +70,9 @@ class Browse extends Component {
   renderProfiles = () => {
     return (
       <>
-        <p>
-          We found {dataStore.peopleInMyDestinations.length} locals in your travel destinations!
-        </p>
+        <p>We found {this.state.profiles.length} locals in your travel destinations!</p>
 
-        {dataStore.peopleInMyDestinations.map((profile, index) => {
+        {this.state.profiles.map((profile, index) => {
           return (
             <Local
               key={index}

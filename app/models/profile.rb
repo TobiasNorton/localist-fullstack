@@ -35,10 +35,8 @@ class Profile < ApplicationRecord
 
     # Take my trip locations
     my_trip_locations.
-      # Give back a flattened single array of all the profiles that aren't me *AND* are near each location
-      flat_map { |location| Profile.where.not(id: id).near(location) }.
-      # And only give me the unique ones
-      uniq
+      # Give back a flattened single array of all the profiles that aren't me *AND* are near each location and only give me the unique ones
+      flat_map { |location| Profile.where.not(id: id).near(location) }.uniq
   end
 
   def self.from_auth_hash(payload)

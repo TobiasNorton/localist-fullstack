@@ -5,19 +5,17 @@ import MyProfile from './MyProfile'
 import Browse from './Browse'
 import EditProfile from './EditProfile'
 import AddTrips from './AddTrips'
-import AllSet from './AllSet'
+import ProfileReady from './ProfileReady'
 import TheirProfile from './TheirProfile'
 
 import { observer } from 'mobx-react'
 
-import { Router, Route, Link } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 
 import auth from './auth'
 import history from './history'
 
 import axios from 'axios'
-
-import dataStore from './DataStore'
 
 class App extends Component {
   componentWillMount() {
@@ -43,7 +41,7 @@ class App extends Component {
           {/* <TheirProfile /> */}
           <Route exact path="/" component={HomePage} />
           <Route path="/profile/" component={EditProfile} />
-          <Route path="/profile_ready/" component={AllSet} />
+          <Route path="/profile_ready/" component={ProfileReady} />
           <Route path="/add_trips/" component={AddTrips} />
           <Route path="/browse/" component={Browse} />
           <Route path="/profiles/user/:id/" component={MyProfile} />

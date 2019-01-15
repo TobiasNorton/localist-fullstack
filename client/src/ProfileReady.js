@@ -4,23 +4,25 @@ import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import dataStore from './DataStore'
 
-class AllSet extends Component {
+import NavBar from './NavBar'
+
+class ProfileReady extends Component {
   componentDidMount = () => {
     // dataStore.getAllProfiles()
   }
 
-  getNewProfile = () => {
-    dataStore.getProfile(dataStore.profiles.length - 1)
-  }
+  // getNewProfile = () => {
+  //   dataStore.getProfile(dataStore.profiles.length - 1)
+  // }
 
   render() {
     return (
       <div>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
-            <div className="dropdown">
-              {/* <a href="#" className="dropdown-button">
+            <div className="dropdown"> */}
+        {/* <a href="#" className="dropdown-button">
                 Requests (4)
               </a>
               <div className="request-list hidden">
@@ -29,7 +31,7 @@ class AllSet extends Component {
                 <a href="#">Francis Begby</a>
                 <a href="#">Budsarin Hiranprueck</a>
               </div> */}
-            </div>
+        {/* </div>
             <a href="#">Browse</a> <a href="#">My Profile</a>
             <a href="#">Sign Out</a> <a href="#" />
             <div className="hamburger">
@@ -38,7 +40,10 @@ class AllSet extends Component {
               <span />
             </div>
           </div>
-        </nav>
+        </nav> */}
+
+        <NavBar />
+
         <section className="all-set">
           <div className="account-ready">
             <h2>You're All Set!</h2>
@@ -69,4 +74,4 @@ class AllSet extends Component {
   }
 }
 
-export default observer(AllSet)
+export default observer(ProfileReady)
