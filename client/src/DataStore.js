@@ -50,7 +50,7 @@ class DataStore {
       console.log(pair[0] + ', ' + pair[1])
     }
 
-    axios.post('/api/profiles', formData).then(response => {
+    axios.put('/api/profile', formData).then(response => {
       // TODO: Replace with history.push()
       window.location = '/add_trips'
     })

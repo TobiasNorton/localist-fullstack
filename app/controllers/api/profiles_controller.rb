@@ -158,8 +158,8 @@ class Api::ProfilesController < ApplicationController
     }
   end
 
-  def create
-    new_profile = Profile.create(profile_params)
+  def update
+    new_profile = current_profile.update(profile_params)
     render json: new_profile
   end
 

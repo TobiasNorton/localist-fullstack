@@ -44,7 +44,7 @@ class App extends Component {
           <Route path="/profile_ready/" component={ProfileReady} />
           <Route path="/add_trips/" component={AddTrips} />
           <Route path="/browse/" component={Browse} />
-          <Route exact path="/profiles/my" component={MyProfile} />
+          <Route exact path="/my_profile" component={MyProfile} />
           <Route exact path="/profiles/:id/" component={TheirProfile} />
 
           <Route path="/login" render={() => auth.login()} />

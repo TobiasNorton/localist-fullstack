@@ -49,7 +49,7 @@ class NavBar extends Component {
             <Link to="/browse/" className="">
               Browse
             </Link>
-            <Link to="/profiles/my" className="">
+            <Link to="/my_profile" className="">
               My Profile
             </Link>
             <Link to="/logout" className="">
