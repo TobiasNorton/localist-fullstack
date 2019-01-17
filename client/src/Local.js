@@ -12,13 +12,18 @@ class Local extends Component {
       linking: false
     }
   }
+
   createLink = event => {
     this.setState({
       linking: true
     })
+
     axios.post('/api/links', { other_profile_id: this.props.id }).then(response => {
+      // code here when the promise is done
       this.props.reloadMyProfile()
     })
+
+    // code here happens right away
   }
 
   render() {

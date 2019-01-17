@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   put '/api/profile', to: 'api/profiles#update'
 
   get '/api/trips', to: 'api/trips#index'
-  get '/api/trips/my_trips', to: 'api/trips#my_trips'
+  get '/api/my_trips', to: 'api/trips#my_trips'
   post '/api/trips', to: 'api/trips#create'
 
   # get '/api/links', to: 'api/links#index'

@@ -29,10 +29,14 @@ class MyProfile extends Component {
 
   componentDidMount = () => {
     axios.get('/api/profile').then(response => {
-      console.log(response.data.profile)
+      // console.log(response.data.profile)
       this.setState({
         myProfileInfo: response.data.profile
       })
+    })
+
+    axios.get('/api/my_trips').then(response => {
+      console.log(response.data)
     })
 
     // axios.get('/api/my_links').then(response => {
@@ -53,7 +57,7 @@ class MyProfile extends Component {
 
   reloadMyProfile = () => {
     axios.get('/api/profile').then(response => {
-      console.log(response.data.profile)
+      // console.log(response.data.profile)
       this.setState({
         myProfileInfo: response.data.profile
       })
@@ -159,7 +163,7 @@ class MyProfile extends Component {
                   reloadMyProfile={this.reloadMyProfile}
                   picture={profile.picture_url}
                   name={profile.name}
-                  firstName={this.firstName}
+                  firstName={this.firstName()}
                   location={profile.location}
                   availability={''}
                 />

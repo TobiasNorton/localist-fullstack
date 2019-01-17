@@ -84,13 +84,12 @@ class Browse extends Component {
     return (
       <>
         <p>We found {this.state.profiles.length} locals in your travel destinations!</p>
-        {this.profilesToRender().map((profile, index) => {
+        {this.profilesToRender().map(profile => {
           return (
             <Local
-              key={index}
+              key={profile.id}
               reloadMyProfile={this.reloadMyProfile}
               id={profile.id}
-              data-id={profile.id}
               picture={profile.picture_url}
               name={profile.name}
               location={profile.location}

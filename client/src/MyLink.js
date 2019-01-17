@@ -14,9 +14,16 @@ class MyLink extends Component {
   deleteLink = event => {
     this.setState({ deleting: true })
 
-    axios.delete(`/api/links/${this.props.id}`).then(response => {
-      this.props.reloadMyProfile()
-    })
+    axios.delete(`/api/links/${this.props.id}`).then(
+      response => {
+        this.props.reloadMyProfile()
+      },
+      () => {
+        this.setState({
+          deleting: false
+        })
+      }
+    )
   }
 
   render() {
