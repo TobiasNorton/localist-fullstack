@@ -9,6 +9,8 @@ import auth from './auth'
 import history from './history'
 import axios from 'axios'
 
+import moment from 'moment'
+
 class MyProfile extends Component {
   constructor(props) {
     super(props)
@@ -48,17 +50,26 @@ class MyProfile extends Component {
 
   showUpcomingTrips = () => {
     console.log(this.state.myProfileInfo.trips)
-    // let trips = this.state.myProfileInfo.trips.trips.map(trip => {
-    //   return (
-    //     <ul>
-    //       <li>{trip.location}</li>
-    //       <li>
-    //         {trip.start_date} - {trip.end_date}
-    //       </li>
-    //     </ul>
-    //   )
-    // })
-    // return trips
+    let trips = this.state.myProfileInfo.trips.map(trip => {
+      return (
+        <ul key={trip.id}>
+          <li>{trip.location}</li>
+          <li>
+            {new Date(trip.start_date).toLocaleDateString([], {
+              month: 'long',
+              day: '2-digit'
+            })}{' '}
+            -{' '}
+            {new Date(trip.end_date).toLocaleDateString([], {
+              month: 'long',
+              day: '2-digit',
+              year: 'numeric'
+            })}
+          </li>
+        </ul>
+      )
+    })
+    return trips
   }
 
   firstName = () => {
@@ -144,15 +155,15 @@ class MyProfile extends Component {
               <p className="header">My Upcoming Trips</p>
               <div className="line" />
 
-              {/* {this.showUpcomingTrips()} */}
-              <ul>
+              {this.showUpcomingTrips()}
+              {/* <ul>
                 <li>Paris, France</li>
                 <li>June 18 - July 8, 2019</li>
               </ul>
               <ul className="body">
                 <li>Chiang Mai, Thailand</li>
                 <li>June 18 - July 8, 2019</li>
-              </ul>
+              </ul> */}
             </div>
 
             <p className="my-links">My Links</p>

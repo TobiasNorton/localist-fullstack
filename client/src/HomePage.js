@@ -35,9 +35,7 @@ class HomePage extends Component {
           <p className="logo">Localist</p>
           <div className="links">
             <p onClick={this.showHowItWorksSection}>How Does It Work?</p>
-            <Link to="/profile">
-              <p>Join</p>
-            </Link>
+            <Link to="/login/">Join</Link>
             <Link to="/login/">Log In</Link>
           </div>
           {/* <div className="hamburger">

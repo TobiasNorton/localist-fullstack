@@ -8,6 +8,7 @@ import AddTrips from './AddTrips'
 import ProfileReady from './ProfileReady'
 import TheirProfile from './TheirProfile'
 import Edit from './Edit'
+import RequestProfile from './RequestProfile'
 
 import { observer } from 'mobx-react'
 
@@ -31,15 +32,6 @@ class App extends Component {
     return (
       <Router history={history}>
         <>
-          {/* <HomePage /> */}
-          {/* <CreateProfile /> */}
-          {/* <AllSet /> */}
-          {/* <MyProfile /> */}
-          {/* <Browse /> */}
-          {/* <UnmatchedProfile /> */}
-          {/* <MatchedProfile /> */}
-          {/* <RequestProfile /> */}
-          {/* <TheirProfile /> */}
           <Route exact path="/" component={HomePage} />
           <Route path="/profile/" component={EditProfile} />
           <Route path="/profile_ready/" component={ProfileReady} />
@@ -48,7 +40,9 @@ class App extends Component {
           <Route exact path="/my_profile" component={MyProfile} />
           <Route exact path="/profiles/:id/" component={TheirProfile} />
           <Route path="/edit/" component={Edit} />
+          <Route path="/request" compontent={RequestProfile} />
           <Route path="/login" render={() => auth.login()} />
+
           <Route
             path="/logout"
             render={() => {
