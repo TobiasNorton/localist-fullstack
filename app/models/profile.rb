@@ -15,6 +15,10 @@ class Profile < ApplicationRecord
 
   after_validation :geocode
 
+  def linked_profiles
+    # All the people I am linked to as 1 and all the people I am linked to as 2
+    (linked_profiles_as_1 + linked_profiles_as_2).uniq
+  end
 
   def other_profiles_near_my_trips
     # Get all profiles that are not me

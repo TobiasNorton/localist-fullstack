@@ -63,7 +63,7 @@ class ProfileReady extends Component {
               <Link to="/browse/">
                 <button>Look for Locals</button>
               </Link>
-              <Link to="/profiles/user/:id">
+              <Link to="/my_profile/">
                 <button onClick={this.getNewProfile}>Go To My Profile</button>
               </Link>
             </div>

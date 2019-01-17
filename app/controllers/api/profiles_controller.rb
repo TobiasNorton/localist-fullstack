@@ -90,7 +90,15 @@ class Api::ProfilesController < ApplicationController
               end_date: trip.end_date
             }
           end
-        }
+        },
+        linked_profiles: current_profile.linked_profiles.map do |profile|
+          {
+            id: profile.id,
+            name: profile.name,
+            picture_url: url_for(profile.picture),
+            location: profile.location,
+          }
+        end 
       }
     }
     
@@ -134,6 +142,7 @@ class Api::ProfilesController < ApplicationController
   end
 
   def browse
+
     render json: {
       profiles: current_profile.other_profiles_near_my_trips.map do |profile|
         {
@@ -162,6 +171,7 @@ class Api::ProfilesController < ApplicationController
     new_profile = current_profile.update(profile_params)
     render json: new_profile
   end
+
 
   # Browse step 4?
   # Store the common locations in a variable

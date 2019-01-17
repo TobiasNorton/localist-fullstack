@@ -154,6 +154,20 @@ button {
   font-family: 'Lato', sans-serif;
 }
 
+.button {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  background-color: hsl(200, 100%, 60%);
+  width: 14rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  margin: 0.2rem 0 0 1rem;
+  width: 9rem;
+}
+
 .main button {
   margin-bottom: 2rem;
 }

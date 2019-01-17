@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 
 import { observer } from 'mobx-react'
-import dataStore from './DataStore'
+// import dataStore from './DataStore'
 
-import { toJS } from 'mobx'
+// import { toJS } from 'mobx'
 
 import auth from './auth'
 import history from './history'
@@ -18,7 +18,10 @@ class Browse extends Component {
 
     this.state = {
       loading: true,
-      profiles: []
+      profiles: [],
+      myProfileInfo: {
+        linked_profiles: []
+      }
     }
   }
 
@@ -28,13 +31,6 @@ class Browse extends Component {
       history.push('/')
     }
   }
-
-  //componentDidMount = () => {
-  // dataStore.getAllProfiles()
-  //   dataStore.populateBrowseSection(() => {
-  //     this.setState({ loading: false })
-  //   })
-  // }
 
   // populateBrowseSection = theFunctionToCallOnceWeHaveLoadedTheData => {
   // This is everyone whose location matches my trip destination
@@ -58,24 +54,41 @@ class Browse extends Component {
       })
     })
 
+    this.reloadMyProfile()
+
     // axios.get('/api/trips').then(response => {
     //   console.log(response.data)
     // })
   }
 
+  reloadMyProfile = () => {
+    axios.get('/api/profile').then(response => {
+      console.log(response.data.profile)
+      this.setState({
+        myProfileInfo: response.data.profile
+      })
+    })
+  }
+
   renderLoading = () => {
-    return <div>LOADING</div>
+    return <div className="loading">LOADING</div>
+  }
+
+  profilesToRender = () => {
+    const linkedProfileIDS = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
+
+    return this.state.profiles.filter(profile => !linkedProfileIDS.includes(profile.id))
   }
 
   renderProfiles = () => {
     return (
       <>
         <p>We found {this.state.profiles.length} locals in your travel destinations!</p>
-
-        {this.state.profiles.map((profile, index) => {
+        {this.profilesToRender().map((profile, index) => {
           return (
             <Local
               key={index}
+              reloadMyProfile={this.reloadMyProfile}
               id={profile.id}
               data-id={profile.id}
               picture={profile.picture_url}
@@ -120,96 +133,6 @@ class Browse extends Component {
 
         <main className="browse-background">
           {this.state.loading ? this.renderLoading() : this.renderProfiles()}
-          {/* <div className="local">
-            <section>
-              <img src="./JeanSebastian.jpeg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Jean-Sebastian Sirois</p>
-              <p>Paris, France</p>
-              <p>Available: June 18 - July 8, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./Margaux.jpg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Margaux Anati</p>
-              <p>Paris, France</p>
-              <p>Available: June 18 - July 8, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./Bruno.jpg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Bruno Chastain</p>
-              <p>Paris, France</p>
-              <p>Available: June 28 - July 4, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./Sarah.jpg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Sarah Richelieu</p>
-              <p>Paris, France</p>
-              <p>Available: June 18 - July 2, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./Duanphen.jpeg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Duanphen Kaekwoon</p>
-              <p>Chiang Mai, Thailand</p>
-              <p>Available: June 18 - July 8, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./BudsarinCropped.jpg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Budsarin Hiranprueck</p>
-              <p>Chiang Mai, Thailand</p>
-              <p>Available: June 18 - July 8, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div>
-
-          <div className="local">
-            <section>
-              <img src="./Naowarat.jpg" className="mini-pic" />
-            </section>
-            <section>
-              <p>Naowarat Angsakul</p>
-              <p>Chiang Mai, Thailand</p>
-              <p>Available: June 18 - July 8, 2019</p>
-              <button>View Profile</button>
-              <button>Unlink</button>
-            </section>
-          </div> */}
         </main>
       </>
     )

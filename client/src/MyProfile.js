@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import dataStore from './DataStore'
-import Local from './Local'
+// import Local from './Local'
 import NavBar from './NavBar'
+import MyLink from './MyLink'
 
 import auth from './auth'
 import history from './history'
@@ -13,7 +14,9 @@ class MyProfile extends Component {
     super(props)
 
     this.state = {
-      myProfileInfo: {}
+      myProfileInfo: {
+        linked_profiles: []
+      }
     }
   }
   componentWillMount = () => {
@@ -30,6 +33,28 @@ class MyProfile extends Component {
         myProfileInfo: response.data.profile
       })
     })
+
+    this.reloadMyProfile()
+  }
+
+  profilesToRender = () => {
+    let myLinkIDs = this.state.myProfileInfo.linked_profiles.map(link => link.id)
+    return this.state.myProfileInfo.linked_profiles.filter(link => myLinkIDs.includes(link.id))
+  }
+
+  reloadMyProfile = () => {
+    axios.get('/api/profile').then(response => {
+      console.log(response.data.profile)
+      this.setState({
+        myProfileInfo: response.data.profile
+      })
+    })
+  }
+
+  firstName = () => {
+    let name = this.state.myProfileInfo.linked_profiles.map(link => link.name)
+    let firstAndLastName = name.split(' ')
+    return firstAndLastName.shift()
   }
 
   render() {
@@ -116,17 +141,17 @@ class MyProfile extends Component {
 
             <p className="my-links">My Links</p>
             <div className="line" />
-
-            {dataStore.peopleInMyDestinations.map((profile, index) => {
+            {this.profilesToRender().map((profile, index) => {
               return (
-                <Local
+                <MyLink
                   key={index}
                   id={profile.id}
-                  data-id={profile.id}
+                  reloadMyProfile={this.reloadMyProfile}
                   picture={profile.picture_url}
                   name={profile.name}
+                  firstName={this.firstName}
                   location={profile.location}
-                  availability={profile.availability}
+                  availability={''}
                 />
               )
             })}
