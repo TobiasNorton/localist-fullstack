@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Local extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      linking: false
+    }
+  }
   createLink = event => {
+    this.setState({
+      linking: true
+    })
     axios.post('/api/links', { other_profile_id: this.props.id }).then(response => {
       this.props.reloadMyProfile()
     })
@@ -21,12 +31,15 @@ class Local extends Component {
           <section className="right-half">
             <p>{this.props.name}</p>
             <p>{this.props.location}</p>
+            <p>You are not linked.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div>
               <Link to={`/profiles/${this.props.id}`} className="button">
                 View Profile
               </Link>
-              <button onClick={this.createLink}>Request</button>
+              <button onClick={this.createLink}>
+                {this.state.linking ? 'Linking...' : 'Link'}
+              </button>
             </div>
           </section>
         </div>

@@ -3,8 +3,18 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class MyLink extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      deleting: false
+    }
+  }
+
   deleteLink = event => {
-    axios.delete('/api/links', { other_profile_id: this.props.id }).then(response => {
+    this.setState({ deleting: true })
+
+    axios.delete(`/api/links/${this.props.id}`).then(response => {
       this.props.reloadMyProfile()
     })
   }
@@ -25,7 +35,9 @@ class MyLink extends Component {
               <Link to={`/profiles/${this.props.id}`} className="button">
                 View Profile
               </Link>
-              <button onClick={this.deleteLink}>Unlink</button>
+              <button onClick={this.deleteLink}>
+                {this.state.deleting ? 'Deleting...' : 'Unlink'}
+              </button>
             </div>
           </section>
         </div>

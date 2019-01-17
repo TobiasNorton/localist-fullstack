@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   post '/api/trips', to: 'api/trips#create'
 
   # get '/api/links', to: 'api/links#index'
-  # get '/api/links/:id', to: 'api/links#my_links'
+  get '/api/my_links', to: 'api/links#my_links'
   post '/api/links', to: 'api/links#create'
-  delete '/api/links', to: 'api/links#delete'
+  delete '/api/links/:profile_id', to: 'api/links#delete'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
     CLIENT_HTML = File.read(Rails.root.join('public/index.html'))

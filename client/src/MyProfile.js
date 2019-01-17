@@ -16,7 +16,8 @@ class MyProfile extends Component {
     this.state = {
       myProfileInfo: {
         linked_profiles: []
-      }
+      },
+      links: []
     }
   }
   componentWillMount = () => {
@@ -33,6 +34,14 @@ class MyProfile extends Component {
         myProfileInfo: response.data.profile
       })
     })
+
+    // axios.get('/api/my_links').then(response => {
+    //   console.log(response.data.my_links)
+    //   response.data.my_links.map(link => {
+    //     if ((link.profile_1_id === this.state.myProfile.id) || (link.profile_1_id === this.state.myProfile.id))
+
+    //   })
+    // })
 
     this.reloadMyProfile()
   }
@@ -53,8 +62,9 @@ class MyProfile extends Component {
 
   firstName = () => {
     let name = this.state.myProfileInfo.linked_profiles.map(link => link.name)
-    let firstAndLastName = name.split(' ')
-    return firstAndLastName.shift()
+    console.log(name)
+    // let firstAndLastName = name.split(' ')
+    // return firstAndLastName[0]
   }
 
   render() {
@@ -249,6 +259,7 @@ class MyProfile extends Component {
             <footer />
           </div>
         </section>
+        <button onClick={this.firstName} />
       </>
     )
   }

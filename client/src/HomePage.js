@@ -91,7 +91,7 @@ class HomePage extends Component {
                 Localist is not a dating website or a platform for couch sharing, but hey, it's a
                 free world! If you should choose to use it for such purposes, more power to you. We
                 just want Localists on both sides to have the best cultural experience they can, and
-                know that the level of commitment is completely up to you and other Localists.
+                know that the level of commitment is completely up to you and who you link with.
               </p>
             </div>
           </div>
