@@ -24,8 +24,9 @@ class Api::ProfilesController < ApplicationController
           latitude: profile.latitude,
           longitude: profile.longitude,
           # picture_url: url_for(profile.picture)
-          picture_url: (url_for(profile.picture) if profile.picture.attached?)
-          # picture_url: url_for(profile.picture.variant(resize: "384x384"))
+          picture_url: (url_for(profile.picture.variant(combine_options: {resize: "384x384", gravity: "center", extent: "384x384"})) if profile.picture.attached?)
+          # picture_url: (url_for(profile.picture) if profile.picture.attached?)
+          # picture_url: url_for(profile.picture.variant(resize: "384x384^") if profile.picture.attached?)
         }
       end
     }
@@ -81,16 +82,14 @@ class Api::ProfilesController < ApplicationController
         latitude: current_profile.latitude,
         longitude: current_profile.longitude,
         picture_url: url_for(current_profile.picture),
-        trips: {
-          trips: current_profile.trips.map do |trip|
-            {
-              id: trip.id,
-              location: trip.location,
-              start_date: trip.start_date,
-              end_date: trip.end_date
-            }
-          end
-        },
+        trips: current_profile.trips.map do |trip|
+          {
+            id: trip.id,
+            location: trip.location,
+            start_date: trip.start_date,
+            end_date: trip.end_date
+          }
+        end,
         linked_profiles: current_profile.linked_profiles.map do |profile|
           {
             id: profile.id,

@@ -21,7 +21,7 @@ class NavBar extends Component {
           <Link id="home" className="menu-item" to="/browse/">
             Browse
           </Link>
-          <Link id="about" className="menu-item" to="/profiles/my">
+          <Link id="about" className="menu-item" to="/my_profile">
             My Profile
           </Link>
           <Link id="contact" className="menu-item" to="/logout">

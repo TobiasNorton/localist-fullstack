@@ -157,10 +157,11 @@ button {
 .button {
   font-size: 1.2rem;
   text-decoration: none;
+  text-align: center;
   color: white;
   background-color: hsl(200, 100%, 60%);
-  width: 14rem;
-  padding: 0.7rem;
+  /* width: 14rem; */
+  padding: 0.7rem 1.25rem 0.7rem 1.25rem;
   border-radius: 5px;
   border: none;
   font-family: 'Lato', sans-serif;
@@ -382,6 +383,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .profile-pic {
   width: 24rem;
+  height: 24rem;
+  object-fit: cover;
   display: block;
   padding: 1rem;
   border-radius: 5px;
@@ -404,6 +407,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin: 0.3rem;
   width: 30rem;
   border-radius: 5px;
+  padding-bottom: 1rem;
 }
 
 .category .header {
@@ -414,7 +418,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .category .body {
-  padding-bottom: 0.6rem;
+  /* padding-bottom: 0.6rem; */
   line-height: 1.3rem;
   font-family: 'Lato', sans-serif;
 }
@@ -508,6 +512,8 @@ p.from {
 
 .mini-pic {
   width: 8rem;
+  height: 8rem;
+  object-fit: cover;
 }
 
 .link p {
@@ -793,6 +799,7 @@ textarea {
 
   .mini-pic {
     width: 85vw;
+    height: auto;
     margin-bottom: 0.5rem;
     box-sizing: border-box;
     padding: 1rem;

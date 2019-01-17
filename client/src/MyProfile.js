@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import dataStore from './DataStore'
+import { Link } from 'react-router-dom'
 // import Local from './Local'
 import NavBar from './NavBar'
 import MyLink from './MyLink'
@@ -15,7 +15,8 @@ class MyProfile extends Component {
 
     this.state = {
       myProfileInfo: {
-        linked_profiles: []
+        linked_profiles: [],
+        trips: []
       },
       links: []
     }
@@ -28,25 +29,6 @@ class MyProfile extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('/api/profile').then(response => {
-      // console.log(response.data.profile)
-      this.setState({
-        myProfileInfo: response.data.profile
-      })
-    })
-
-    axios.get('/api/my_trips').then(response => {
-      console.log(response.data)
-    })
-
-    // axios.get('/api/my_links').then(response => {
-    //   console.log(response.data.my_links)
-    //   response.data.my_links.map(link => {
-    //     if ((link.profile_1_id === this.state.myProfile.id) || (link.profile_1_id === this.state.myProfile.id))
-
-    //   })
-    // })
-
     this.reloadMyProfile()
   }
 
@@ -64,9 +46,24 @@ class MyProfile extends Component {
     })
   }
 
+  showUpcomingTrips = () => {
+    console.log(this.state.myProfileInfo.trips)
+    // let trips = this.state.myProfileInfo.trips.trips.map(trip => {
+    //   return (
+    //     <ul>
+    //       <li>{trip.location}</li>
+    //       <li>
+    //         {trip.start_date} - {trip.end_date}
+    //       </li>
+    //     </ul>
+    //   )
+    // })
+    // return trips
+  }
+
   firstName = () => {
     let name = this.state.myProfileInfo.linked_profiles.map(link => link.name)
-    console.log(name)
+    // console.log(name)
     // let firstAndLastName = name.split(' ')
     // return firstAndLastName[0]
   }
@@ -106,6 +103,9 @@ class MyProfile extends Component {
               <h3 className="profile-name">{this.state.myProfileInfo.name}</h3>
               <img src={this.state.myProfileInfo.picture_url} className="profile-pic" alt="Toby" />
               <p className="from">{this.state.myProfileInfo.location}</p>
+              <Link to={'/edit'} className="button">
+                Edit Profile
+              </Link>
             </div>
 
             <div className="category">
@@ -143,6 +143,8 @@ class MyProfile extends Component {
             <div className="category">
               <p className="header">My Upcoming Trips</p>
               <div className="line" />
+
+              {/* {this.showUpcomingTrips()} */}
               <ul>
                 <li>Paris, France</li>
                 <li>June 18 - July 8, 2019</li>
@@ -158,7 +160,7 @@ class MyProfile extends Component {
             {this.profilesToRender().map((profile, index) => {
               return (
                 <MyLink
-                  key={index}
+                  key={profile.id}
                   id={profile.id}
                   reloadMyProfile={this.reloadMyProfile}
                   picture={profile.picture_url}
