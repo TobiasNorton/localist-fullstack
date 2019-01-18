@@ -78,16 +78,17 @@ class TheirProfile extends Component {
   }
 
   deleteLink = event => {
-    axios.delete('/api/links', { other_profile_id: this.state.profile.id }).then(response => {})
-    this.loadMyProfile()
+    axios.delete(`/api/links/${this.state.profile.id}`).then(response => {
+      this.loadMyProfile()
+    })
   }
 
   createLink = event => {
     axios.post('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
       console.log(response)
       // code here when the promise is done
+      this.loadMyProfile()
     })
-    this.loadMyProfile()
     // code here happens right away
   }
 

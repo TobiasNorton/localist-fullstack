@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import auth from './auth'
 import history from './history'
@@ -8,6 +9,14 @@ import history from './history'
 import NavBar from './NavBar'
 
 class AddTrips extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showProfileLink: false
+    }
+  }
+
   componentWillMount = () => {
     // If not logged in, kick me to the home page
     if (!auth.isAuthenticated()) {
@@ -31,8 +40,11 @@ class AddTrips extends Component {
     }
 
     axios.post('/api/trips', formData).then(response => {
-      // TODO: Replace with history.push()
-      window.location = '/profile_ready'
+      // if (response.data.errors) {
+      //   this.setState({ showProfileLink: true })
+      // } else {
+      history.push('/profile_ready')
+      // }
     })
   }
 
@@ -123,6 +135,7 @@ class AddTrips extends Component {
             </div>
             <button type="submit">Submit</button>
             {/* <button onClick={this.addAnothertrip}>Add Another Trip</button> */}
+            {this.state.showProfileLink && <Link to="/profile_ready">Show The profile Anyway</Link>}
           </form>
         </div>
         <footer />

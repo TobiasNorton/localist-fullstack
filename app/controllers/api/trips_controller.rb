@@ -36,9 +36,13 @@ class Api::TripsController < ApplicationController
   end
 
   def create
-    render json: current_profile.trips.create(trip_params)
-    # render json: Trip.create(trip_params)
+    trip = current_profile.trips.create(trip_params)
 
+    if trip.valid?
+      render json: trip
+    else
+      render json: { errors: trip.errors }
+    end
   end
 
   private
