@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { Link } from 'react-router-dom'
-// import Local from './Local'
 import NavBar from './NavBar'
 import MyLink from './MyLink'
 
 import auth from './auth'
 import history from './history'
 import axios from 'axios'
-
-import moment from 'moment'
 
 class MyProfile extends Component {
   constructor(props) {

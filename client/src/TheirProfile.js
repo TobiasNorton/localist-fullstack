@@ -5,7 +5,9 @@ import axios from 'axios'
 import NavBar from './NavBar'
 
 import { observer } from 'mobx-react'
-import dataStore from './DataStore'
+
+import auth from './auth'
+import history from './history'
 
 class TheirProfile extends Component {
   constructor(props) {
@@ -13,17 +15,68 @@ class TheirProfile extends Component {
 
     this.state = {
       profile: {},
-      isLinked: false
+      isLinked: false,
+      myProfileInfo: {
+        linked_profiles: []
+      }
     }
   }
+
+  componentWillMount = () => {
+    // If not logged in, kick me to the home page
+    if (!auth.isAuthenticated()) {
+      history.push('/')
+    }
+  }
+
   componentDidMount = () => {
     // dataStore.getProfile(this.props.match.params.id)
     axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
+      console.log(response.data.profile)
       this.setState({
         profile: response.data.profile
       })
       // this.state = response.data.displaying_profile
     })
+
+    this.loadMyProfile()
+  }
+
+  loadMyProfile = () => {
+    axios.get('/api/profile').then(response => {
+      console.log(response.data.profile)
+      this.setState({
+        myProfileInfo: response.data.profile
+      })
+    })
+  }
+
+  // profilesToRender = () => {
+  //   const linkedProfileIDS = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
+
+  //   return this.state.profiles.filter(profile => !linkedProfileIDS.includes(profile.id))
+  // }
+
+  renderLinkStatus = () => {
+    const linkedProfileIDs = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
+
+    if (linkedProfileIDs.includes(this.state.profile.id)) {
+      return (
+        <>
+          <p className="link-status">You are linked with {this.state.profile.name}</p>
+          <button>Unlink</button>
+        </>
+      )
+    } else if (linkedProfileIDs.includes(!this.state.profile.id)) {
+      return (
+        <>
+          <p className="link-status">You are not linked with {this.state.profile.name}</p>
+          <button onClick={this.createLink}>Link</button>
+        </>
+      )
+    } else {
+      return
+    }
   }
 
   createLink = event => {
@@ -37,10 +90,6 @@ class TheirProfile extends Component {
 
     // code here happens right away
   }
-
-  // linkOrUnlinkButton = () => {
-
-  // }
 
   // reloadTheirProfile = () => {
   //   axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {

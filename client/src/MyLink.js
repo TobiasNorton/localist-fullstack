@@ -39,8 +39,8 @@ class MyLink extends Component {
             <p>You are linked with {this.props.firstName}.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div>
-              <Link to={`/profiles/${this.props.id}`} className="button">
-                View Profile
+              <Link to={`/profiles/${this.props.id}`}>
+                <button className="button">View Profile</button>
               </Link>
               <button onClick={this.deleteLink}>
                 {this.state.deleting ? 'Deleting...' : 'Unlink'}
