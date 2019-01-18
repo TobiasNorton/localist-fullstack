@@ -67,22 +67,18 @@ class TheirProfile extends Component {
           <button onClick={this.deleteLink}>Unlink</button>
         </>
       )
-    } else if (linkedProfileIDs.includes(!this.state.profile.id)) {
+    } else {
       return (
         <>
           <p className="link-status">You are not linked with {this.state.profile.name}</p>
           <button onClick={this.createLink}>Link</button>
         </>
       )
-    } else {
-      return
     }
   }
 
   deleteLink = event => {
-    axios.delete('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
-      console.log(response.data)
-    })
+    axios.delete('/api/links', { other_profile_id: this.state.profile.id }).then(response => {})
     this.loadMyProfile()
   }
 
@@ -91,7 +87,38 @@ class TheirProfile extends Component {
       console.log(response)
       // code here when the promise is done
     })
+    this.loadMyProfile()
     // code here happens right away
+  }
+
+  whatsapp = () => {
+    if (this.state.profile.whatsapp) {
+      return <li>WhatsApp: {this.state.profile.whatsapp}</li>
+    }
+  }
+
+  facebook = () => {
+    if (this.state.profile.facebook) {
+      return <li>Facebook Messenger: {this.state.profile.facebook}</li>
+    }
+  }
+
+  email = () => {
+    if (this.state.profile.email) {
+      return <li>Email: {this.state.profile.email}</li>
+    }
+  }
+
+  instagram = () => {
+    if (this.state.profile.instagram) {
+      return <li>Instagram: {this.state.profile.instagram}</li>
+    }
+  }
+
+  phone = () => {
+    if (this.state.profile.phone) {
+      return <li>Phone: {this.state.profile.phone}</li>
+    }
   }
 
   render() {
@@ -161,17 +188,17 @@ class TheirProfile extends Component {
           </div>
 
           <div className="right">
-            {/* <div className="category">
+            <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />
               <ul className="body">
-                <li>WhatsApp: {this.state.profile.whatsapp}</li>
-                <li>Email: {this.state.profile.email}</li>
-                <li>Facebook Messenger: {this.state.profile.facebook}</li>
-                <li>Instagram: {this.state.profile.instagram}</li>
-                <li>Phone: {this.state.profile.phone}</li>
+                {this.whatsapp()}
+                {this.email()}
+                {this.facebook()}
+                {this.instagram()}
+                {this.phone()}
               </ul>
-            </div> */}
+            </div>
 
             <div className="category">
               <p className="header">Contact Me</p>

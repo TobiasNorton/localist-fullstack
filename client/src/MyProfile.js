@@ -69,13 +69,6 @@ class MyProfile extends Component {
     return trips
   }
 
-  firstName = () => {
-    let name = this.state.myProfileInfo.linked_profiles.map(link => link.name)
-    // console.log(name)
-    // let firstAndLastName = name.split(' ')
-    // return firstAndLastName[0]
-  }
-
   render() {
     return (
       <>
@@ -173,7 +166,6 @@ class MyProfile extends Component {
                   reloadMyProfile={this.reloadMyProfile}
                   picture={profile.picture_url}
                   name={profile.name}
-                  firstName={this.firstName()}
                   location={profile.location}
                   availability={''}
                 />
@@ -273,7 +265,6 @@ class MyProfile extends Component {
             <footer />
           </div>
         </section>
-        <button onClick={this.firstName} />
       </>
     )
   }

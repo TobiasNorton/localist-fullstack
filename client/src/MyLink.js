@@ -26,6 +26,11 @@ class MyLink extends Component {
     )
   }
 
+  firstName = () => {
+    let name = this.props.name
+    return name.split(' ').shift()
+  }
+
   render() {
     return (
       <div>
@@ -36,7 +41,7 @@ class MyLink extends Component {
           <section className="right-half">
             <p>{this.props.name}</p>
             <p>{this.props.location}</p>
-            <p>You are linked with {this.props.firstName}.</p>
+            <p>You are linked with {this.firstName()}.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div>
               <Link to={`/profiles/${this.props.id}`}>
