@@ -45,6 +45,13 @@ class Api::TripsController < ApplicationController
     end
   end
 
+  def delete
+    trip = current_profile.trips.find(params[:id])
+
+    trip.destroy
+    render json: trip
+  end
+
   private
 
   def trip_params

@@ -487,12 +487,45 @@ p.from {
   margin: 0.5rem;
   padding: 0 1rem 0 1rem;
   font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .my-profile li {
   font-family: 'Lato', sans-serif;
   list-style-type: none;
   margin-bottom: 0.3rem;
+}
+
+.new-trip-button {
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: hsl(200, 100%, 60%);
+  /* width: 14rem; */
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  margin: 0.2rem 0 0 0;
+  width: 9rem;
+}
+
+.remove-trip-button {
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: hsl(200, 100%, 60%);
+  /* width: 14rem; */
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  margin: 0.2rem 0 0 0;
+  /* width: 9rem; */
 }
 
 .my-links {
@@ -538,7 +571,6 @@ footer {
   height: 6rem;
   background-color: hsla(127, 50%, 80%, 1);
 }
-
 /* -------------- RequestProfile ---------- */
 
 .request-buttons button {

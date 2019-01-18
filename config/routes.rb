@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/api/trips', to: 'api/trips#index'
   get '/api/my_trips', to: 'api/trips#my_trips'
   post '/api/trips', to: 'api/trips#create'
+  delete '/api/trips/:id', to: 'api/trips#delete'
 
   # get '/api/links', to: 'api/links#index'
   get '/api/my_links', to: 'api/links#my_links'

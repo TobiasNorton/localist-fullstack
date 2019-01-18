@@ -8,6 +8,7 @@ import AddTrips from './AddTrips'
 import ProfileReady from './ProfileReady'
 import TheirProfile from './TheirProfile'
 import Edit from './Edit'
+import NewTrip from './NewTrip'
 import RequestProfile from './RequestProfile'
 
 import { observer } from 'mobx-react'
@@ -40,6 +41,7 @@ class App extends Component {
           <Route exact path="/my_profile" component={MyProfile} />
           <Route exact path="/profiles/:id/" component={TheirProfile} />
           <Route path="/edit/" component={Edit} />
+          <Route path="/new_trip" component={NewTrip} />
           <Route path="/request" compontent={RequestProfile} />
           <Route path="/login" render={() => auth.login()} />
 

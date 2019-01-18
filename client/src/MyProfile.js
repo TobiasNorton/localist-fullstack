@@ -46,7 +46,6 @@ class MyProfile extends Component {
   }
 
   showUpcomingTrips = () => {
-    console.log(this.state.myProfileInfo.trips)
     let trips = this.state.myProfileInfo.trips.map(trip => {
       return (
         <ul key={trip.id}>
@@ -63,10 +62,19 @@ class MyProfile extends Component {
               year: 'numeric'
             })}
           </li>
+          <button onClick={this.deleteTrip} value={trip.id} className="remove-trip-button">
+            Remove Trip
+          </button>
         </ul>
       )
     })
     return trips
+  }
+
+  deleteTrip = event => {
+    axios.delete(`/api/trips/${event.target.value}`).then(response => {
+      this.reloadMyProfile()
+    })
   }
 
   render() {
@@ -146,6 +154,9 @@ class MyProfile extends Component {
               <div className="line" />
 
               {this.showUpcomingTrips()}
+              <Link to={'/new_trip'} className="new-trip-button">
+                Add a New Trip
+              </Link>
               {/* <ul>
                 <li>Paris, France</li>
                 <li>June 18 - July 8, 2019</li>
