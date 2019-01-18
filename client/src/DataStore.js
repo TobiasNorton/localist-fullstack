@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { decorate, computed, observable } from 'mobx'
-import { observer } from 'mobx-react'
 import axios from 'axios'
-
-import { toJS } from 'mobx'
 
 class DataStore {
   constructor() {
@@ -23,23 +20,16 @@ class DataStore {
     })
   }
 
-  populateBrowseSection = theFunctionToCallOnceWeHaveLoadedTheData => {
+  populateBrowseSection = callBack => {
     // This is everyone whose location matches my trip destination
     axios.get('/api/profiles/browse').then(response => {
       dataStore.peopleInMyDestinations = response.data.profiles
 
-      if (theFunctionToCallOnceWeHaveLoadedTheData) {
-        theFunctionToCallOnceWeHaveLoadedTheData()
+      if (callBack) {
+        callBack()
       }
     })
   }
-
-  // getMyTrips = () => {
-  //   // This fills the 'Availability' fields with my trip dates
-  //   axios.get(`api/trips/${1}`).then(response => {
-  //     dataStore.myTrips = response.data.trips
-  //   })
-  // }
 
   editProfile = event => {
     event.preventDefault()
@@ -63,18 +53,6 @@ class DataStore {
       dataStore.profileDisplayed = response.data.displaying_profile
     })
   }
-
-  // showPeopleIAmLinkedWith = () => {
-  //   axios.get('/api/links').then(response => {
-  //     console.log(response.data)
-  //   })
-  // }
-
-  // getMyProfile = () => {
-  //   axios.get('/api/profiles/:id').then(response => {
-  //     console.log(response.data)
-  //   })
-  // }
 }
 
 decorate(DataStore, {

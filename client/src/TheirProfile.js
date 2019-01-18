@@ -64,7 +64,7 @@ class TheirProfile extends Component {
       return (
         <>
           <p className="link-status">You are linked with {this.state.profile.name}</p>
-          <button>Unlink</button>
+          <button onClick={this.deleteLink}>Unlink</button>
         </>
       )
     } else if (linkedProfileIDs.includes(!this.state.profile.id)) {
@@ -79,27 +79,20 @@ class TheirProfile extends Component {
     }
   }
 
-  createLink = event => {
-    axios.post('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
-      this.setState({
-        isLinked: true
-      })
-      // code here when the promise is done
-      // this.reloadTheirProfile()
+  deleteLink = event => {
+    axios.delete('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
+      console.log(response.data)
     })
-
-    // code here happens right away
+    this.loadMyProfile()
   }
 
-  // reloadTheirProfile = () => {
-  //   axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
-  //     console.log(response.data.profile)
-  //     this.setState({
-  //       profile: response.data.profile
-  //     })
-  //     // call this function inside component did mount
-  //   })
-  // }
+  createLink = event => {
+    axios.post('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
+      console.log(response)
+      // code here when the promise is done
+    })
+    // code here happens right away
+  }
 
   render() {
     return (
@@ -152,10 +145,10 @@ class TheirProfile extends Component {
                 <button>Decline</button>
               </div> */}
 
-              <p className="link-status">You are not linked with {this.state.profile.name}</p>
+              {/* <p className="link-status">You are not linked with {this.state.profile.name}</p> */}
 
-              {/* {this.linkOrUnlinkButton()} */}
-              <button onClick={this.createLink}>Link</button>
+              {this.renderLinkStatus()}
+              {/* <button onClick={this.createLink}>Link</button> */}
 
               {/* DO NOT REMOVE THIS CODE ^^^^ !!! */}
             </div>

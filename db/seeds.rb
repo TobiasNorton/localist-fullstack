@@ -191,13 +191,13 @@ toby.trips.create(location: "Paris, France", start_date: "2019-02-24", end_date:
 
 toby.trips.create(location: "Tangier, Morocco", start_date: "2019-03-07", end_date: "2019-03-15")
 
-languages = ["English", "English, French", "Spanish, English", "Spanish, German"]
+languages = ["English", "English, French", "Spanish, English", "Spanish, German", "Cantonese, English, Spanish"]
 
-cities = ["Galway, Ireland", "Paris, France", "Tangier, Morocco", "Vancouver, British Columbia", "Lima, Peru"]
+cities = ["Galway, Ireland", "Paris, France", "Tangier, Morocco", "Vancouver, British Columbia", "Lima, Peru", "Buenos Aires, Argentina", "Stockholm, Sweden", "Tokyo, Japan"]
 
 genders = ["M", "F", "Other/Prefer not to answer"]
 
-20.times do
+100.times do
   fake_person = Profile.create(name: Faker::Name.name, age: rand(18..68), gender: genders.sample, languages: languages.sample, location: cities.sample, about: "Stretch out with your feelings. You see, you can do it. I call it luck. In my experience, there's no such thing as luck. Look, going good against remotes is one thing. Going good against the living? That's something else. Looks like we're coming up on Alderaan. The Jedi are extinct, their fire has gone out of the universe. You, my friend, are all that's left of their religion.", why_joined: "He is here... Obi-Wan Kenobi! What makes you think so? A tremor in the Force. The last time I felt it was in the presence of my old master. Surely he must be dead by now. Don't underestimate the power of the Force.", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
   fake_person.trips.create(location: cities.sample, start_date: Faker::Date.between(12.days.from_now, Date.today), end_date: Faker::Date.between(Date.today, 100.days.from_now))

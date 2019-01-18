@@ -17,20 +17,20 @@ class HomePage extends Component {
   render() {
     return (
       <body>
-        {/* <Menu right>
-          <Link id="home" className="menu-item" to="/browse/">
+        <Menu right>
+          {/* <Link id="home" className="menu-item" to="/browse/">
             Browse
-          </Link>
-          <Link id="about" className="menu-item" to="/profiles/user/:id">
+          </Link> */}
+          <Link id="about" className="menu-item" to="/login/">
             Join
           </Link>
-          <Link id="contact" className="menu-item" to="/logout">
+          <Link id="contact" className="menu-item" to="/login/">
             Log In
+          </Link>
+          {/* <Link onClick={this.showSettings} className="menu-item--small" href="">
+            Settings
           </Link> */}
-        {/* <Link onClick={this.showSettings} className="menu-item--small" href="">
-        Settings
-      </Link> */}
-        {/* </Menu> */}
+        </Menu>
         <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">

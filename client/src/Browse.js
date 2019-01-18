@@ -137,7 +137,5 @@ class Browse extends Component {
     )
   }
 }
-// map over profiles in state
-// for each profile, return a 'Local' component
-// pass all the properties down as props to the Local component
+
 export default observer(Browse)
