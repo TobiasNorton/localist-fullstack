@@ -39,8 +39,8 @@ class Local extends Component {
             <p>You are not linked.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div>
-              <Link to={`/profiles/${this.props.id}`} className="button">
-                View Profile
+              <Link to={`/profiles/${this.props.id}`}>
+                <button className="button">View Profile</button>
               </Link>
               <button onClick={this.createLink}>
                 {this.state.linking ? 'Linking...' : 'Link'}

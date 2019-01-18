@@ -285,7 +285,7 @@ class EditProfile extends Component {
                 placeholder="picture.jpg"
               />
             </div>
-            <button type="submit">Add Trips</button>
+            <button type="submit">Add a Trip</button>
           </form>
           {/* <Link to="/browse/" className="button-link">
             Search Locals

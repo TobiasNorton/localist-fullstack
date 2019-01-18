@@ -121,7 +121,7 @@ class AddTrips extends Component {
                 </div>
               </div> */}
             </div>
-            <button type="submit">Okay, Let's Go!</button>
+            <button type="submit">Submit</button>
             {/* <button onClick={this.addAnothertrip}>Add Another Trip</button> */}
           </form>
         </div>

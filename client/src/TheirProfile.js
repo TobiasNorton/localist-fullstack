@@ -12,19 +12,45 @@ class TheirProfile extends Component {
     super(props)
 
     this.state = {
-      profile: {}
+      profile: {},
+      isLinked: false
     }
   }
   componentDidMount = () => {
     // dataStore.getProfile(this.props.match.params.id)
     axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
-      console.log(response.data.profile)
       this.setState({
         profile: response.data.profile
       })
       // this.state = response.data.displaying_profile
     })
   }
+
+  createLink = event => {
+    axios.post('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
+      this.setState({
+        isLinked: true
+      })
+      // code here when the promise is done
+      // this.reloadTheirProfile()
+    })
+
+    // code here happens right away
+  }
+
+  // linkOrUnlinkButton = () => {
+
+  // }
+
+  // reloadTheirProfile = () => {
+  //   axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
+  //     console.log(response.data.profile)
+  //     this.setState({
+  //       profile: response.data.profile
+  //     })
+  //     // call this function inside component did mount
+  //   })
+  // }
 
   render() {
     return (
@@ -78,7 +104,9 @@ class TheirProfile extends Component {
               </div> */}
 
               <p className="link-status">You are not linked with {this.state.profile.name}</p>
-              <button>Send Request</button>
+
+              {/* {this.linkOrUnlinkButton()} */}
+              <button onClick={this.createLink}>Link</button>
 
               {/* DO NOT REMOVE THIS CODE ^^^^ !!! */}
             </div>
