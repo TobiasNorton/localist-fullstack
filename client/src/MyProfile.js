@@ -77,6 +77,36 @@ class MyProfile extends Component {
     })
   }
 
+  whatsapp = () => {
+    if (this.state.myProfileInfo.whatsapp) {
+      return <li>WhatsApp: {this.state.myProfileInfo.whatsapp}</li>
+    }
+  }
+
+  facebook = () => {
+    if (this.state.myProfileInfo.facebook) {
+      return <li>Facebook Messenger: {this.state.myProfileInfo.facebook}</li>
+    }
+  }
+
+  email = () => {
+    if (this.state.myProfileInfo.email) {
+      return <li>Email: {this.state.myProfileInfo.email}</li>
+    }
+  }
+
+  instagram = () => {
+    if (this.state.myProfileInfo.instagram) {
+      return <li>Instagram: {this.state.myProfileInfo.instagram}</li>
+    }
+  }
+
+  phone = () => {
+    if (this.state.myProfileInfo.phone) {
+      return <li>Phone: {this.state.myProfileInfo.phone}</li>
+    }
+  }
+
   render() {
     return (
       <>
@@ -127,11 +157,16 @@ class MyProfile extends Component {
               <p className="header">Preferred Contact Information</p>
               <div className="line" />
               <ul className="body">
-                <li>WhatsApp: {this.state.myProfileInfo.whatsapp}</li>
+                {/* <li>WhatsApp: {this.state.myProfileInfo.whatsapp}</li>
                 <li>Email: {this.state.myProfileInfo.email}</li>
                 <li>Facebook Messenger: {this.state.myProfileInfo.facebook}</li>
                 <li>Instagram: {this.state.myProfileInfo.instagram}</li>
-                <li>Phone: {this.state.myProfileInfo.phone}</li>
+                <li>Phone: {this.state.myProfileInfo.phone}</li> */}
+                {this.whatsapp()}
+                {this.email()}
+                {this.facebook()}
+                {this.instagram()}
+                {this.phone()}
               </ul>
             </div>
 

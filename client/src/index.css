@@ -620,7 +620,15 @@ footer {
   font-size: 1.2rem;
 }
 
-/* --------------- Create a Profile ----------------- */
+/* --------------- CreateProfile ----------------- */
+
+.loading {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
 
 .create-profile {
   background-color: hsla(127, 50%, 80%, 1);

@@ -14,6 +14,7 @@ class ProfileReady extends Component {
         <section className="all-set">
           <div className="account-ready">
             <h2>You're All Set!</h2>
+            <div className="line" />
             <h3>Now for the fun part:</h3>
             <p>
               Based on your upcoming trips, Localist has provided you with a list of locals that are

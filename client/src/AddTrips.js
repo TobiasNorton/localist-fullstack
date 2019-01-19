@@ -83,7 +83,7 @@ class AddTrips extends Component {
         <div className="create-profile">
           <form onSubmit={this.addTrips} className="form-body">
             <div className="input">
-              <p>List your upcoming trips:</p>
+              <p>Add a trip here:</p>
 
               <div className="input">
                 <p>City:</p>

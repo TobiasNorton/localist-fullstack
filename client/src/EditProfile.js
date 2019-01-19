@@ -35,7 +35,7 @@ class EditProfile extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div>Loading</div>
+      return <div className="loading">Loading...</div>
     }
 
     return (
@@ -71,7 +71,7 @@ class EditProfile extends Component {
               />
             </div>
             <div className="input">
-              <p>Gender*</p>
+              {/* <p>Gender*</p>
               <section className="gender">
                 <div>
                   <input type="radio" name="profile[gender]" id="male" value="male" />
@@ -84,6 +84,17 @@ class EditProfile extends Component {
                 <div>
                   <input type="radio" name="profile[gender]" id="other" value="other" />
                   <label htmlFor="other">Other/Prefer not to answer</label>
+                </div>
+              </section> */}
+              <p>Will your profile be public? This allows travelers to reach out to you.</p>
+              <section className="gender">
+                <div>
+                  <input type="radio" name="profile[available]" id="male" value="true" />
+                  <label htmlFor="male">Yes, definitely</label>
+                </div>
+                <div>
+                  <input type="radio" name="profile[available]" id="female" value="false" />
+                  <label htmlFor="female">Not right now</label>
                 </div>
               </section>
             </div>
@@ -285,7 +296,7 @@ class EditProfile extends Component {
                 placeholder="picture.jpg"
               />
             </div>
-            <button type="submit">Add a Trip</button>
+            <button type="submit">Submit</button>
           </form>
           {/* <Link to="/browse/" className="button-link">
             Search Locals
