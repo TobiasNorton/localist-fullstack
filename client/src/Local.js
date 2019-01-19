@@ -26,6 +26,11 @@ class Local extends Component {
     // code here happens right away
   }
 
+  firstName = () => {
+    let name = this.props.name
+    return name.split(' ').shift()
+  }
+
   render() {
     return (
       <div>
@@ -36,7 +41,7 @@ class Local extends Component {
           <section className="right-half">
             <p>{this.props.name}</p>
             <p>{this.props.location}</p>
-            <p>You are not linked.</p>
+            <p>You are not linked with {this.firstName()}.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div>
               <Link to={`/profiles/${this.props.id}`}>

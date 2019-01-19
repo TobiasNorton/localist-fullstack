@@ -99,35 +99,6 @@ karen.picture.attach(io: File.open(Rails.root.join('client/public/Karen.jpg')), 
 # Link.create(profile_1: katie, profile_2: karen)
 # Link.create(profile_1: katie, profile_2: kenny)
 
-
-
-
-
-
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
-
-# Profile.create(name: "Jean-Sebastian Sirois", age: 26, gender: "M", location:, about:, why_joined:, facebook:, instagram:, phone:, whatsapp: "+ 1 234098 123098", email: "person@email.com", latitude:, longitude: )
 # {
 #     "name": "Jean-Sebastian Sirois",
 #     "location": "Paris, France",
@@ -180,11 +151,6 @@ karen.picture.attach(io: File.open(Rails.root.join('client/public/Karen.jpg')), 
 
 # gavin = Profile.create(name: "Gavin", location: "Antigua, Guatemala", about: "Bacon ipsum dolor amet pork loin tenderloin cupim leberkas sausage, burgdoggen bresaola shankle corned beef flank turducken. Ribeye pancetta beef fatback, beef ribs swine sirloin tail. Strip steak tongue shankle bacon, leberkas corned beef fatback meatball filet mignon. Boudin tenderloin swine fatback cupim pork chop tri-tip.", why_joined: Faker::PrincessBride.quote, phone: "941-911-9111", whatsapp: "+ 1 234098 123098" "+ 1 234098 123098", email: "person@email.com")
 
-# gavin.trips.create(location: "Chicago", start_date: "2019-01-21", end_date: "2012-01-22" )
-# gavin.trips.create(location: "New York", start_date: "2019-01-23", end_date: "2012-01-24" )
-
-
-
 toby.trips.create(location: "Dublin, Ireland", start_date: "2019-02-11", end_date: "2019-02-23")
 
 toby.trips.create(location: "Paris, France", start_date: "2019-02-24", end_date: "2019-03-06")
@@ -198,7 +164,7 @@ cities = ["Dublin, Ireland", "Edinburgh, SCotland" "Paris, France", "Tangier, Mo
 genders = ["M", "F", "Other/Prefer not to answer"]
 
 100.times do
-  fake_person = Profile.create(name: Faker::Name.name, age: rand(18..68), gender: genders.sample, languages: languages.sample, location: cities.sample, about: "I love to travel and meet new people. I am a software developer and have been working as an engineer for roughly 12 years. I absolutely love it. When I'm not coding I like to play music at local venues or paint. If you are coming to town let me know and I will gladly show you around! I am happy to show you around or make recommendations for whatever you may be into.", why_joined: "I found Localist to be a great platform for meeting new people when I travel and for meeting travelers when I'm at home. I love food, so when I go to a new place it's great to have some insight as to where the best spots would be, especially if it's homecooked in someone's kitchen. It's all about the cultural experience.", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
+  fake_person = Profile.create(name: Faker::Name.name, age: rand(18..68), gender: genders.sample, languages: languages.sample, location: cities.sample, about: "I am a software developer and have been working as an engineer for roughly 12 years. I absolutely love it. When I'm not coding I like to play music at local venues or paint. If you are coming to town let me know and I will gladly show you around! I am happy to show you around or make recommendations for whatever you may be into. I love to travel and meet new people.", why_joined: "I found Localist to be a great platform for meeting new people when I travel and for meeting travelers when I'm at home. I love food, so when I go to a new place it's great to have some insight as to where the best spots would be, especially if it's homecooked in someone's kitchen. It's all about the cultural experience.", phone: "941-911-9111", whatsapp: "+ 1 234098 123098", email: "person@email.com")
 
   fake_person.trips.create(location: cities.sample, start_date: Faker::Date.between(12.days.from_now, Date.today), end_date: Faker::Date.between(Date.today, 100.days.from_now))
 
