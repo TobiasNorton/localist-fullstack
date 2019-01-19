@@ -382,8 +382,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .profile-pic {
-  width: 24rem;
-  height: 24rem;
+  width: 20rem;
+  height: 20rem;
   object-fit: cover;
   display: block;
   padding: 1rem;
@@ -580,7 +580,7 @@ footer {
   font-size: 1.2rem;
 }
 
-/* --------------- Browse Locals --------------*/
+/* --------------- Browse --------------*/
 
 .browse-background {
   background-color: hsla(127, 50%, 80%, 1);
@@ -719,7 +719,7 @@ textarea {
   border-radius: 5px;
 }
 
-/* ------------ You're All Set -------------*/
+/* ------------ ProfileReady -------------*/
 
 .all-set {
   height: 100vh;

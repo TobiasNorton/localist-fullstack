@@ -55,7 +55,7 @@ class Browse extends Component {
   }
 
   renderLoading = () => {
-    return <div className="loading">LOADING</div>
+    return <div className="loading">Loading...</div>
   }
 
   profilesToRender = () => {

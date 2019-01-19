@@ -75,6 +75,10 @@ class MyProfile extends Component {
     axios.delete(`/api/trips/${event.target.value}`).then(response => {
       this.reloadMyProfile()
     })
+
+    // Iterate over my links in state
+    // For each of my links, if my trips.location(s) does not include
+    // them, delete.
   }
 
   whatsapp = () => {
