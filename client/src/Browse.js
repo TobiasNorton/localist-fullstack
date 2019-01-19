@@ -32,22 +32,10 @@ class Browse extends Component {
     }
   }
 
-  // populateBrowseSection = theFunctionToCallOnceWeHaveLoadedTheData => {
-  // This is everyone whose location matches my trip destination
-  //   axios.get('/api/profiles/browse').then(response => {
-  //     dataStore.peopleInMyDestinations = response.data.profiles
-
-  //     if (theFunctionToCallOnceWeHaveLoadedTheData) {
-  //       theFunctionToCallOnceWeHaveLoadedTheData()
-  //     }
-  //   })
-  // }
-
   // Original axios call before MobX
 
   componentDidMount = () => {
     axios.get('/api/profiles/browse').then(response => {
-      console.log(response.data.profiles)
       this.setState({
         loading: false,
         profiles: response.data.profiles
@@ -55,10 +43,6 @@ class Browse extends Component {
     })
 
     this.reloadMyProfile()
-
-    // axios.get('/api/trips').then(response => {
-    //   console.log(response.data)
-    // })
   }
 
   reloadMyProfile = () => {

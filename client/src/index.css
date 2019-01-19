@@ -714,20 +714,20 @@ textarea {
 /* ------------ You're All Set -------------*/
 
 .all-set {
-  height: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: hsla(127, 50%, 80%, 1);
 }
 
 .account-ready {
-  max-width: 40rem;
+  /* max-width: 40rem; */
+  width: 35rem;
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  margin: 2rem;
+  margin: 10rem 2rem 2rem 2rem;
 }
 
 .account-ready h2 {
@@ -748,15 +748,17 @@ textarea {
 .get-started-buttons {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .get-started-buttons button {
-  margin: 0 1rem 0 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 
 @media only screen and (max-width: 760px) {
   .account-ready {
-    width: 90vw;
+    width: 75vw;
+    margin-top: 5rem;
   }
 
   .get-started-buttons {
@@ -764,9 +766,19 @@ textarea {
   }
 }
 
+@media only screen and (max-width: 685px) {
+  .get-started-buttons button {
+    width: 12rem;
+  }
+}
+
 @media only screen and (max-width: 650px) {
   .big-field {
     width: 80vw;
+  }
+
+  .account-ready button {
+    width: 10rem;
   }
 }
 
@@ -811,6 +823,10 @@ textarea {
   }
 
   .link button {
+    width: 14rem;
+  }
+
+  .get-started-buttons button {
     width: 14rem;
   }
 }

@@ -2,46 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import { observer } from 'mobx-react'
-import dataStore from './DataStore'
 
 import NavBar from './NavBar'
 
 class ProfileReady extends Component {
-  componentDidMount = () => {
-    // dataStore.getAllProfiles()
-  }
-
-  // getNewProfile = () => {
-  //   dataStore.getProfile(dataStore.profiles.length - 1)
-  // }
-
   render() {
     return (
       <div>
-        {/* <nav className="nav-bar">
-          <p className="logo">Localist</p>
-          <div className="links">
-            <div className="dropdown"> */}
-        {/* <a href="#" className="dropdown-button">
-                Requests (4)
-              </a>
-              <div className="request-list hidden">
-                <a href="#">Michael Kelly</a>
-                <a href="#">Brenna Hensley</a>
-                <a href="#">Francis Begby</a>
-                <a href="#">Budsarin Hiranprueck</a>
-              </div> */}
-        {/* </div>
-            <a href="#">Browse</a> <a href="#">My Profile</a>
-            <a href="#">Sign Out</a> <a href="#" />
-            <div className="hamburger">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-        </nav> */}
-
         <NavBar />
 
         <section className="all-set">
@@ -64,7 +31,7 @@ class ProfileReady extends Component {
                 <button>Look for Locals</button>
               </Link>
               <Link to="/my_profile/">
-                <button onClick={this.getNewProfile}>Go To My Profile</button>
+                <button>My Profile</button>
               </Link>
             </div>
           </div>
