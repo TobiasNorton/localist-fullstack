@@ -48,7 +48,7 @@ class Edit extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div>Loading</div>
+      return <img src="/LoadingSpacePrincess.gif" />
     }
 
     return (

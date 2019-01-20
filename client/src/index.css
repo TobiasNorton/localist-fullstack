@@ -408,6 +408,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 30rem;
   border-radius: 5px;
   padding-bottom: 1rem;
+  box-shadow: 0 1px 0 hsla(185, 0%, 60%, 1);
 }
 
 .category .header {
@@ -421,6 +422,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* padding-bottom: 0.6rem; */
   line-height: 1.3rem;
   font-family: 'Lato', sans-serif;
+  color: hsla(185, 0%, 25%, 1);
 }
 
 .their-profile p {
@@ -514,18 +516,18 @@ p.from {
 }
 
 .remove-trip-button {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   text-decoration: none;
   text-align: center;
   color: white;
   background-color: hsl(200, 100%, 60%);
   /* width: 14rem; */
-  padding: 0.7rem;
+  padding: 0.3rem;
   border-radius: 5px;
   border: none;
   font-family: 'Lato', sans-serif;
   margin: 0.2rem 0 0 0;
-  /* width: 9rem; */
+  width: 7rem;
 }
 
 .my-links {
@@ -598,6 +600,7 @@ footer {
   border-radius: 5px;
   padding: 1rem;
   box-sizing: border-box;
+  box-shadow: 0 3px 5px hsla(185, 0%, 0%, 0.3);
 }
 
 /* inside .local
