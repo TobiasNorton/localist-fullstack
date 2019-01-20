@@ -159,8 +159,8 @@ class TheirProfile extends Component {
         <section className="their-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">{this.state.profile.name}</h3>
               <img src={this.state.profile.picture_url} className="profile-pic" alt="Budsarin" />
+              <h3 className="profile-name">{this.state.profile.name}</h3>
               <p className="from">{this.state.profile.location}</p>
               {/* <p className="link-status">You are linked with {this.state.profile.name}</p>
               <button>Unlink</button> */}
@@ -201,11 +201,11 @@ class TheirProfile extends Component {
               </ul>
             </div>
 
-            <div className="category">
+            {/* <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />
               <p className="body">You must be linked to see contact information.</p>
-            </div>
+            </div> */}
 
             <div className="category">
               <p className="header">About Me</p>

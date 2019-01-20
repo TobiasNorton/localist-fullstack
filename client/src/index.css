@@ -328,7 +328,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* ---------- Unmatched Profile -------- */
 
 .category .line {
-  background-color: grey;
+  /* background-color: grey; */
+  background-color: hsla(127, 50%, 50%, 1);
   height: 1px;
   width: 4rem;
   margin: 0.5rem;
@@ -374,10 +375,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .profile-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   text-align: center;
-  margin: 1rem;
+  margin: 1rem 0 0 0;
   font-family: 'Lato', sans-serif;
 }
 
@@ -388,6 +389,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: block;
   padding: 1rem;
   border-radius: 5px;
+  margin-top: 3rem;
   /* box-sizing: border-box; */
   box-shadow: 0px 3px 5px hsla(185, 0%, 80%, 1);
 }
@@ -408,7 +410,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 30rem;
   border-radius: 5px;
   padding-bottom: 1rem;
-  box-shadow: 0 1px 0 hsla(185, 0%, 60%, 1);
+  /* box-shadow: 0 1px 0 hsla(185, 0%, 60%, 1); */
+  box-shadow: 0 3px 5px hsla(185, 0%, 0%, 0.3);
 }
 
 .category .header {
@@ -422,7 +425,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* padding-bottom: 0.6rem; */
   line-height: 1.3rem;
   font-family: 'Lato', sans-serif;
-  color: hsla(185, 0%, 25%, 1);
+  color: hsla(185, 0%, 30%, 1);
 }
 
 .their-profile p {
@@ -441,12 +444,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-family: 'Lato', sans-serif;
   list-style-type: none;
   margin-bottom: 0.3rem;
+  color: hsla(185, 0%, 25%, 1);
 }
 
 .their-profile button {
   margin: 0.5rem;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ------------- MyProfile --------------- */
@@ -480,7 +484,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 p.from {
-  padding: 1rem 0 0.5rem 0;
+  padding: 0 0 0.5rem 0;
   margin: 5px;
   font-family: 'Lato', sans-serif;
 }
@@ -498,6 +502,23 @@ p.from {
   font-family: 'Lato', sans-serif;
   list-style-type: none;
   margin-bottom: 0.3rem;
+  color: hsla(185, 0%, 30%, 1);
+}
+
+.edit-profile-button {
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: hsl(200, 100%, 60%);
+  /* width: 14rem; */
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  margin: 0.2rem 0 0 1rem;
+  width: 9rem;
+  margin-bottom: 0.5rem;
 }
 
 .new-trip-button {
@@ -511,7 +532,7 @@ p.from {
   border-radius: 5px;
   border: none;
   font-family: 'Lato', sans-serif;
-  margin: 0.2rem 0 0 0;
+  margin: 0.2rem 0 0.5rem 0;
   width: 9rem;
 }
 
@@ -519,12 +540,15 @@ p.from {
   font-size: 0.9rem;
   text-decoration: none;
   text-align: center;
-  color: white;
-  background-color: hsl(200, 100%, 60%);
+  /* color: white; */
+  /* background-color: hsl(200, 100%, 60%); */
+  color: hsla(200, 0%, 50%);
+  background-color: hsla(200, 0%, 95%);
+  border: 2px solid hsla(200, 0%, 80%);
   /* width: 14rem; */
   padding: 0.3rem;
   border-radius: 5px;
-  border: none;
+  /* border: none; */
   font-family: 'Lato', sans-serif;
   margin: 0.2rem 0 0 0;
   width: 7rem;
@@ -631,6 +655,7 @@ footer {
   font-size: 2rem;
   text-align: center;
   margin-top: 4rem;
+  height: 100vh;
 }
 
 .create-profile {
@@ -828,8 +853,9 @@ textarea {
 
   img.profile-pic {
     /* width: 85vw; */
-    width: 85vw;
-    margin-bottom: 0.5rem;
+    width: 75vw;
+    margin: 2rem 0 0.5rem 0;
+    height: auto;
     /* box-sizing: border-box; */
   }
 

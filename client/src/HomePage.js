@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import waterfall from './Waterfall.jpg'
+import girlsInBoat from './meetpeoplesolotravel.jpeg'
+import groupSitting from './GroupSitting.jpeg'
+
 import { slide as Menu } from 'react-burger-menu'
 
 class HomePage extends Component {
@@ -61,7 +65,7 @@ class HomePage extends Component {
           <h1 onClick={this.showWhatIsSection}>What is Localist?</h1>
           <div className="box-container">
             <div className="box">
-              <img src="./Waterfall.jpg" />
+              <img src={waterfall} />
               <p className="header">Experience Culture</p>
               <p className="body">
                 Localist provides a unique platform to meet with locals anywhere on the planet so
@@ -72,7 +76,7 @@ class HomePage extends Component {
               </p>
             </div>
             <div className="box">
-              <img src="./meetpeoplesolotravel.jpeg" />
+              <img src={girlsInBoat} />
               <p className="header">Locals Can Hang Out With Travelers</p>
               <p className="body">
                 Show off your town! Remember, those from other countries don't have the same context
@@ -83,7 +87,7 @@ class HomePage extends Component {
               </p>
             </div>
             <div className="box">
-              <img src="./GroupSitting.jpeg" />
+              <img src={groupSitting} />
               <p className="header">What Localist is Not</p>
               <p className="body">
                 Localist is not a dating website or a platform for couch sharing, but hey, it's a

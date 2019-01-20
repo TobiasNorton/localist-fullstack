@@ -143,10 +143,10 @@ class MyProfile extends Component {
         <section className="my-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">{this.state.myProfileInfo.name}</h3>
               <img src={this.state.myProfileInfo.picture_url} className="profile-pic" alt="Toby" />
+              <h3 className="profile-name">{this.state.myProfileInfo.name}</h3>
               <p className="from">{this.state.myProfileInfo.location}</p>
-              <Link to={'/edit'} className="button">
+              <Link to={'/edit'} className="edit-profile-button">
                 Edit Profile
               </Link>
             </div>
