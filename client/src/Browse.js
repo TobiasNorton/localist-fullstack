@@ -55,7 +55,8 @@ class Browse extends Component {
   }
 
   renderLoading = () => {
-    return <div className="loading">Loading...</div>
+    return <img src="/LoadingSpacePrincess.gif" />
+    // return <div className="loading">Loading...</div>
   }
 
   profilesToRender = () => {
