@@ -42,7 +42,7 @@ class App extends Component {
           <Route exact path="/profiles/:id/" component={TheirProfile} />
           <Route path="/edit/" component={Edit} />
           <Route path="/new_trip" component={NewTrip} />
-          <Route path="/request" compontent={RequestProfile} />
+          <Route path="/request" component={RequestProfile} />
           <Route path="/login" render={() => auth.login()} />
 
           <Route
