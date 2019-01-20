@@ -93,11 +93,11 @@ class Edit extends Component {
               <p>Will your profile be public? This allows travelers to reach out to you.</p>
               <section className="gender">
                 <div>
-                  <input type="radio" name="profile[available]" id="male" value="true" />
+                  <input type="radio" name="profile[available]" id="yes" value="true" checked />
                   <label htmlFor="yes">Yes</label>
                 </div>
                 <div>
-                  <input type="radio" name="profile[available]" id="female" value="false" />
+                  <input type="radio" name="profile[available]" id="no" value="false" />
                   <label htmlFor="no">Not right now</label>
                 </div>
               </section>
