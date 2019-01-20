@@ -77,6 +77,38 @@ class TheirProfile extends Component {
     }
   }
 
+  renderContactInfo = () => {
+    const linkedProfileIDs = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
+
+    if (linkedProfileIDs.includes(this.state.profile.id)) {
+      return (
+        <>
+          <div className="category">
+            <p className="header">Contact Me</p>
+            <div className="line" />
+            <ul className="body">
+              {this.whatsapp()}
+              {this.email()}
+              {this.facebook()}
+              {this.instagram()}
+              {this.phone()}
+            </ul>
+          </div>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <div className="category">
+            <p className="header">Contact Me</p>
+            <div className="line" />
+            <p className="body">You must be linked to see contact information.</p>
+          </div>
+        </>
+      )
+    }
+  }
+
   deleteLink = event => {
     axios.delete(`/api/links/${this.state.profile.id}`).then(response => {
       this.loadMyProfile()
@@ -189,7 +221,9 @@ class TheirProfile extends Component {
           </div>
 
           <div className="right">
-            <div className="category">
+            {this.renderContactInfo()}
+
+            {/* <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />
               <ul className="body">
@@ -199,7 +233,7 @@ class TheirProfile extends Component {
                 {this.instagram()}
                 {this.phone()}
               </ul>
-            </div>
+            </div> */}
 
             {/* <div className="category">
               <p className="header">Contact Me</p>
