@@ -388,6 +388,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   object-fit: cover;
   display: block;
   padding: 1rem;
+  background-color: hsla(127, 50%, 90%, 1);
   border-radius: 5px;
   margin-top: 3rem;
   /* box-sizing: border-box; */
@@ -654,8 +655,9 @@ footer {
   font-family: 'Lato', sans-serif;
   font-size: 2rem;
   text-align: center;
-  margin-top: 4rem;
+  padding-top: 4rem;
   height: 100vh;
+  background-color: hsla(127, 50%, 80%, 1);
 }
 
 .create-profile {

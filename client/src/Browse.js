@@ -55,8 +55,8 @@ class Browse extends Component {
   }
 
   renderLoading = () => {
-    return <img src="/LoadingSpacePrincess.gif" />
-    // return <div className="loading">Loading...</div>
+    // return <img src="/LoadingSpacePrincess.gif" />
+    return <div className="loading">Loading...</div>
   }
 
   profilesToRender = () => {
@@ -87,6 +87,16 @@ class Browse extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      // return <img src="/LoadingSpacePrincess.gif" />
+      return (
+        <>
+          <NavBar />
+          <div className="loading">Loading...</div>
+        </>
+      )
+    }
+
     return (
       <>
         {/* <nav className="nav-bar">

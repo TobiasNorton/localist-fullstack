@@ -48,7 +48,13 @@ class Edit extends Component {
 
   render() {
     if (this.state.loading) {
-      return <img src="/LoadingSpacePrincess.gif" />
+      // return <img src="/LoadingSpacePrincess.gif" />
+      return (
+        <>
+          <NavBar />
+          <div className="loading">Loading...</div>
+        </>
+      )
     }
 
     return (
@@ -84,7 +90,19 @@ class Edit extends Component {
               />
             </div>
             <div className="input">
-              <p>Gender*</p>
+              <p>Will your profile be public? This allows travelers to reach out to you.</p>
+              <section className="gender">
+                <div>
+                  <input type="radio" name="profile[available]" id="male" value="true" />
+                  <label htmlFor="yes">Yes</label>
+                </div>
+                <div>
+                  <input type="radio" name="profile[available]" id="female" value="false" />
+                  <label htmlFor="no">Not right now</label>
+                </div>
+              </section>
+
+              {/* <p>Gender*</p>
               <section className="gender">
                 <div>
                   <input type="radio" name="profile[gender]" id="male" value="male" />
@@ -98,7 +116,7 @@ class Edit extends Component {
                   <input type="radio" name="profile[gender]" id="other" value="other" />
                   <label htmlFor="other">Other/Prefer not to answer</label>
                 </div>
-              </section>
+              </section> */}
             </div>
             <div className="input">
               <p>Location</p>

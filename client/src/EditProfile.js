@@ -35,7 +35,13 @@ class EditProfile extends Component {
 
   render() {
     if (this.state.loading) {
-      return <img src="/LoadingSpacePrincess.gif" />
+      // return <img src="/LoadingSpacePrincess.gif" />
+      return (
+        <>
+          <NavBar />
+          <div className="loading">Loading...</div>
+        </>
+      )
     }
 
     return (
