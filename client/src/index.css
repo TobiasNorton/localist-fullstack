@@ -618,10 +618,22 @@ footer {
 
 .browse-background {
   background-color: hsla(127, 50%, 80%, 1);
-  padding: 3rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.browse-prompt {
+  text-align: center;
+  margin-bottom: 0;
+  color: hsla(185, 0%, 30%, 1);
+}
+
+.browse-prompt span {
+  color: hsl(200, 100%, 60%);
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .local {

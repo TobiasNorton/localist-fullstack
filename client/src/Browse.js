@@ -68,7 +68,12 @@ class Browse extends Component {
   renderProfiles = () => {
     return (
       <>
-        <p>We found {this.state.profiles.length} locals in your travel destinations!</p>
+        <div className="category">
+          <p className="browse-prompt">
+            We found <span>{this.state.profiles.length}</span> locals in your travel destinations!
+          </p>
+        </div>
+
         {this.profilesToRender().map(profile => {
           return (
             <Local
