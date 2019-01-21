@@ -30,6 +30,7 @@ class TheirProfile extends Component {
   }
 
   componentDidMount = () => {
+    window.scrollTo(0, 0)
     // dataStore.getProfile(this.props.match.params.id)
     axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
       console.log(response.data.profile)

@@ -55,7 +55,7 @@ class HomePage extends Component {
             <br />
             <span>Localist</span>
           </p>
-          <h3 className="main-caption">Meet With Locals, Anywhere in the World.</h3>
+          <h3 className="main-caption">Meet with Locals, Anywhere in the World.</h3>
           <Link to="/login/">
             <button>Join the Family</button>
           </Link>
