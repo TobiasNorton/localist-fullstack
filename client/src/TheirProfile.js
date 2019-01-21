@@ -255,7 +255,7 @@ class TheirProfile extends Component {
             <div className="category">
               <p className="header">Available</p>
               <div className="line" />
-              <p className="body">June 18 - July 8, 2019</p>
+              <p className="body">Any day after 5. Free on weekends.</p>
             </div>
 
             {/* <p className="link-status">You are linked with Budsarin Hiranprueck</p>

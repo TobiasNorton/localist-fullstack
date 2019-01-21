@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import NavBar from './NavBar'
 
 class RequestProfile extends Component {
   render() {
     return (
       <>
-        <nav className="nav-bar">
+        {/* <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <div className="dropdown">
@@ -21,13 +22,15 @@ class RequestProfile extends Component {
             <a href="#">Browse</a> <a href="#">My Profile</a>
             <a href="#">Sign Out</a> <a href="#" />
           </div>
-        </nav>
+        </nav> */}
+
+        <NavBar />
 
         <section className="their-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">Michael Kelly</h3>
               <img src="./MichaelKelly.jpg" className="profile-pic" alt="Michael Kelly" />
+              <h3 className="profile-name">Michael Kelly</h3>
               <p className="from">Galway, Ireland</p>
               <p className="link-status">Michael Kelly would like to link with you.</p>
               <div className="request-buttons">

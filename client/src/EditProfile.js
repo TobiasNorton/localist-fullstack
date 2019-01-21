@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import dataStore from './DataStore'
 
 import NavBar from './NavBar'

@@ -19,10 +19,10 @@ class Local extends Component {
     })
 
     axios.post('/api/links', { other_profile_id: this.props.id }).then(response => {
+      // Add trip ID as a second argument when doing this to link 'links' to 'trips'
       // code here when the promise is done
       this.props.reloadMyProfile()
     })
-
     // code here happens right away
   }
 
