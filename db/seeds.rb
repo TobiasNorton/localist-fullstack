@@ -176,11 +176,11 @@ karen.picture.attach(io: File.open(Rails.root.join('client/public/Karen.jpg')), 
 
 # gavin = Profile.create(name: "Gavin", location: "Antigua, Guatemala", about: "Bacon ipsum dolor amet pork loin tenderloin cupim leberkas sausage, burgdoggen bresaola shankle corned beef flank turducken. Ribeye pancetta beef fatback, beef ribs swine sirloin tail. Strip steak tongue shankle bacon, leberkas corned beef fatback meatball filet mignon. Boudin tenderloin swine fatback cupim pork chop tri-tip.", why_joined: Faker::PrincessBride.quote, phone: "941-234-2341", whatsapp: "+ 1 234098 123098" "+ 1 234098 123098", email: "person@email.com")
 
-toby.trips.create(location: "Dublin, Ireland", start_date: "2019-02-11", end_date: "2019-02-23")
+# toby.trips.create(location: "Dublin, Ireland", start_date: "2019-02-11", end_date: "2019-02-23")
 
-toby.trips.create(location: "Paris, France", start_date: "2019-02-24", end_date: "2019-03-06")
+# toby.trips.create(location: "Paris, France", start_date: "2019-02-24", end_date: "2019-03-06")
 
-toby.trips.create(location: "Tangier, Morocco", start_date: "2019-03-07", end_date: "2019-03-15")
+# toby.trips.create(location: "Tangier, Morocco", start_date: "2019-03-07", end_date: "2019-03-15")
 
 languages = ["English", "English, French", "Spanish, English", "Spanish, German", "Cantonese, English, Spanish"]
 
