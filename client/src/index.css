@@ -540,7 +540,7 @@ p.from {
   border-radius: 5px;
   border: none;
   font-family: 'Lato', sans-serif;
-  margin: 0.2rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   width: 9rem;
 }
 
@@ -607,9 +607,15 @@ footer {
 }
 /* -------------- RequestProfile ---------- */
 
+.request-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .request-buttons button {
   margin-bottom: 1rem;
-  width: 13.5rem;
+  width: 10rem;
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
 }
@@ -651,13 +657,14 @@ footer {
 .right-half {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;`
 } */
 
 .local p {
   margin: 0 0 0.5rem 1rem;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  color: hsla(185, 0%, 30%, 1);
 }
 
 .local button {
@@ -665,6 +672,11 @@ footer {
   width: 9rem;
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
+}
+
+.local .name {
+  color: black;
+  font-weight: 600;
 }
 
 /* --------------- CreateProfile ----------------- */

@@ -39,7 +39,7 @@ class MyLink extends Component {
             <img src={this.props.picture} className="mini-pic" />
           </section>
           <section className="right-half">
-            <p>{this.props.name}</p>
+            <p className="name">{this.props.name}</p>
             <p>{this.props.location}</p>
             <p>You are linked with {this.firstName()}.</p>
             {/* <p>Available: {dataStore.theirAvailability()}</p> */}

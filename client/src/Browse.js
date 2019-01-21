@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Local from './Local'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 
 import { observer } from 'mobx-react'
