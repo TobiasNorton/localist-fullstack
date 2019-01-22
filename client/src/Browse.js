@@ -28,8 +28,6 @@ class Browse extends Component {
     }
   }
 
-  // Original axios call before MobX
-
   componentDidMount = () => {
     axios.get('/api/profiles/browse').then(response => {
       this.setState({
@@ -100,35 +98,12 @@ class Browse extends Component {
 
     return (
       <>
-        {/* <nav className="nav-bar">
-          <p className="logo">Localist</p>
-          <div className="links">
-            <div className="dropdown">
-              <a href="#" className="dropdown-button">
-                Requests (4)
-              </a>
-              <div className="request-list hidden">
-                <a href="#">Michael Kelly</a>
-                <a href="#">Brenna Hensley</a>
-                <a href="#">Francis Begby</a>
-                <a href="#">Budsarin Hiranprueck</a>
-              </div>
-            </div>
-            <Link to="/browse/">Browse</Link> <Link to="/profiles/user/">My Profile</Link>
-            <Link to="/logout">Sign Out</Link>
-            <div className="hamburger">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-        </nav> */}
-
         <NavBar />
 
         <main className="browse-background">
           {this.state.loading ? this.renderLoading() : this.renderProfiles()}
         </main>
+        <div className="footer" />
       </>
     )
   }
