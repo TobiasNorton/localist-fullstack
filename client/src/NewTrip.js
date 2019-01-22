@@ -33,6 +33,7 @@ class NewTrip extends Component {
   addTrips = event => {
     event.preventDefault()
 
+    alert('clicked')
     const formData = new FormData(event.target)
 
     for (let pair of formData.entries()) {

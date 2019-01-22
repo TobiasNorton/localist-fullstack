@@ -82,7 +82,7 @@ code {
   margin: 0 0 2rem 0;
 }
 
-.hamburger {
+/* .hamburger {
   margin-right: 1rem;
   display: none;
 }
@@ -104,10 +104,10 @@ code {
   left: 0;
   background-color: black;
   color: black;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-}
+} */
 
 .logo {
   font-family: 'Good Vibes';
@@ -264,7 +264,7 @@ button {
   width: 36px;
   height: 30px;
   right: 14px;
-  top: 14px;
+  top: 13px;
   display: none;
 }
 
