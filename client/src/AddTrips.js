@@ -48,36 +48,9 @@ class AddTrips extends Component {
     })
   }
 
-  // addAnotherTrip = () => {
-  //   return (
-  //     <div className="input">
-  //       <p>City:</p>
-  //       <input type="text" placeholder="City, Country" />
-  //       <p>Travel Dates:</p>
-
-  //       <div className="travel-dates">
-  //         <label>From</label>
-  //         <input type="date" />
-  //       </div>
-
-  //       <div className="travel-dates">
-  //         <label>Until</label>
-  //         <input type="date" />
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
   render() {
     return (
       <div>
-        {/* <nav className="nav-bar">
-          <p className="logo">Localist</p>
-          <div className="links">
-            <a href="#">Join</a> <a href="#">Log In</a> <a href="#" />
-          </div>
-        </nav> */}
-
         <NavBar />
 
         <div className="create-profile">
@@ -100,38 +73,6 @@ class AddTrips extends Component {
                   <input type="date" name="trip[end_date]" />
                 </div>
               </div>
-
-              {/* <div className="input">
-                <p>City:</p>
-                <input type="text" name="trip[location]" placeholder="City, Country" />
-                <p>Travel Dates:</p>
-
-                <div className="travel-dates">
-                  <label>From</label>
-                  <input type="date" name="trip[start_date]" />
-                </div>
-
-                <div className="travel-dates">
-                  <label>Until</label>
-                  <input type="date" name="trip[end_date]" />
-                </div>
-              </div>
-
-              <div className="input">
-                <p>City:</p>
-                <input type="text" name="trip[location]" placeholder="City, Country" />
-                <p>Travel Dates:</p>
-                <div className="travel-dates">
-                  <section className="from-until">
-                    <label>From</label>
-                    <input type="date" name="trip[start_date]" />
-                  </section>
-                  <section className="from-until">
-                    <label>Until</label>
-                    <input type="date" name="trip[end_date]" />
-                  </section>
-                </div>
-              </div> */}
             </div>
             <button type="submit">Submit</button>
             {/* <button onClick={this.addAnothertrip}>Add Another Trip</button> */}

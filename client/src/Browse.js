@@ -4,9 +4,6 @@ import axios from 'axios'
 import NavBar from './NavBar'
 
 import { observer } from 'mobx-react'
-// import dataStore from './DataStore'
-
-// import { toJS } from 'mobx'
 
 import auth from './auth'
 import history from './history'
