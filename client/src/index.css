@@ -437,7 +437,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .their-profile p {
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
   padding: 0 3rem 0 3rem;
   font-family: 'Lato', sans-serif;
 }
@@ -487,6 +487,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .my-profile p {
+  /* margin: 0.5rem; */
   padding: 0 3rem 0 3rem;
   font-family: 'Lato', sans-serif;
 }
@@ -565,6 +566,8 @@ p.from {
 .my-links {
   font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
+  margin-bottom: 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .link {
@@ -697,6 +700,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .form-body {
@@ -825,6 +829,15 @@ textarea {
   margin: 1rem 1rem 0 1rem;
 }
 
+.main-footer {
+  font-size: 0.9rem;
+  color: white;
+  background-color: hsla(127, 50%, 50%, 1);
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  padding: 1.2rem;
+}
+
 @media only screen and (max-width: 760px) {
   .account-ready {
     width: 75vw;
@@ -874,6 +887,10 @@ textarea {
   .category {
     width: 95vw;
     margin: 0.3rem 0 0.3rem 0;
+  }
+
+  .category p {
+    text-align: center;
   }
 
   .link {

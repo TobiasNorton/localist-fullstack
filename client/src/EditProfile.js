@@ -63,6 +63,7 @@ class EditProfile extends Component {
                 name="profile[name]"
                 defaultValue={this.state.profile.name}
                 placeholder="Your Name Here"
+                // autoComplete="off"
               />
             </div>
             <div className="input">
@@ -73,6 +74,7 @@ class EditProfile extends Component {
                 defaultValue={this.state.profile.age}
                 maxLength="3"
                 placeholder="Your Age Here"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -110,6 +112,7 @@ class EditProfile extends Component {
                 name="profile[location]"
                 defaultValue={this.state.profile.location}
                 placeholder="My Hometown, Anywhere"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -119,6 +122,7 @@ class EditProfile extends Component {
                 name="profile[languages]"
                 defaultValue={this.state.profile.languages}
                 placeholder="English, Cantonese, Spanish"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -130,6 +134,7 @@ class EditProfile extends Component {
                 defaultValue={this.state.profile.about}
                 rows="5"
                 placeholder="Interests, hobbies, background, etc."
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -141,6 +146,7 @@ class EditProfile extends Component {
                 defaultValue={this.state.profile.why_joined}
                 rows="5"
                 placeholder="Hidden food gems, good conversation"
+                autoComplete="off"
               />
             </div>
 
@@ -152,6 +158,7 @@ class EditProfile extends Component {
                 name="profile[whatsapp]"
                 defaultValue={this.state.profile.whatsapp}
                 placeholder="+ 123 4567890123"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -161,6 +168,7 @@ class EditProfile extends Component {
                 name="profile[phone]"
                 defaultValue={this.state.profile.phone}
                 placeholder="911-555-3423"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -170,6 +178,7 @@ class EditProfile extends Component {
                 name="profile[email]"
                 defaultValue={this.state.profile.email}
                 placeholder="coolperson@coolmail.com"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -179,6 +188,7 @@ class EditProfile extends Component {
                 name="profile[facebook]"
                 defaultValue={this.state.profile.facebook}
                 placeholder="Your Facebook"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -188,10 +198,11 @@ class EditProfile extends Component {
                 name="profile[instagram]"
                 defaultValue={this.state.profile.instagram}
                 placeholder="@your.instagram.name"
+                autoComplete="off"
               />
             </div>
             <div className="input">
-              <p>List your upcoming trips:</p>
+              {/* <p>List your upcoming trips:</p> */}
 
               {/* <div className="input">
                 <p>City:</p>
