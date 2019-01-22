@@ -77,7 +77,7 @@ class HomePage extends Component {
               <p className="header">Locals Can Hang Out With Travelers</p>
               <p className="body">
                 Show off your town! Remember, those from other countries don't have the same context
-                as you; your town might be cooler than you think, and it could be a great
+                as you; your town might be more fun than you think, and it could be a great
                 opportunity to hang out with someone from another country. The best part is, it's
                 non-committal, so no one is obligated to do anything beyond the initial hang out.
                 Meet up for lunch, a beer or for a 3-day hike. It's up to you.
@@ -102,20 +102,20 @@ class HomePage extends Component {
             <div className="box">
               <p className="header">Create an Account</p>
               <p className="body">
-                You will be prompted to register with Localist through either Facebook or Google for
-                authentication purposes. From there you will create a profile. After filling out the
-                necessary information, you can add dates and destinations of trips you'll be taking,
-                and Localist will take it from there.
+                You will be prompted to register with Localist through Google for authentication
+                purposes. From there you will create a profile. After filling out the necessary
+                information, you can add dates and destinations of trips you'll be taking, and
+                Localist will take it from there.
               </p>
             </div>
             <div className="box">
               <p className="header">Browse Locals</p>
               <p className="body">
                 Based on your travel information, you will be provided with a list of locals that
-                live in the cities you will be traveling to. You may view their profiles or request
-                to link with them. You may also receive requests from incoming travelers that are
-                planning to visit your town, at which point you may view their profile. You may
-                accept or decline any link request.
+                live in your travel destinations. As you scroll through, you may view their profiles
+                or link with them. Incoming travelers that are planning to visit your town may also
+                link with you if your profile is set to "public". You may unlink with someone at any
+                time.
               </p>
             </div>
             <div className="box">
