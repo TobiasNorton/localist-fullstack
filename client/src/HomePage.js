@@ -50,11 +50,8 @@ class HomePage extends Component {
         </nav>
 
         <section className="main">
-          <p className="welcome">
-            Welcome to
-            <br />
-            <span>Localist</span>
-          </p>
+          <p className="welcome">Welcome to</p>
+          <div className="localist">Localist</div>
           <h3 className="main-caption">Meet with Locals, Anywhere in the World.</h3>
           <Link to="/login/">
             <button>Join the Family</button>
