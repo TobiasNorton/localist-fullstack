@@ -551,9 +551,9 @@ p.from {
   text-align: center;
   /* color: white; */
   /* background-color: hsl(200, 100%, 60%); */
-  color: hsla(200, 0%, 50%);
-  background-color: hsla(200, 0%, 95%);
-  border: 2px solid hsla(200, 0%, 80%);
+  color: hsla(200, 0%, 50%, 1);
+  background-color: hsla(200, 0%, 95%, 1);
+  border: 2px solid hsla(200, 0%, 80%, 1);
   /* width: 14rem; */
   padding: 0.3rem;
   border-radius: 5px;

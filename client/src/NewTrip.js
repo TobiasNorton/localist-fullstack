@@ -33,26 +33,15 @@ class NewTrip extends Component {
   addTrips = event => {
     event.preventDefault()
 
-    alert('clicked')
     const formData = new FormData(event.target)
 
-    for (let pair of formData.entries()) {
-      alert(pair[0] + ', ' + pair[1])
-    }
-
-    axios
-      .post('/api/trips', formData)
-      .then(response => {
-        alert('OK!')
-        // if (response.data.errors) {
-        //   this.setState({ showProfileLink: true })
-        // } else {
-        history.push('/my_profile')
-        // }
-      })
-      .catch(error => {
-        alert(error)
-      })
+    axios.post('/api/trips', formData).then(response => {
+      // if (response.data.errors) {
+      //   this.setState({ showProfileLink: true })
+      // } else {
+      history.push('/my_profile')
+      // }
+    })
   }
 
   render() {
