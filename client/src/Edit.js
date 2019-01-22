@@ -35,9 +35,9 @@ class Edit extends Component {
 
     const formData = new FormData(event.target)
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
+    // for (let pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1])
+    // }
 
     axios.put('/api/profile', formData).then(response => {
       // history.push('/my_profile')

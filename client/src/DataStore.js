@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 import { decorate, computed, observable } from 'mobx'
 import axios from 'axios'
+
+import history from './history'
 
 class DataStore {
   constructor() {
@@ -36,12 +38,8 @@ class DataStore {
 
     const formData = new FormData(event.target)
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
-
     axios.put('/api/profile', formData).then(response => {
-      // TODO: Replace with history.push()
+      history.push('/add_trips')
       window.location = '/add_trips'
     })
     this.getAllProfiles()
