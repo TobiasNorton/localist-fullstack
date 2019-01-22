@@ -441,7 +441,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* padding-bottom: 0.6rem; */
   line-height: 1.3rem;
   font-family: 'Lato', sans-serif;
-  color: hsla(185, 0%, 30%, 1);
+  color: hsla(185, 0%, 25%, 1);
 }
 
 .their-profile p {
@@ -652,6 +652,9 @@ footer {
   text-align: center;
   margin-bottom: 0;
   color: hsla(185, 0%, 30%, 1);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .browse-prompt span {
@@ -816,6 +819,12 @@ textarea {
   background-color: hsla(127, 50%, 80%, 1);
 }
 
+.all-set-p {
+  color: hsla(185, 0%, 30%, 1);
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
 .account-ready {
   /* max-width: 40rem; */
   width: 35rem;
@@ -858,6 +867,12 @@ textarea {
   text-align: center;
   padding: 1.2rem;
 } */
+
+@media only screen and (max-width: 980px) {
+  .category p {
+    text-align: center;
+  }
+}
 
 @media only screen and (max-width: 760px) {
   .account-ready {

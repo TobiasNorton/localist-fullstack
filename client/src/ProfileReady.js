@@ -16,12 +16,12 @@ class ProfileReady extends Component {
             <h2>You're All Set!</h2>
             <div className="line" />
             <h3>Now for the fun part:</h3>
-            <p>
+            <p className="all-set-p">
               Based on your upcoming trips, Localist has provided you with a list of locals that are
               available in your destinations during the time that you will be visiting. You may
               either go to your profile or start looking for locals to link with.
             </p>
-            <p>
+            <p className="all-set-p">
               When you are scrolling through locals, you may request to link with someone, or view
               their profile. If you request someone, they will be notified of your request and can
               either accept or deny. If they accept, your contact information will become visible to
