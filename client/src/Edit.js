@@ -212,8 +212,6 @@ class Edit extends Component {
               />
             </div>
             <div className="input">
-              <p>List your upcoming trips:</p>
-
               <p>Upload a Photo of Yourself</p>
               <input
                 type="file"

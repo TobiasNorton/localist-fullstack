@@ -49,7 +49,7 @@ class MyProfile extends Component {
   showUpcomingTrips = () => {
     let trips = this.state.myProfileInfo.trips.map(trip => {
       return (
-        <ul key={trip.id}>
+        <ul className="trips" key={trip.id}>
           <li>{trip.location}</li>
           <li>
             {new Date(trip.start_date).toLocaleDateString([], {

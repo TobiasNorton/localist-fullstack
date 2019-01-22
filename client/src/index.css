@@ -504,7 +504,7 @@ p.from {
   font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .my-profile li {
@@ -512,6 +512,12 @@ p.from {
   list-style-type: none;
   margin-bottom: 0.3rem;
   color: hsla(185, 0%, 30%, 1);
+}
+
+.trips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .edit-profile-button {
