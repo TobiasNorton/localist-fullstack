@@ -27,7 +27,7 @@ code {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 8em);
+  min-height: calc(100vh - 7em);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,6 +178,7 @@ button {
   background-color: hsla(127, 50%, 50%, 1);
   text-align: center;
   font-family: 'Lato', sans-serif;
+  min-height: calc(100vh - 3.5rem);
 }
 
 .how-it-works {
@@ -188,7 +189,7 @@ button {
 
 .what-is h1,
 .how-it-works h1 {
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0 1rem 0;
   line-height: 1.5rem;
   font-family: 'Lato', sans-serif;
 }
