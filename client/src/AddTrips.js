@@ -35,10 +35,6 @@ class AddTrips extends Component {
 
     const formData = new FormData(event.target)
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
-
     axios.post('/api/trips', formData).then(response => {
       // if (response.data.errors) {
       //   this.setState({ showProfileLink: true })
@@ -60,7 +56,12 @@ class AddTrips extends Component {
 
               <div className="input">
                 <p>City:</p>
-                <input type="text" name="trip[location]" placeholder="City, Country" />
+                <input
+                  type="text"
+                  name="trip[location]"
+                  placeholder="City, Country"
+                  autoComplete="off"
+                />
                 <p>Travel Dates:</p>
 
                 <div className="travel-dates">

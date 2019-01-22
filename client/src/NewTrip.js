@@ -56,7 +56,12 @@ class NewTrip extends Component {
 
               <div className="input">
                 <p>City:</p>
-                <input type="text" name="trip[location]" placeholder="City, Country" />
+                <input
+                  type="text"
+                  name="trip[location]"
+                  placeholder="City, Country"
+                  autoComplete="off"
+                />
                 <p>Travel Dates:</p>
 
                 <div className="travel-dates">

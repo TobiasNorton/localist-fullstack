@@ -35,10 +35,6 @@ class Edit extends Component {
 
     const formData = new FormData(event.target)
 
-    // for (let pair of formData.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1])
-    // }
-
     axios.put('/api/profile', formData).then(response => {
       // history.push('/my_profile')
       window.location = '/my_profile'
@@ -87,6 +83,7 @@ class Edit extends Component {
                 defaultValue={this.state.profile.age}
                 maxLength="3"
                 placeholder="Your Age Here"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -125,6 +122,7 @@ class Edit extends Component {
                 name="profile[location]"
                 defaultValue={this.state.profile.location}
                 placeholder="My Hometown, Anywhere"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -134,6 +132,7 @@ class Edit extends Component {
                 name="profile[languages]"
                 defaultValue={this.state.profile.languages}
                 placeholder="English, Cantonese, Spanish"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -145,6 +144,7 @@ class Edit extends Component {
                 defaultValue={this.state.profile.about}
                 rows="5"
                 placeholder="Interests, hobbies, background, etc."
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -156,6 +156,7 @@ class Edit extends Component {
                 defaultValue={this.state.profile.why_joined}
                 rows="5"
                 placeholder="Hidden food gems, good conversation"
+                autoComplete="off"
               />
             </div>
 
@@ -167,6 +168,7 @@ class Edit extends Component {
                 name="profile[whatsapp]"
                 defaultValue={this.state.profile.whatsapp}
                 placeholder="+ 123 4567890123"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -176,6 +178,7 @@ class Edit extends Component {
                 name="profile[phone]"
                 defaultValue={this.state.profile.phone}
                 placeholder="911-555-3423"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -185,6 +188,7 @@ class Edit extends Component {
                 name="profile[email]"
                 defaultValue={this.state.profile.email}
                 placeholder="coolperson@coolmail.com"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -194,6 +198,7 @@ class Edit extends Component {
                 name="profile[facebook]"
                 defaultValue={this.state.profile.facebook}
                 placeholder="Your Facebook"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -203,6 +208,7 @@ class Edit extends Component {
                 name="profile[instagram]"
                 defaultValue={this.state.profile.instagram}
                 placeholder="@your.instagram.name"
+                autoComplete="off"
               />
             </div>
             <div className="input">
@@ -214,6 +220,7 @@ class Edit extends Component {
                 name="profile[picture]"
                 defaultValue={this.state.profile.picture}
                 placeholder="picture.jpg"
+                autoComplete="off"
               />
             </div>
             <button type="submit">Back to Profile</button>
