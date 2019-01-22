@@ -23,7 +23,7 @@ code {
 
 .main {
   background: linear-gradient(hsla(185, 0%, 50%, 0.2), hsla(185, 0%, 50%, 0.2)),
-    url('./shane-rounce-405329-unsplash.jpg');
+    url('./main-image-100dpi.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
