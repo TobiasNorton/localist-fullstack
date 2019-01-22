@@ -22,10 +22,14 @@ class ProfileReady extends Component {
               either go to your profile or start looking for locals to link with.
             </p>
             <p className="all-set-p">
-              When you are scrolling through locals, you may request to link with someone, or view
+              When you are scrolling through locals, you may either link with someone or view their
+              profile. If you decide to link with someone, they will appear in your profile under
+              the "My Links" tab. At this time your contact information will become visible to them
+              and theirs will be visible to you.
+              {/* When you are scrolling through locals, you may request to link with someone, or view
               their profile. If you request someone, they will be notified of your request and can
               either accept or deny. If they accept, your contact information will become visible to
-              them and theirs will be visible to you.
+              them and theirs will be visible to you. */}
             </p>
             <div className="get-started-buttons">
               <Link to="/browse/">
