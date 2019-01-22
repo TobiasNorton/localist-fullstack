@@ -37,16 +37,22 @@ class NewTrip extends Component {
     const formData = new FormData(event.target)
 
     for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
+      alert(pair[0] + ', ' + pair[1])
     }
 
-    axios.post('/api/trips', formData).then(response => {
-      // if (response.data.errors) {
-      //   this.setState({ showProfileLink: true })
-      // } else {
-      history.push('/my_profile')
-      // }
-    })
+    axios
+      .post('/api/trips', formData)
+      .then(response => {
+        alert('OK!')
+        // if (response.data.errors) {
+        //   this.setState({ showProfileLink: true })
+        // } else {
+        history.push('/my_profile')
+        // }
+      })
+      .catch(error => {
+        alert(error)
+      })
   }
 
   render() {
