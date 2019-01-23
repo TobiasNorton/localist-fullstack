@@ -960,16 +960,26 @@ textarea {
 
   .welcome {
     font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
 
   .welcome span {
     font-size: 4.5rem;
   }
 
+  .localist {
+    font-size: 4.5rem;
+    line-height: 3.2rem;
+  }
+
   .main-caption {
     font-size: 1.6rem;
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+  }
+
+  .main button {
+    width: 12rem;
   }
 
   .local {
@@ -1008,6 +1018,10 @@ textarea {
   .link p {
     margin: 0 0 0.7rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .main button {
+    width: 10rem;
   }
 }
 
