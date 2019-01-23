@@ -42,7 +42,6 @@ class MyLink extends Component {
             <p className="name">{this.props.name}</p>
             <p>{this.props.location}</p>
             <p>You are linked with {this.firstName()}.</p>
-            {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div classname="local-buttons-container">
               <Link to={`/profiles/${this.props.id}`}>
                 <button className="button">View Profile</button>

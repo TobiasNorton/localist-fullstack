@@ -39,6 +39,22 @@ class RequestProfile extends Component {
               </div>
             </div>
 
+            {/* <p className="link-status">You are linked with {this.state.profile.name}</p>
+              <button>Unlink</button> */}
+
+            {/* DO NOT REMOVE THIS COMMENTED CODE vvvv !! */}
+
+            {/* <p className="link-status">Michael Kelly would like to link with you.</p>
+              <div className="request-buttons">
+                <button>Accept</button>
+                <button>Decline</button>
+              </div> */}
+
+            {/* <p className="link-status">You are not linked with {this.state.profile.name}</p> */}
+
+            {/* <button onClick={this.createLink}>Link</button> */}
+
+            {/* DO NOT REMOVE THIS CODE ^^^^ */}
             <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />

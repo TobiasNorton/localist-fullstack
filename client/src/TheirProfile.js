@@ -157,60 +157,15 @@ class TheirProfile extends Component {
   render() {
     return (
       <>
-        {/* <nav className="nav-bar">
-          <p className="logo">Localist</p>
-          <div className="links">
-            <div className="dropdown">
-              <a href="#" className="dropdown-button">
-                Requests (4)
-              </a>
-              <div className="request-list hidden">
-                <a href="#">Michael Kelly</a>
-                <a href="#">Brenna Hensley</a>
-                <a href="#">Francis Begby</a>
-                <a href="#">Anaramhatoywan Mankot</a>
-              </div>
-            </div>
-            <a href="#">Browse</a> <a href="#">My Profile</a>
-            <a href="#">Sign Out</a> <a href="#" />
-          </div>
-          <div className="hamburger">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="side-nav">
-            <a href="#">Browse</a>
-            <a href="#">My Profile</a>
-            <a href="#">Sign Out</a>
-          </div>
-        </nav> */}
-
         <NavBar />
-
         <section className="their-profile">
           <div className="left">
             <div className="category">
               <img src={this.state.profile.picture_url} className="profile-pic" alt="Budsarin" />
               <h3 className="profile-name">{this.state.profile.name}</h3>
               <p className="from">{this.state.profile.location}</p>
-              {/* <p className="link-status">You are linked with {this.state.profile.name}</p>
-              <button>Unlink</button> */}
-
-              {/* DO NOT REMOVE THIS COMMENTED CODE vvvv !! */}
-
-              {/* <p className="link-status">Michael Kelly would like to link with you.</p>
-              <div className="request-buttons">
-                <button>Accept</button>
-                <button>Decline</button>
-              </div> */}
-
-              {/* <p className="link-status">You are not linked with {this.state.profile.name}</p> */}
 
               {this.renderLinkStatus()}
-              {/* <button onClick={this.createLink}>Link</button> */}
-
-              {/* DO NOT REMOVE THIS CODE ^^^^ !!! */}
             </div>
 
             <div className="category">
@@ -222,24 +177,6 @@ class TheirProfile extends Component {
 
           <div className="right">
             {this.renderContactInfo()}
-
-            {/* <div className="category">
-              <p className="header">Contact Me</p>
-              <div className="line" />
-              <ul className="body">
-                {this.whatsapp()}
-                {this.email()}
-                {this.facebook()}
-                {this.instagram()}
-                {this.phone()}
-              </ul>
-            </div> */}
-
-            {/* <div className="category">
-              <p className="header">Contact Me</p>
-              <div className="line" />
-              <p className="body">You must be linked to see contact information.</p>
-            </div> */}
 
             <div className="category">
               <p className="header">About Me</p>
@@ -256,9 +193,6 @@ class TheirProfile extends Component {
               <div className="line" />
               <p className="body">Any day after 5. Free on weekends.</p>
             </div>
-
-            {/* <p className="link-status">You are linked with Budsarin Hiranprueck</p>
-            <button>Unlink</button> */}
           </div>
         </section>
         <footer />

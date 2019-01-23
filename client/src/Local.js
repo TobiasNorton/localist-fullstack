@@ -42,7 +42,6 @@ class Local extends Component {
             <p className="name">{this.props.name}</p>
             <p>{this.props.location}</p>
             <p>You are not linked with {this.firstName()}.</p>
-            {/* <p>Available: {dataStore.theirAvailability()}</p> */}
             <div className="local-buttons-container">
               <Link to={`/profiles/${this.props.id}`}>
                 <button className="button">View Profile</button>

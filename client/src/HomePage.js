@@ -22,18 +22,12 @@ class HomePage extends Component {
     return (
       <body>
         <Menu right>
-          {/* <Link id="home" className="menu-item" to="/browse/">
-            Browse
-          </Link> */}
           <Link id="about" className="menu-item" to="/login/">
             Join
           </Link>
           <Link id="contact" className="menu-item" to="/login/">
             Log In
           </Link>
-          {/* <Link onClick={this.showSettings} className="menu-item--small" href="">
-            Settings
-          </Link> */}
         </Menu>
         <nav className="nav-bar">
           <p className="logo">Localist</p>
@@ -42,11 +36,6 @@ class HomePage extends Component {
             <Link to="/login/">Join</Link>
             <Link to="/login/">Log In</Link>
           </div>
-          {/* <div className="hamburger">
-            <span />
-            <span />
-            <span />
-          </div> */}
         </nav>
 
         <section className="main">
