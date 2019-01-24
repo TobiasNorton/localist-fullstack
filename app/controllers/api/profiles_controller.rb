@@ -81,7 +81,7 @@ class Api::ProfilesController < ApplicationController
         email: current_profile.email,
         latitude: current_profile.latitude,
         longitude: current_profile.longitude,
-        picture_url: url_for(current_profile.picture),
+        picture_url: url_for(current_profile.picture.variant("auto-orient": true)),
         trips: current_profile.trips.map do |trip|
           {
             id: trip.id,
