@@ -15,10 +15,10 @@ class Profile < ApplicationRecord
 
   after_validation :geocode
 
-  def profile_picture_auto_orient
-    profile.picture.variant(auto_orient: true)
+  def picture_auto_orient
+    picture.variant(auto_orient: true)
   rescue ActiveStorage::InvariableError
-    profile.picture
+    picture
   end
 
   def linked_profiles
