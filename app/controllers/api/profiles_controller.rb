@@ -23,7 +23,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: url_for(profile.picture.variant(auto_orient: true) if profile.picture.attached?)
+          picture_url: profile.picture.attached? && url_for(profile.picture.variant(auto_orient: true))
           # picture_url: (url_for(profile.picture.variant(combine_options: {resize: "384x384", gravity: "center", extent: "384x384"})) if profile.picture.attached?)
           # picture_url: (url_for(profile.picture) if profile.picture.attached?)
           # picture_url: url_for(profile.picture.variant(resize: "384x384^") if profile.picture.attached?)
@@ -160,7 +160,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: url_for(profile.picture.variant(auto_orient: true) if profile.picture.attached?)
+          picture_url: profile.picture.attached? && url_for(profile.picture.variant(auto_orient: true))
         } 
       end
     }
