@@ -23,8 +23,8 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          # picture_url: url_for(profile.picture)
-          picture_url: (url_for(profile.picture.variant(combine_options: {resize: "384x384", gravity: "center", extent: "384x384"})) if profile.picture.attached?)
+          picture_url: url_for(profile.picture.variant(auto_orient: true) if profile.picture.attached?)
+          # picture_url: (url_for(profile.picture.variant(combine_options: {resize: "384x384", gravity: "center", extent: "384x384"})) if profile.picture.attached?)
           # picture_url: (url_for(profile.picture) if profile.picture.attached?)
           # picture_url: url_for(profile.picture.variant(resize: "384x384^") if profile.picture.attached?)
         }
@@ -56,7 +56,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: url_for(profile.picture)
+          picture_url: url_for(profile.picture.variant(auto_orient: true))
         }
       end
     }
@@ -94,7 +94,7 @@ class Api::ProfilesController < ApplicationController
           {
             id: profile.id,
             name: profile.name,
-            picture_url: url_for(profile.picture),
+            picture_url: url_for(profile.picture.variant(auto_orient: true)),
             location: profile.location,
           }
         end 
@@ -125,7 +125,7 @@ class Api::ProfilesController < ApplicationController
         email: profile.email,
         latitude: profile.latitude,
         longitude: profile.longitude,
-        picture_url: url_for(profile.picture),
+        picture_url: url_for(profile.picture.variant(auto_orient: true)),
         trips: {
           trips: profile.trips.map do |trip|
             {
@@ -160,7 +160,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: (url_for(profile.picture) if profile.picture.attached?)
+          picture_url: (url_for(profile.picture.variant(auto_orient: true)) if profile.picture.attached?)
         } 
       end
     }
