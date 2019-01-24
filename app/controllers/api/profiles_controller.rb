@@ -23,7 +23,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: profile.picture.attached? && url_for(profile.picture.variant(auto_orient: true))
+          picture_url: profile.picture.attached? && url_for(profile.profile_picture_auto_orient)
           # picture_url: (url_for(profile.picture.variant(combine_options: {resize: "384x384", gravity: "center", extent: "384x384"})) if profile.picture.attached?)
           # picture_url: (url_for(profile.picture) if profile.picture.attached?)
           # picture_url: url_for(profile.picture.variant(resize: "384x384^") if profile.picture.attached?)
@@ -56,7 +56,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: url_for(profile.picture.variant(auto_orient: true))
+          picture_url: url_for(profile.profile_picture_auto_orient)
         }
       end
     }
@@ -81,7 +81,7 @@ class Api::ProfilesController < ApplicationController
         email: current_profile.email,
         latitude: current_profile.latitude,
         longitude: current_profile.longitude,
-        picture_url: url_for(current_profile.picture.variant(auto_orient: true)),
+        picture_url: url_for(current_profile.profile_picture_auto_orient),
         trips: current_profile.trips.map do |trip|
           {
             id: trip.id,
@@ -94,7 +94,7 @@ class Api::ProfilesController < ApplicationController
           {
             id: profile.id,
             name: profile.name,
-            picture_url: url_for(profile.picture.variant(auto_orient: true)),
+            picture_url: url_for(profile.profile_picture_auto_orient),
             location: profile.location,
           }
         end 
@@ -125,7 +125,7 @@ class Api::ProfilesController < ApplicationController
         email: profile.email,
         latitude: profile.latitude,
         longitude: profile.longitude,
-        picture_url: url_for(profile.picture.variant(auto_orient: true)),
+        picture_url: url_for(profile.profile_picture_auto_orient),
         trips: {
           trips: profile.trips.map do |trip|
             {
@@ -160,7 +160,7 @@ class Api::ProfilesController < ApplicationController
           email: profile.email,
           latitude: profile.latitude,
           longitude: profile.longitude,
-          picture_url: profile.picture.attached? && url_for(profile.picture.variant(auto_orient: true))
+          picture_url: profile.picture.attached? && url_for(profile.profile_picture_auto_orient)
         } 
       end
     }

@@ -15,6 +15,12 @@ class Profile < ApplicationRecord
 
   after_validation :geocode
 
+  def profile_picture_auto_orient
+    profile.picture.variant(auto_orient: true)
+  rescue ActiveStorage::InvariableError
+    profile.picture
+  end
+
   def linked_profiles
     # All the people I am linked to as 1 and all the people I am linked to as 2
     (linked_profiles_as_1 + linked_profiles_as_2).uniq
