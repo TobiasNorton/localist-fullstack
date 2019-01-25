@@ -59,7 +59,7 @@ class NewTrip extends Component {
                 <input
                   type="text"
                   name="trip[location]"
-                  placeholder="City, Country"
+                  placeholder="Where to?"
                   autoComplete="off"
                 />
                 <p>Travel Dates:</p>
