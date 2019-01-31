@@ -5,7 +5,7 @@ class RequestProfile extends Component {
   render() {
     return (
       <>
-        {/* <nav className="nav-bar">
+        <nav className="nav-bar">
           <p className="logo">Localist</p>
           <div className="links">
             <div className="dropdown">
@@ -22,9 +22,9 @@ class RequestProfile extends Component {
             <a href="#">Browse</a> <a href="#">My Profile</a>
             <a href="#">Sign Out</a> <a href="#" />
           </div>
-        </nav> */}
+        </nav>
 
-        <NavBar />
+        {/* <NavBar /> */}
 
         <section className="their-profile">
           <div className="left">

@@ -180,6 +180,41 @@ button {
   margin-bottom: 2rem;
 }
 
+.arrow {
+  width: 2.5rem;
+  justify-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* margin: 0 auto 0 auto; */
+  /* transform-origin: bottom; */
+  position: absolute;
+  bottom: 5rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+/* .bounce {
+  animation-name: bounce;
+  animation-timing-function: ease;
+} */
+
+/* @keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
 .what-is {
   /* min-height: 100vh; */
   background-color: hsla(127, 50%, 50%, 1);
