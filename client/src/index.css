@@ -89,6 +89,10 @@ code {
   margin: 0 0 2rem 0;
 }
 
+p.menu-item:hover {
+  cursor: pointer;
+}
+
 /* .hamburger {
   margin-right: 1rem;
   display: none;

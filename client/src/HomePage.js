@@ -28,6 +28,12 @@ class HomePage extends Component {
           <Link id="contact" className="menu-item" to="/login/">
             Log In
           </Link>
+          <p id="contact" className="menu-item" onClick={this.showWhatIsSection}>
+            What is Localist?
+          </p>
+          <p id="contact" className="menu-item" onClick={this.showHowItWorksSection}>
+            How Does It Work?
+          </p>
         </Menu>
         <nav className="nav-bar">
           <p className="logo">Localist</p>
