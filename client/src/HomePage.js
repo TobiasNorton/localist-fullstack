@@ -94,6 +94,7 @@ class HomePage extends Component {
               </p>
             </div>
           </div>
+          <img src={arrow} className="what-is-arrow" onClick={this.showHowItWorksSection} />
         </section>
 
         <section className="how-it-works">

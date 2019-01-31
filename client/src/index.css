@@ -199,6 +199,17 @@ button {
   cursor: pointer;
 }
 
+.what-is-arrow {
+  width: 2.5rem;
+  /* justify-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; */
+  /* margin: 0 auto 0 auto; */
+  /* transform-origin: bottom; */
+  margin-top: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
 /* .bounce {
   animation-name: bounce;
   animation-timing-function: ease;
@@ -224,7 +235,8 @@ button {
   background-color: hsla(127, 50%, 50%, 1);
   text-align: center;
   font-family: 'Lato', sans-serif;
-  min-height: calc(100vh - 3.5rem);
+  /* min-height: calc(100vh - 3.5rem); */
+  min-height: 100vh;
 }
 
 .how-it-works {
@@ -252,7 +264,7 @@ button {
   /* min-height: 30rem; */
   padding: 0.6rem;
   justify-content: center;
-  padding-bottom: 2.5rem;
+  /* padding-bottom: 2.5rem; */
 }
 
 .how-it-works .box-container {
@@ -273,7 +285,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 3px 5px hsla(185, 0%, 0%, 0.2);
+  box-shadow: 0 3px 5px hsla(185, 0%, 0%, 0.1);
 }
 
 .how-it-works .box {
