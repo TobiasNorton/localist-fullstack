@@ -60,6 +60,7 @@ class HomePage extends Component {
             <div className="box">
               <img src={waterfall} />
               <p className="header">Experience Culture</p>
+              <div className="box-line" />
               <p className="body">
                 Localist provides a unique platform to meet with locals anywhere on the planet so
                 that travelers can get a richer experience and see their travel destinations up
@@ -71,6 +72,7 @@ class HomePage extends Component {
             <div className="box">
               <img src={girlsInBoat} />
               <p className="header">Locals Can Hang Out With Travelers</p>
+              <div className="box-line" />
               <p className="body">
                 Show off your town! Remember, those from other countries don't have the same context
                 as you; your town might be more fun than you think, and it could be a great
@@ -82,6 +84,8 @@ class HomePage extends Component {
             <div className="box">
               <img src={groupSitting} />
               <p className="header">What Localist is Not</p>
+              <div className="box-line" />
+
               <p className="body">
                 Localist is not a dating website or a platform for couch sharing, but hey, it's a
                 free world! If you should choose to use it for such purposes, more power to you. We
@@ -97,6 +101,7 @@ class HomePage extends Component {
           <div className="box-container">
             <div className="box">
               <p className="header">Create an Account</p>
+              <div className="box-line" />
               <p className="body">
                 You will be prompted to register with Localist through Google for authentication
                 purposes. From there you will create a profile. After filling out the necessary
@@ -106,6 +111,7 @@ class HomePage extends Component {
             </div>
             <div className="box">
               <p className="header">Browse Locals</p>
+              <div className="box-line" />
               <p className="body">
                 Based on your travel information, you will be provided with a list of locals that
                 live in your travel destinations. As you scroll through, you may view their profiles
@@ -116,6 +122,7 @@ class HomePage extends Component {
             </div>
             <div className="box">
               <p className="header">Set Up a Time and Place to Meet</p>
+              <div className="box-line" />
               <p className="body">
                 Once you are linked with someone, your contact information will become visible to
                 them and theirs will be visible to you. From here it's up to you two to decide how
