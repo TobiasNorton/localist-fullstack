@@ -30,13 +30,11 @@ class TheirProfile extends Component {
 
   componentDidMount = () => {
     window.scrollTo(0, 0)
-    // dataStore.getProfile(this.props.match.params.id)
     axios.get(`/api/profiles/${this.props.match.params.id}`).then(response => {
       console.log(response.data.profile)
       this.setState({
         profile: response.data.profile
       })
-      // this.state = response.data.displaying_profile
     })
 
     this.loadMyProfile()
@@ -50,12 +48,6 @@ class TheirProfile extends Component {
       })
     })
   }
-
-  // profilesToRender = () => {
-  //   const linkedProfileIDS = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
-
-  //   return this.state.profiles.filter(profile => !linkedProfileIDS.includes(profile.id))
-  // }
 
   renderLinkStatus = () => {
     const linkedProfileIDs = this.state.myProfileInfo.linked_profiles.map(profile => profile.id)
@@ -117,11 +109,8 @@ class TheirProfile extends Component {
 
   createLink = event => {
     axios.post('/api/links', { other_profile_id: this.state.profile.id }).then(response => {
-      console.log(response)
-      // code here when the promise is done
       this.loadMyProfile()
     })
-    // code here happens right away
   }
 
   whatsapp = () => {

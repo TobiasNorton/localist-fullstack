@@ -260,11 +260,8 @@ button {
 .what-is .box-container {
   display: flex;
   flex-wrap: wrap;
-  /* height: calc(100vh-3rem); */
-  /* min-height: 30rem; */
   padding: 0.6rem;
   justify-content: center;
-  /* padding-bottom: 2.5rem; */
 }
 
 .how-it-works .box-container {
@@ -388,8 +385,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Individual item */
 .bm-item {
-  /* display: inline-block; */
-  /* margin: 1rem 0; */
   margin-bottom: 1rem;
   color: white;
   text-decoration: none;
@@ -488,7 +483,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 30rem;
   border-radius: 5px;
   padding-bottom: 1rem;
-  /* box-shadow: 0 1px 0 hsla(185, 0%, 60%, 1); */
   box-shadow: 0 3px 5px hsla(185, 0%, 0%, 0.3);
 }
 
@@ -500,14 +494,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .category .body {
-  /* padding-bottom: 0.6rem; */
   line-height: 1.3rem;
   font-family: 'Lato', sans-serif;
   color: hsla(185, 0%, 25%, 1);
 }
 
 .their-profile p {
-  /* margin: 0.5rem; */
   padding: 0 3rem 0 3rem;
   font-family: 'Lato', sans-serif;
 }
@@ -539,7 +531,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   justify-content: center;
   flex-wrap: wrap;
   background-color: hsla(127, 50%, 80%, 1);
-  /* background-color: white; */
 }
 
 .my-profile .left {
@@ -557,7 +548,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .my-profile p {
-  /* margin: 0.5rem; */
   padding: 0 3rem 0 3rem;
   font-family: 'Lato', sans-serif;
 }

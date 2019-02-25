@@ -3,8 +3,6 @@ import { observer } from 'mobx-react'
 import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 import MyLink from './MyLink'
-// import Footer from './Footer'
-
 import auth from './auth'
 import history from './history'
 import axios from 'axios'
@@ -188,7 +186,6 @@ class MyProfile extends Component {
             <footer />
           </div>
         </section>
-        {/* <Footer /> */}
       </>
     )
   }
