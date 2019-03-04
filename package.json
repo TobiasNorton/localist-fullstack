@@ -4,8 +4,8 @@
     "client/node_modules"
   ],
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "postinstall": "npm run build && npm run deploy"
-  }
+    "build": "npm run build && npm run deploy",
+    "deploy": "cp -a client/build/. public/"
+  },
+  "heroku-run-build-script": true
 }
