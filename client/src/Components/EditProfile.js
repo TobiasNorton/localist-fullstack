@@ -20,7 +20,6 @@ class EditProfile extends Component {
   }
 
   componentWillMount = () => {
-    // If not logged in, kick me to the home page
     if (!auth.isAuthenticated()) {
       history.push('/')
     }
@@ -34,7 +33,6 @@ class EditProfile extends Component {
 
   render() {
     if (this.state.loading) {
-      // return <img src="/LoadingSpacePrincess.gif" />
       return (
         <>
           <NavBar />
@@ -56,7 +54,6 @@ class EditProfile extends Component {
                 name="profile[name]"
                 defaultValue={this.state.profile.name}
                 placeholder="Your Name Here"
-                // autoComplete="off"
               />
             </div>
             <div className="input">
@@ -71,21 +68,6 @@ class EditProfile extends Component {
               />
             </div>
             <div className="input">
-              {/* <p>Gender*</p>
-              <section className="gender">
-                <div>
-                  <input type="radio" name="profile[gender]" id="male" value="male" />
-                  <label htmlFor="male">Male</label>
-                </div>
-                <div>
-                  <input type="radio" name="profile[gender]" id="female" value="female" />
-                  <label htmlFor="female">Female</label>
-                </div>
-                <div>
-                  <input type="radio" name="profile[gender]" id="other" value="other" />
-                  <label htmlFor="other">Other/Prefer not to answer</label>
-                </div>
-              </section> */}
               <p>Will your profile be public? This allows travelers to reach out to you.</p>
               <section className="gender">
                 <div>
@@ -205,15 +187,6 @@ class EditProfile extends Component {
             </div>
             <button type="submit">Submit</button>
           </form>
-          {/* <Link to="/browse/" className="button-link">
-            Search Locals
-          </Link>
-          <Link to="/profiles/user/:id/" className="button-link">
-            My Profile
-          </Link> */}
-          {/* <button type="submit">My Profile</button>
-          <button type="submit">Search Locals</button>
-          <button type="submit">Add Trips</button> */}
         </div>
         <footer />
       </div>

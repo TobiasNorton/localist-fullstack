@@ -5,7 +5,6 @@ import auth from '../auth'
 import history from '../history'
 
 import NavBar from '../NavBar'
-import { Link } from 'react-router-dom'
 
 class Edit extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class Edit extends Component {
   }
 
   componentWillMount = () => {
-    // If not logged in, kick me to the home page
     if (!auth.isAuthenticated()) {
       history.push('/')
     }
@@ -36,15 +34,12 @@ class Edit extends Component {
     const formData = new FormData(event.target)
 
     axios.put('/api/profile', formData).then(response => {
-      // history.push('/my_profile')
       window.location = '/my_profile'
     })
-    // this.getAllProfiles()
   }
 
   render() {
     if (this.state.loading) {
-      // return <img src="/LoadingSpacePrincess.gif" />
       return (
         <>
           <NavBar />
@@ -55,15 +50,7 @@ class Edit extends Component {
 
     return (
       <div>
-        {/* <nav className="nav-bar">
-          <p className="logo">Localist</p>
-          <div className="links">
-            <a href="#">Join</a> <a href="#">Log In</a> <a href="#" />
-          </div>
-        </nav> */}
-
         <NavBar />
-
         <div className="create-profile">
           <form onSubmit={this.editProfile} className="form-body">
             <div className="input">
@@ -98,22 +85,6 @@ class Edit extends Component {
                   <label htmlFor="no">Not right now</label>
                 </div>
               </section>
-
-              {/* <p>Gender*</p>
-              <section className="gender">
-                <div>
-                  <input type="radio" name="profile[gender]" id="male" value="male" />
-                  <label htmlFor="male">Male</label>
-                </div>
-                <div>
-                  <input type="radio" name="profile[gender]" id="female" value="female" />
-                  <label htmlFor="female">Female</label>
-                </div>
-                <div>
-                  <input type="radio" name="profile[gender]" id="other" value="other" />
-                  <label htmlFor="other">Other/Prefer not to answer</label>
-                </div>
-              </section> */}
             </div>
             <div className="input">
               <p>Location</p>
@@ -159,7 +130,6 @@ class Edit extends Component {
                 autoComplete="off"
               />
             </div>
-
             <p>Please list your preferred methods of contact.</p>
             <div className="input">
               <p>WhatsApp</p>
@@ -223,15 +193,6 @@ class Edit extends Component {
             </div>
             <button type="submit">Back to Profile</button>
           </form>
-          {/* <Link to="/browse/" className="button-link">
-            Search Locals
-          </Link>
-          <Link to="/profiles/user/:id/" className="button-link">
-            My Profile
-          </Link> */}
-          {/* <button type="submit">My Profile</button>
-          <button type="submit">Search Locals</button>
-          <button type="submit">Add Trips</button> */}
         </div>
         <footer />
       </div>

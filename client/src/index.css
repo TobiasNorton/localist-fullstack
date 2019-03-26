@@ -10,7 +10,7 @@ body {
 
 @font-face {
   font-family: 'Good Vibes';
-  src: url('./Assets/goodvibes.ttf');
+  src: url('./goodvibes.ttf');
 }
 
 button:hover {
@@ -23,7 +23,7 @@ code {
 
 .main {
   background: linear-gradient(hsla(185, 0%, 50%, 0.2), hsla(185, 0%, 50%, 0.2)),
-    url('./Assets/main-image-100dpi.jpg');
+    url('./main-image-100dpi.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,33 +92,6 @@ code {
 p.menu-item:hover {
   cursor: pointer;
 }
-
-/* .hamburger {
-  margin-right: 1rem;
-  display: none;
-}
-
-.hamburger span {
-  width: 40px;
-  height: 6px;
-  background-color: white;
-  display: block;
-  margin: 4px 0 4px 0;
-}
-
-.side-nav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: black;
-  color: black;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-} */
 
 .logo {
   font-family: 'Good Vibes';
@@ -189,8 +162,6 @@ button {
   justify-self: flex-end;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  /* margin: 0 auto 0 auto; */
-  /* transform-origin: bottom; */
   position: absolute;
   bottom: 5rem;
 }

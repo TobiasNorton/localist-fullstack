@@ -49,7 +49,6 @@ class Browse extends Component {
   }
 
   renderLoading = () => {
-    // return <img src="/LoadingSpacePrincess.gif" />
     return <div className="loading">Loading...</div>
   }
 
@@ -87,7 +86,6 @@ class Browse extends Component {
 
   render() {
     if (this.state.loading) {
-      // return <img src="/LoadingSpacePrincess.gif" />
       return (
         <>
           <NavBar />
