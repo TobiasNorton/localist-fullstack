@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import auth from './auth'
-import history from './history'
+import auth from '../auth'
+import history from '../history'
 
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
 
 class Edit extends Component {

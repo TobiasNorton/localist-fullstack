@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import NavBar from '../NavBar'
 
-class UnmatchedProfile extends Component {
+class RequestProfile extends Component {
   render() {
     return (
       <>
@@ -23,26 +24,53 @@ class UnmatchedProfile extends Component {
           </div>
         </nav>
 
+        {/* <NavBar /> */}
+
         <section className="their-profile">
           <div className="left">
             <div className="category">
-              <h3 className="profile-name">Budsarin Hiranprueck</h3>
-              <img src="./BudsarinCropped.jpg" className="profile-pic" alt="Budsarin" />
-              <p className="from">Chiang Mai, Thailand</p>
-              <p className="link-status">You are not linked with Budsarin Hiranprueck</p>
-              <button>Send Request</button>
+              <img src="./MichaelKelly.jpg" className="profile-pic" alt="Michael Kelly" />
+              <h3 className="profile-name">Michael Kelly</h3>
+              <p className="from">Galway, Ireland</p>
+              <p className="link-status">Michael Kelly would like to link with you.</p>
+              <div className="request-buttons">
+                <button>Accept</button>
+                <button>Decline</button>
+              </div>
             </div>
 
+            {/* <p className="link-status">You are linked with {this.state.profile.name}</p>
+              <button>Unlink</button> */}
+
+            {/* DO NOT REMOVE THIS COMMENTED CODE vvvv !! */}
+
+            {/* <p className="link-status">Michael Kelly would like to link with you.</p>
+              <div className="request-buttons">
+                <button>Accept</button>
+                <button>Decline</button>
+              </div> */}
+
+            {/* <p className="link-status">You are not linked with {this.state.profile.name}</p> */}
+
+            {/* <button onClick={this.createLink}>Link</button> */}
+
+            {/* DO NOT REMOVE THIS CODE ^^^^ */}
             <div className="category">
               <p className="header">Contact Me</p>
               <div className="line" />
               <p className="body">You must be linked to see contact information.</p>
+              {/* <ul className="body">
+                <li>WhatsApp: +1 5234 3486 324</li>
+                <li>Email: mkelly@something.com</li>
+                <li>Facebook Messenger: Michael Kelly</li>
+                <li>Instagram: @mike.like.mike</li>
+              </ul> */}
             </div>
 
             <div className="category">
               <p className="header">Languages I Speak</p>
               <div className="line" />
-              <p className="body">Thai, English, Ngaw, some Spanish</p>
+              <p className="body">English</p>
             </div>
           </div>
 
@@ -51,12 +79,11 @@ class UnmatchedProfile extends Component {
               <p className="header">About Me</p>
               <div className="line" />
               <p className="body">
-                Hi, I'm Budsarin! I've lived in Chiang Mai for 10 years. I like to bacon ipsum dolor
-                amet spare ribs landjaeger filet mignon, frankfurter porchetta salami tenderloin.
-                Hamburger porchetta frankfurter meatball picanha. Kielbasa pork corned beef salami
-                pork belly cow ball tip pork loin doner pastrami. Drumstick leberkas ribeye brisket.
-                Leberkas spare ribs landjaeger tail picanha salami. Tenderloin pancetta shankle
-                kevin, pork loin pastrami swine tail.
+                I am a lover of the outdoors, beer and good food. I love to travel and I porchetta
+                salami tenderloin. Hamburger porchetta frankfurter meatball picanha. Kielbasa pork
+                corned beef salami pork belly cow ball tip pork loin doner pastrami. Drumstick
+                leberkas ribeye brisket. Leberkas spare ribs landjaeger tail picanha salami.
+                Tenderloin pancetta shankle kevin, pork loin pastrami swine tail.
               </p>
             </div>
             <div className="category">
@@ -70,13 +97,10 @@ class UnmatchedProfile extends Component {
               </p>
             </div>
             <div className="category">
-              <p className="header">Available</p>
+              <p className="header">Coming to St. Petersburg, FL</p>
               <div className="line" />
-              <p className="body">June 18 - July 8, 2019</p>
+              <p className="body">March 28 - April 6, 2019</p>
             </div>
-
-            {/* <p className="link-status">You are not linked with Budsarin Hiranprueck</p>
-            <button>Send Request</button> */}
           </div>
         </section>
         <footer />
@@ -85,4 +109,4 @@ class UnmatchedProfile extends Component {
   }
 }
 
-export default UnmatchedProfile
+export default RequestProfile

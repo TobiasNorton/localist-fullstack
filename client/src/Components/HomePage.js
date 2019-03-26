@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import waterfall from './Waterfall.jpg'
-import girlsInBoat from './meetpeoplesolotravel.jpeg'
-import groupSitting from './GroupSitting.jpeg'
-import arrow from './white_arrow.png'
+import waterfall from '../Waterfall.jpg'
+import girlsInBoat from '../meetpeoplesolotravel.jpeg'
+import groupSitting from '../GroupSitting.jpeg'
+import arrow from '../white_arrow.png'
 import { slide as Menu } from 'react-burger-menu'
 
 class HomePage extends Component {

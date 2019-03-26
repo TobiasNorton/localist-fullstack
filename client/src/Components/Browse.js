@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Local from './Local'
 import axios from 'axios'
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 
 import { observer } from 'mobx-react'
 
-import auth from './auth'
-import history from './history'
+import auth from '../auth'
+import history from '../history'
 
 class Browse extends Component {
   constructor(props) {

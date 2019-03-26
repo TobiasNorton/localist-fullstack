@@ -3,10 +3,10 @@ import { observer } from 'mobx-react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-import auth from './auth'
-import history from './history'
+import auth from '../auth'
+import history from '../history'
 
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 
 class AddTrips extends Component {
   constructor(props) {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { observer } from 'mobx-react'
 
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 
 class ProfileReady extends Component {
   render() {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import dataStore from './DataStore'
+import dataStore from '../DataStore'
 
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 
 import { observer } from 'mobx-react'
 import axios from 'axios'
 
-import auth from './auth'
-import history from './history'
+import auth from '../auth'
+import history from '../history'
 
 class EditProfile extends Component {
   constructor(props) {

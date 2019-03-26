@@ -10,7 +10,7 @@ body {
 
 @font-face {
   font-family: 'Good Vibes';
-  src: url('./goodvibes.ttf');
+  src: url('./Assets/goodvibes.ttf');
 }
 
 button:hover {
@@ -23,7 +23,7 @@ code {
 
 .main {
   background: linear-gradient(hsla(185, 0%, 50%, 0.2), hsla(185, 0%, 50%, 0.2)),
-    url('./main-image-100dpi.jpg');
+    url('./Assets/main-image-100dpi.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
