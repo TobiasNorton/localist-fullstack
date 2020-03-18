@@ -1,3 +1,3 @@
 # Let's just test this.
 
-[How about this](www.tobiasnorton.surge.sh)
+[How about this](http://www.tobiasnorton.surge.sh)
