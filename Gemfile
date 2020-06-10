@@ -51,7 +51,7 @@ gem "mini_magick", "~> 4.9"
 
 gem 'exifr'
 
-gem "geocoder", "~> 1.5"
+gem "geocoder", "~> 1.6"
 
 gem "jwt", "~> 2.1"
 
